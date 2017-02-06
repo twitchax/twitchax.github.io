@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.twitchax.com/"/>
+  <link href="http://blog.aaroney.com/"/>
   <updated>2017-02-06T06:33:01.000Z</updated>
-  <id>http://blog.twitchax.com/</id>
+  <id>http://blog.aaroney.com/</id>
   
   <author>
     <name>Aaron Roney</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>.NET Core Web App in Azure</title>
-    <link href="http://blog.twitchax.com/2017/02/03/NET-Core-Web-App-in-Azure/"/>
-    <id>http://blog.twitchax.com/2017/02/03/NET-Core-Web-App-in-Azure/</id>
+    <link href="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/"/>
+    <id>http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/</id>
     <published>2017-02-03T23:49:24.000Z</published>
     <updated>2017-02-06T06:33:01.000Z</updated>
     
@@ -139,27 +139,27 @@
     
     </summary>
     
-      <category term="Built with Azure Tools" scheme="http://blog.twitchax.com/categories/Built-with-Azure-Tools/"/>
+      <category term="Built with Azure Tools" scheme="http://blog.aaroney.com/categories/Built-with-Azure-Tools/"/>
     
     
-      <category term="azure" scheme="http://blog.twitchax.com/tags/azure/"/>
+      <category term="azure" scheme="http://blog.aaroney.com/tags/azure/"/>
     
-      <category term="dotnet" scheme="http://blog.twitchax.com/tags/dotnet/"/>
+      <category term="dotnet" scheme="http://blog.aaroney.com/tags/dotnet/"/>
     
-      <category term="azure-cli" scheme="http://blog.twitchax.com/tags/azure-cli/"/>
+      <category term="azure-cli" scheme="http://blog.aaroney.com/tags/azure-cli/"/>
     
-      <category term="vscode" scheme="http://blog.twitchax.com/tags/vscode/"/>
+      <category term="vscode" scheme="http://blog.aaroney.com/tags/vscode/"/>
     
-      <category term="csharp" scheme="http://blog.twitchax.com/tags/csharp/"/>
+      <category term="csharp" scheme="http://blog.aaroney.com/tags/csharp/"/>
     
-      <category term="microsoft" scheme="http://blog.twitchax.com/tags/microsoft/"/>
+      <category term="microsoft" scheme="http://blog.aaroney.com/tags/microsoft/"/>
     
   </entry>
   
   <entry>
     <title>Issue 7: Burwell v. Hobby Lobby</title>
-    <link href="http://blog.twitchax.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/"/>
-    <id>http://blog.twitchax.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/</id>
+    <link href="http://blog.aaroney.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/"/>
+    <id>http://blog.aaroney.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/</id>
     <published>2016-11-01T21:00:00.000Z</published>
     <updated>2017-02-06T08:08:14.100Z</updated>
     
@@ -237,19 +237,19 @@
     
     </summary>
     
-      <category term="The Supreme Court is Usually Badass" scheme="http://blog.twitchax.com/categories/The-Supreme-Court-is-Usually-Badass/"/>
+      <category term="The Supreme Court is Usually Badass" scheme="http://blog.aaroney.com/categories/The-Supreme-Court-is-Usually-Badass/"/>
     
     
-      <category term="scotus" scheme="http://blog.twitchax.com/tags/scotus/"/>
+      <category term="scotus" scheme="http://blog.aaroney.com/tags/scotus/"/>
     
-      <category term="supreme court" scheme="http://blog.twitchax.com/tags/supreme-court/"/>
+      <category term="supreme court" scheme="http://blog.aaroney.com/tags/supreme-court/"/>
     
   </entry>
   
   <entry>
     <title>Issue 6: United States v. Windsor</title>
-    <link href="http://blog.twitchax.com/2016/10/01/Issue-6-United-States-v-Windsor/"/>
-    <id>http://blog.twitchax.com/2016/10/01/Issue-6-United-States-v-Windsor/</id>
+    <link href="http://blog.aaroney.com/2016/10/01/Issue-6-United-States-v-Windsor/"/>
+    <id>http://blog.aaroney.com/2016/10/01/Issue-6-United-States-v-Windsor/</id>
     <published>2016-10-01T21:00:00.000Z</published>
     <updated>2017-02-06T07:51:21.302Z</updated>
     
@@ -317,19 +317,19 @@
     
     </summary>
     
-      <category term="The Supreme Court is Usually Badass" scheme="http://blog.twitchax.com/categories/The-Supreme-Court-is-Usually-Badass/"/>
+      <category term="The Supreme Court is Usually Badass" scheme="http://blog.aaroney.com/categories/The-Supreme-Court-is-Usually-Badass/"/>
     
     
-      <category term="scotus" scheme="http://blog.twitchax.com/tags/scotus/"/>
+      <category term="scotus" scheme="http://blog.aaroney.com/tags/scotus/"/>
     
-      <category term="supreme court" scheme="http://blog.twitchax.com/tags/supreme-court/"/>
+      <category term="supreme court" scheme="http://blog.aaroney.com/tags/supreme-court/"/>
     
   </entry>
   
   <entry>
     <title>Issue 5: Fred Korematsu v. United States</title>
-    <link href="http://blog.twitchax.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/"/>
-    <id>http://blog.twitchax.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/</id>
+    <link href="http://blog.aaroney.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/"/>
+    <id>http://blog.aaroney.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/</id>
     <published>2016-09-01T21:00:00.000Z</published>
     <updated>2017-02-06T07:45:22.816Z</updated>
     
@@ -388,19 +388,19 @@
     
     </summary>
     
-      <category term="The Supreme Court is Usually Badass" scheme="http://blog.twitchax.com/categories/The-Supreme-Court-is-Usually-Badass/"/>
+      <category term="The Supreme Court is Usually Badass" scheme="http://blog.aaroney.com/categories/The-Supreme-Court-is-Usually-Badass/"/>
     
     
-      <category term="scotus" scheme="http://blog.twitchax.com/tags/scotus/"/>
+      <category term="scotus" scheme="http://blog.aaroney.com/tags/scotus/"/>
     
-      <category term="supreme court" scheme="http://blog.twitchax.com/tags/supreme-court/"/>
+      <category term="supreme court" scheme="http://blog.aaroney.com/tags/supreme-court/"/>
     
   </entry>
   
   <entry>
     <title>Issue 3: George W. Bush and Richard Cheney, Petitioners v. Albert Gore, Jr. and Joseph Lieberman, et al.</title>
-    <link href="http://blog.twitchax.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/"/>
-    <id>http://blog.twitchax.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/</id>
+    <link href="http://blog.aaroney.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/"/>
+    <id>http://blog.aaroney.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/</id>
     <published>2016-07-01T21:00:00.000Z</published>
     <updated>2017-02-06T08:03:13.006Z</updated>
     
@@ -458,19 +458,19 @@
     
     </summary>
     
-      <category term="The Supreme Court is Usually Badass" scheme="http://blog.twitchax.com/categories/The-Supreme-Court-is-Usually-Badass/"/>
+      <category term="The Supreme Court is Usually Badass" scheme="http://blog.aaroney.com/categories/The-Supreme-Court-is-Usually-Badass/"/>
     
     
-      <category term="scotus" scheme="http://blog.twitchax.com/tags/scotus/"/>
+      <category term="scotus" scheme="http://blog.aaroney.com/tags/scotus/"/>
     
-      <category term="supreme court" scheme="http://blog.twitchax.com/tags/supreme-court/"/>
+      <category term="supreme court" scheme="http://blog.aaroney.com/tags/supreme-court/"/>
     
   </entry>
   
   <entry>
     <title>Issue 2: James McCulloch v. The State of Maryland, John James</title>
-    <link href="http://blog.twitchax.com/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/"/>
-    <id>http://blog.twitchax.com/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/</id>
+    <link href="http://blog.aaroney.com/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/"/>
+    <id>http://blog.aaroney.com/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/</id>
     <published>2016-06-01T21:00:00.000Z</published>
     <updated>2017-02-06T07:56:16.396Z</updated>
     
@@ -518,19 +518,19 @@
     
     </summary>
     
-      <category term="The Supreme Court is Usually Badass" scheme="http://blog.twitchax.com/categories/The-Supreme-Court-is-Usually-Badass/"/>
+      <category term="The Supreme Court is Usually Badass" scheme="http://blog.aaroney.com/categories/The-Supreme-Court-is-Usually-Badass/"/>
     
     
-      <category term="scotus" scheme="http://blog.twitchax.com/tags/scotus/"/>
+      <category term="scotus" scheme="http://blog.aaroney.com/tags/scotus/"/>
     
-      <category term="supreme court" scheme="http://blog.twitchax.com/tags/supreme-court/"/>
+      <category term="supreme court" scheme="http://blog.aaroney.com/tags/supreme-court/"/>
     
   </entry>
   
   <entry>
     <title>Issue 1: Marbury v. Madison, 5 U.S. (1 Cranch) 137 (1803)</title>
-    <link href="http://blog.twitchax.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/"/>
-    <id>http://blog.twitchax.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/</id>
+    <link href="http://blog.aaroney.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/"/>
+    <id>http://blog.aaroney.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/</id>
     <published>2016-05-01T21:00:00.000Z</published>
     <updated>2017-02-06T06:36:11.367Z</updated>
     
@@ -581,12 +581,12 @@
     
     </summary>
     
-      <category term="The Supreme Court is Usually Badass" scheme="http://blog.twitchax.com/categories/The-Supreme-Court-is-Usually-Badass/"/>
+      <category term="The Supreme Court is Usually Badass" scheme="http://blog.aaroney.com/categories/The-Supreme-Court-is-Usually-Badass/"/>
     
     
-      <category term="scotus" scheme="http://blog.twitchax.com/tags/scotus/"/>
+      <category term="scotus" scheme="http://blog.aaroney.com/tags/scotus/"/>
     
-      <category term="supreme court" scheme="http://blog.twitchax.com/tags/supreme-court/"/>
+      <category term="supreme court" scheme="http://blog.aaroney.com/tags/supreme-court/"/>
     
   </entry>
   

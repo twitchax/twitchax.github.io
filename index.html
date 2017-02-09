@@ -186,7 +186,7 @@ ga('send', 'pageview');
 <p>Navigating to this address (i.e., <a href="http://aarondemohelloapp.azurewebsites.net/" target="_blank" rel="external">http://aarondemohelloapp.azurewebsites.net/</a>) yields a default Azure web app screen.</p>
 <h3 id="deploy-to-azure-via-git"><a href="#Deploy-to-Azure-via-git" class="headerlink" title="Deploy to Azure via git"></a>Deploy to Azure via git</h3><p>At the moment, we are just eager to get our app up on Azure.  For now, we will configure deployment using local git.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ az appservice web <span class="built_in">source</span>-control config-local-git </div><div class="line">    -g DemoGroup </div><div class="line">    -n AaronDemoHelloApp </div><div class="line">    --out tsv</div><div class="line">https://twitchax@aarondemohelloapp.scm.azurewebsites.net/AaronDemoHelloApp.git</div></pre></td></tr></table></figure>
-<p>However, we need to create a username and password for this deplyoment endpoint.  Let’s set our deployment credentials through the Azure CLI.</p>
+<p>However, we need to create a username and password for this deployment endpoint.  Let’s set our deployment credentials through the Azure CLI.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">az appservice web deployment user <span class="built_in">set</span> </div><div class="line">    --user-name twitchax</div></pre></td></tr></table></figure>
 <p>You will be prompted to set a password, and that’s it for deployment authentication!</p>
 <p>Now, we can push our app straight from our shell with git.  </p>
@@ -205,530 +205,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/" data-id="ciytsy1dw00095wdfmy7hu0mq" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/" data-id="ciyz181a0000030df4s1annls" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/azure/">azure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/azure-cli/">azure-cli</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/csharp/">csharp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dotnet/">dotnet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/microsoft/">microsoft</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/">vscode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Issue-7-Burwell-v-Hobby-Lobby" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/" class="article-date">
-  <time datetime="2016-11-01T21:00:00.000Z" itemprop="datePublished">2016-11-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/The-Supreme-Court-is-Usually-Badass/">The Supreme Court is Usually Badass</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/">Issue 7: Burwell v. Hobby Lobby</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div class="toc">
-
-<!-- toc -->
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#background">Background</a><ul>
-<li><a href="#sherbert-v-verner-374-us-398-1963">Sherbert v. Verner, 374 U.S. 398 (1963)</a></li>
-<li><a href="#wisconsin-v-yoder-406-us-205-1972">Wisconsin v. Yoder, 406 U.S. 205 (1972)</a></li>
-<li><a href="#employment-division-department-of-human-resources-of-oregon-vs-smith-494-us-872-1990">Employment Division, Department of Human Resources of Oregon vs. Smith, 494 U.S. 872 (1990)</a></li>
-<li><a href="#congress">Congress</a></li>
-<li><a href="#other">Other</a></li>
-<li><a href="#synopsis-of-proceedings">Synopsis of Proceedings</a></li>
-<li><a href="#questions-before-the-court-in-application-of-the-sherbert-test">Questions before the Court (in application of the Sherbert test)</a></li>
-</ul>
-</li>
-<li><a href="#decision">Decision</a><ul>
-<li><a href="#dissent">Dissent</a></li>
-</ul>
-</li>
-<li><a href="#impact">Impact</a></li>
-</ul>
-<!-- tocstop -->
-</div>
-
-<h1 id="introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>This is the seventh issue of “The Supreme Court is Usually Badass”, where I discuss a Supreme Court case and my opinion on its effects throughout U.S. History.  I would also enjoy others to participate and discuss the decisions of the case, if one feels so inclined.</p>
-<p>Sylvia Burwell, Secretary of Health and Human Services, et al., Petitioners v. Hobby Lobby Stores, Inc., Mardel, Inc., David Green, Barbara Green, Steve Green, Mart Green, and Darsee Lett; Conestoga Wood Specialties Corporation, et al., Petitioners v. Sylvia Burwell, Secretary of Health and Human Services, et al. 573 U.S. ___ (204) (<a href="http://www.supremecourt.gov/opinions/13pdf/13-354_olp1.pdf" target="_blank" rel="external">http://www.supremecourt.gov/opinions/13pdf/13-354_olp1.pdf</a>, <a href="http://en.wikipedia.org/wiki/Sebelius_v._Hobby_Lobby" target="_blank" rel="external">http://en.wikipedia.org/wiki/Sebelius_v._Hobby_Lobby</a>).</p>
-<h1 id="background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>On November 16, 1993, after having been introduced by Representative Chuck Schumer (D-NY), unanimously (by voice) approved by the House of Representatives and passing the Senate (97-3), President Bill Clinton signed the Religious Freedom Restoration Act of 1993 (Pub. L. No. 103-141, 107 Stat. 1488) into law (henceforth referred to as RFRA).  The circumstances leading up to its near universally-approved passage are as follows:</p>
-<h2 id="sherbert-v-verner-374-us-398-1963"><a href="#Sherbert-v-Verner-374-U-S-398-1963" class="headerlink" title="Sherbert v. Verner, 374 U.S. 398 (1963)"></a>Sherbert v. Verner, 374 U.S. 398 (1963)</h2><p>After a member of the Seventh-day Adventist Church was fired for refusing to work on Saturday due to her religious beliefs, she was denied unemployment benefits.  The Supreme Court applied strict scrutiny and held, in a 7-2 decision, that denying Sherbert’s claim (for unemployment) was an unconstitutional burden on her free exercise of religion; thus, establishing the Sherbert test, which follows:</p>
-<ol>
-<li>The claimant has a sincerely held religious belief.</li>
-<li>The proposed Government action has a substantial burden on the claimant’s ability to act on said belief.</li>
-<li>If (1) and (2), the government must prove:<br> a. The proposed Government action is in furtherance of a compelling state interest.<br> b. The Government has pursued such action in the manner least restrictive to religion.</li>
-</ol>
-<h2 id="wisconsin-v-yoder-406-us-205-1972"><a href="#Wisconsin-v-Yoder-406-U-S-205-1972" class="headerlink" title="Wisconsin v. Yoder, 406 U.S. 205 (1972)"></a>Wisconsin v. Yoder, 406 U.S. 205 (1972)</h2><p>Three Amish students were taken out of school at age thirteen (13) due to their parents’ religious beliefs (too much knowledge endangers salvation), against the laws of the State.  In a unanimous decision, and affirming the application of the Sherbert test, the Supreme Court ruled that the State was in violation of the Establishment Clause of the First Amendment of the U.S. Constitution.</p>
-<h2 id="employment-division-department-of-human-resources-of-oregon-vs-smith-494-us-872-1990"><a href="#Employment-Division-Department-of-Human-Resources-of-Oregon-vs-Smith-494-U-S-872-1990" class="headerlink" title="Employment Division, Department of Human Resources of Oregon vs. Smith, 494 U.S. 872 (1990)"></a>Employment Division, Department of Human Resources of Oregon vs. Smith, 494 U.S. 872 (1990)</h2><p>Two members of the Native American Church were fired after having ingested peyote as part of a religious ceremony; subsequently, they were denied unemployment benefits, as the state claimed the two were fired for good reason.  In the 6-3 decision, Justice Scalia delivered the opinion of the court, which threw dirt in the face of the Sherbert test and ruled that “neutral laws of general applicability do not violate the Free Exercise Clause of the First Amendment.” (this is somewhat mockingly quoted by Ginsburg post)</p>
-<h2 id="congress"><a href="#Congress" class="headerlink" title="Congress"></a>Congress</h2><p>Congress, butthurt by the complete dismissal of the Sherbert test by the U.S. Supreme Court, sought a constitutional solution to codifying the Sherbert test as law; thus, the Legislative and Executive passed the RFRA.  This law was affirmed in City of Boerne v. Flores, 521 U.S. 507 (1997); however, the High Court ruled the RFRA could not be applied to state laws.  After the passage of the RFRA, the Supreme Court would, henceforth, be legally required to apply the Sherbert test to cases of religious freedom (unless of course, the RFRA is deemed inadequate; i.e., SCOTUS rules it unconstitutional).</p>
-<h2 id="other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><p>On March 23, 2010, after having narrowly passed the House of Representatives and closely passing the Senate, President Barack Obama signed and so enacted the Patient Protection and Affordable Care Act (Pub. L. No. 111-148, 124 Stat. 119-1025) which, in relevance to this document, gave the Health Resources and Services Administration (part of the Department of Health and Human Services) the authority to mandate the preventative care covered for women in employer-based health plans.  With consultation from the Institute of Medicine and others, the HRSA decided that all twenty (20) FDA-approved contraceptives should be covered without cost sharing (i.e., without co-pay).  Corporations found in violation of this portion of the statute are fined $100 per day per affected employee.</p>
-<p>Hobby Lobby is an arts and crafts company, founded by self-made billionaire David Green and owned by his Evangelical Christian family.  Hobby Lobby sued (having been in noncompliance and, subsequently, fined) in September of 2012; the U.S. Court for the Western District of Oklahoma denied Hobby Lobby’s request for preliminary injunction.  In March of 2012 the U.S. Court of Appeals for the Tenth Circuit ruled that Hobby Lobby Stores, Inc. is a person who has religious freedom.  In September of the 2013, the U.S. Supreme Court granted certiorari.  Hilarity ensues.</p>
-<p>The U.S. Supreme Court heard the oral arguments for Burwell v. Hobby Lobby on March 25, 2014.</p>
-<h2 id="synopsis-of-proceedings"><a href="#Synopsis-of-Proceedings" class="headerlink" title="Synopsis of Proceedings"></a>Synopsis of Proceedings</h2><p>The Solicitor General, Donald B. Verrilli Jr., argued the case for the respondents, while Paul D. Clement argued for the petitioners.  Nothing out of the ordinary occurred.</p>
-<h2 id="questions-before-the-court-in-application-of-the-sherbert-test"><a href="#Questions-before-the-Court-in-application-of-the-Sherbert-test" class="headerlink" title="Questions before the Court (in application of the Sherbert test)"></a>Questions before the Court (in application of the Sherbert test)</h2><ol>
-<li>Can corporations be considered “persons” via reading of the RFRA or the Establishment Clause?</li>
-<li>Assuming (1), does the claimant have a sincerely held religious belief (not argued, as SCOTUS has never set a precedent of ruling on the legitimacy of a claim of sincere beliefs)?</li>
-<li>Assuming (2), does the contraceptive mandate substantially burden Hobby Lobby’s beliefs?</li>
-<li>Assuming (3), does the contraceptive mandate provide the least restrictive means of serving a compelling state interest?</li>
-</ol>
-<h1 id="decision"><a href="#Decision" class="headerlink" title="Decision"></a>Decision</h1><p>On June 30, 2013, the High Court ruled in a 5-4 decision that Hobby Lobby, Inc. is a person (stressing the fact that Hobby Lobby is a “closely-held” corporation) as read in the RFRA (the Establishment Clause was not opined) who is substantially burdened by the compelling state interest of providing contraceptives without cost-sharing; in addition, the Court ruled that the PPACA mandate was not the least restrictive means of serving the aforementioned state interest.</p>
-<p>In an eloquently written opinion, Justice Samuel Alito (joined in full by Roberts, Scalia, Kennedy and Thomas) touched on each of the questions mentioned.  Part III-C of Alito’s opinion discussed that, due to the Dictionary Act, “the words ‘person’ and ‘whoever’ include corporations, companies, associations, firms, partnerships, societies, and joint stock companies, as well as individuals…unless the context indicates otherwise.”  In addition, he goes on to point out that, in most states, “every corporation, whether profit or not for profit” may “be incorporated or organized…to conduct or promote any lawful business or purposes”; thus, the Court believes that, having been defined as a person in the Dictionary Act (in addition, the majority ruled that RFRA did not provide differing context), Hobby Lobby has a right to free exercise of religion.  </p>
-<p>Alito goes on to support the Court’s case that the contraceptive mandate is both substantially burdensome and a compelling government interest (but that the ACA’s wording is not the least restrictive means of achieving that interest).  However, the majority offers two solutions for the U.S. Government: (1) pay for contraceptives for everyone yourself (i.e., the U.S. Government) or (2) set up an “accommodation” similar to the one currently applied non-profits.  Finally, the majority seeks to assuage the dissent’s concerns by stating:</p>
-<blockquote>
-<p>“In any event, our decision in these cases is concerned solely with the contraceptive mandate.  Our decision should not be understood to hold that an insurance coverage mandate must necessarily fall if it conflicts with an employer’s religious beliefs.  Other coverage requirements, such as immunizations, may be supported by different interests (for example, the need to combat the spread of infectious diseases) and may involve different arguments about the least restrictive means of providing them.”</p>
-</blockquote>
-<h2 id="dissent"><a href="#Dissent" class="headerlink" title="Dissent"></a>Dissent</h2><p>Justice Ginsburg authored the dissenting opinion, joined (mostly in full) by Sotomayor; Breyer, Kagan (all but Part III-C-1 [the part concerning corporate “personhood”]).  Ginsburg begins her factually unmatched opinion with a bold statement:</p>
-<blockquote>
-<p>“In a decision of startling breadth, the Court holds that commercial enterprises, including corporations, along with partnerships and sole proprietorships, can opt out of any law (saving only tax laws) they judge incompatible with their sincerely held religious beliefs.”</p>
-</blockquote>
-<p>In general, she makes an effort to deliver decisive blows to the majority opinion on a point-by-point basis.  First, she reminds the reader that Congress specifically shot down the “conscience amendment” to the ACA, which sought to provide exemptions to the contraceptive mandate to religiously burdened corporations.  In addition, she notes that “[c]ongress left health care decisions—including the choice among contraceptive methods—in the hands of women, with the aid of their health care providers.”  Her most compelling argument concerns the “personhood” with regard to RFRA that the majority opinion has applied to corporations.  She makes the point which has been affirmed time and time again by the High Court that “[a]ccommodations to religious beliefs or observances, the Court has clarified, must not significantly impinge on the interests of third parties.”  In relaying this point, she quotes Chafee by reminding the reader that “[y]our right to swing your arms ends just where the other man’s nose begins”; this, as if to say, that all rights of our land are bestowed upon an individual up to (but not including) said right’s infringement of the same rights of others.  In this, she clearly draws the argument that the proverbial “noses” of the women who work for religiously burdened corporations are no longer protected from the proverbial “arms” of the “corporate person”.  She muses that over 200 years ago, Chief Justice John Marshall stated that corporations “have no consciences, no beliefs, no feelings, no thoughts, no desires.”  Finally, points out that “[b]y incorporating a business, however, an individual separates herself from the entity and escapes personal responsibility for the entity’s obligations. One might ask why the separation should hold only when it serves the interest of those who control the corporation.”</p>
-<p>Ginsburg goes on to repudiate the claims made by the majority opinion, which she accomplishes with much fervor (there are good arguments against the majority’s least restrictive suggestions); however, it is apparent that the crux of the issue for her lies in the “corporate personhood” establishment made by the majority in the area of free exercise of religion, reminding us that she believes “in keeping the courts ‘out of the business of evaluating the relative merits of differing religious claims.’” (United States v. Lee, 455 U.S. 252 [1982]).  In the end, the dissent’s primary concern is that the U.S. Supreme Court has ruled that corporations are persons with the right to free exercise of religion; however, the Court has left the door open for any religious claim to be made by a corporation under this ruling, which will result in the U.S. Supreme Court eventually “favoring one religion [or religious practice] over another.”  She closes by stating: “[the] Court, I fear, has ventured into a minefield.”</p>
-<p>To drive the point home, Breyer and Kagan wrote a one paragraph dissent, simply stating their disdain for “corporate personhood”: “We need not and do not decide whether either for-profit corporations or their owners may bring claims under [RFRA].”</p>
-<h1 id="impact"><a href="#Impact" class="headerlink" title="Impact"></a>Impact</h1><p>Only the future will tell!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/" data-id="ciytsy1e0000b5wdfpghts4vi" class="article-share-link">Share</a>
-      
-        <a href="http://blog.aaroney.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scotus/">scotus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/supreme-court/">supreme court</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Issue-6-United-States-v-Windsor" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/01/Issue-6-United-States-v-Windsor/" class="article-date">
-  <time datetime="2016-10-01T21:00:00.000Z" itemprop="datePublished">2016-10-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/The-Supreme-Court-is-Usually-Badass/">The Supreme Court is Usually Badass</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/01/Issue-6-United-States-v-Windsor/">Issue 6: United States v. Windsor</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div class="toc">
-
-<!-- toc -->
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#background">Background</a><ul>
-<li><a href="#synopsis-of-proceedings">Synopsis of Proceedings</a></li>
-<li><a href="#questions-before-the-court">Questions before the Court:</a></li>
-</ul>
-</li>
-<li><a href="#decision">Decision</a></li>
-<li><a href="#impact">Impact</a></li>
-</ul>
-<!-- tocstop -->
-</div>
-
-<h1 id="introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>This is the sixth issue of “The Supreme Court is Usually Badass”, where I discuss a Supreme Court case and my opinion on its effects throughout U.S. History.  I would also enjoy others to participate and discuss the decisions of the case, if one feels so inclined.</p>
-<p>United States, petitioner v. Edith Schlain Windsor, in her capacity as executor of the Estate of Thea Clara Spyer, et al. 570 U.S. ___ (2013) (<a href="http://www.supremecourt.gov/opinions/12pdf/12-307_g2bh.pdf" target="_blank" rel="external">http://www.supremecourt.gov/opinions/12pdf/12-307_g2bh.pdf</a>).</p>
-<h1 id="background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>On September 21, 1996, having been passed by both the House and the Senate by a wide majority in both, President Bill Clinton signed into law and so enacted the Defense of Marriage Act (DOMA).  This Act made a very particular statement about the word “marriage” in Section 3, codefied as 1 USC § 7; Section 3 of DOMA states:</p>
-<blockquote>
-<p>“In determining the meaning of any Act of Congress, or of any ruling, regulation, or interpretation of the various administrative bureaus and agencies of the United States, the word ‘marriage’ means only a legal union between one man and one woman as husband and wife, and the word ‘spouse’ refers only to a person of the opposite sex who is a husband or a wife.” (<a href="http://www.gpo.gov/fdsys/pkg/BILLS-104hr3396rh/pdf/BILLS-104hr3396rh.pdf" target="_blank" rel="external">http://www.gpo.gov/fdsys/pkg/BILLS-104hr3396rh/pdf/BILLS-104hr3396rh.pdf</a>)</p>
-</blockquote>
-<p>The State of New York recognized the marriage of New York residents Edith Windsor and Thea Spyer, who wed in Ontario, Canada, in 2007.  When Spyer died in 2009, she left her entire estate to Windsor.  Windsor sought to claim the federal estate tax exemption for surviving spouses, but was barred from doing so by Section 3 of the federal Defense of Marriage Act (DOMA), which amended the Dictionary Act—a law providing rules of construction for over 1,000 federal laws and the whole realm of federal regulations—to define “marriage” and “spouse” as excluding same-sex partners. Windsor paid $363,053 in estate taxes and sought a refund, which the Internal Revenue Service denied. Windsor brought this refund suit, contending that DOMA violates the principles of equal protection incorporated in the Fifth Amendment. While the suit was pending, the Attorney General notified the Speaker of the House of Representatives that the Department of Justice would no longer defend Section 3’s constitutionality. In response, the Bipartisan Legal Advisory Group (BLAG) of the House of Representatives voted to intervene in the litigation to defend Section 3’s constitutionality. The District Court permitted the intervention. On the merits, the court ruled against the United States, finding Section 3 unconstitutional and ordering the Treasury to refund Windsor’s tax with interest. The Second Circuit affirmed. The United States has not complied with the judgment, and the U.S. Supreme Court granted certiorari on December 7, 2012.  Hilarity ensues.</p>
-<p>The U.S. Supreme Court heard the oral arguments for United States v. Windsor on March 27, 2013.</p>
-<h2 id="synopsis-of-proceedings"><a href="#Synopsis-of-Proceedings" class="headerlink" title="Synopsis of Proceedings"></a>Synopsis of Proceedings</h2><p>The Solicitor General, Donald B. Verrilli Jr., argued the case for the petitioners, while Paul D. Clement argued for the respondents.  Vicki C. Jackson, Esq., of Cambridge, Massachusetts was invited as amicus curiae to argue in support of questions (2) and (3).  Nothing out of the ordinary occurred besides Associate Justice Sonia Sotomayor’s fantastic question:</p>
-<blockquote>
-<p>“Outside of the marriage context, can you think of any other rational basis, reason, for a state using sexual orientation as a factor in denying homosexuals benefits or imposing burdens on them? Is there any other rational decision-making that the government could make? Denying them a job, not granting them benefits of some sort, any other decision?”<br>Her question was answered in the negative.</p>
-</blockquote>
-<h2 id="questions-before-the-court"><a href="#Questions-before-the-Court" class="headerlink" title="Questions before the Court:"></a>Questions before the Court:</h2><ol>
-<li>Does Section 3 of DOMA violate the Fifth Amendment’s guarantee of equal protection of the laws as applied to persons of the same sex who are legally married under the laws of their State?</li>
-<li>Does the executive branch’s agreement with the appellate court decision deprive the court of jurisdiction?</li>
-<li>Does BLAG have Article III jurisdiction.</li>
-</ol>
-<h1 id="decision"><a href="#Decision" class="headerlink" title="Decision"></a>Decision</h1><p>On June 26, 2013, the High Court ruled in a 5-4 decision that Section 3 of the Defense of Marriage Act was unconstitutional with respect to the Due Process Clause of the Fifth Amendment to the U.S. Constitution.  However, the unconstitutionality of DOMA ends at the federal government: the states still have the right to define laws around marriage with respect to sexual orientation (though the wording of the opinion suggests that calling a State law into question may soon deem it unconstitutional).  Associate Justice Anthony Kennedy (joined by Ginsburg, Breyer, Sotomayor and Kagan) issued the opinion of the court, stating simply at one point:</p>
-<blockquote>
-<p>“What the State of New York treats as alike the federal law deems unlike by a law designed to injure the same class the State seeks to protect.”</p>
-</blockquote>
-<p>Having read the entire opinion, Kennedy notably splits the Court’s decision into several sections.  Section I of the opinion seeks to enlighten the reader regarding DOMA and the burden it placed on the respondents.  Section II of the opinion outlines the Court’s decision to answer question (2) in the negative and question (3) in the positive; as such, the Court deemed itself within jurisdiction, despite the Executive Branch’s dismissal of DOMA, and the Court allowed BLAG to participate in the hearings.  Section III outlines the Court’s reasoning with regard to “throwing back to the states”, if you will.  Their reasoning relies upon the fact that states may construct their marriage laws how they wish (such as age or mental capacity requirements); however, it should be noted that bringing a state ban on same-sex marriage to the Supreme Court may have the same outcome as Loving v. Virginia 388 U.S. 1 (1967), in which the High Court held that marriage discrimination based on race was unconstitutional.  Finally, Section IV of the opinion gets to the meat of question (1), whereby the Court eagerly insists that federal marriage discrimination on the basis of sexual orientation is unconstitutional.  DOMA Section 3 is officially struck down.  Here are some of my personally selected highlights:</p>
-<blockquote>
-<p>“By its recognition of the validity of same-sex marriages performed in other jurisdictions and then by authorizing same-sex unions and same-sex marriages, New York sought to give further protection and dignity to that bond [of marriage]. For same-sex couples who wished to be married, the State acted to give their lawful conduct a lawful status. This status is a far-reaching legal acknowledgment of the intimate relationship between two people, a relationship deemed by the State worthy of dignity in the community equal with all other marriages. It reflects both the community’s considered perspective on the historical roots of the institution of marriage and its evolving understanding of the meaning of equality.”</p>
-<p>“The avowed purpose and practical effect of the law here in question are to impose a disadvantage, a separate status, and so a stigma upon all who enter into same-sex marriages made lawful by the unquestioned authority of the States.”</p>
-<p>“DOMA writes inequality into the entire United States Code.”</p>
-<p>“The power the Constitution grants it also restrains.  And though Congress has great authority to design laws to fit its own conception of sound national policy, it cannot deny the liberty protected by the Due Process Clause of the Fifth Amendment.  What has been explained to this point should more than suffice to establish that the principal purpose and the necessary effect of this law are to demean those persons who are in a lawful same-sex marriage. This requires the Court to hold, as it now does, that DOMA is unconstitutional as a deprivation of the liberty of the person protected by the Fifth Amendment of the Constitution…The class to which DOMA directs its restrictions and restraints are those persons who are joined in same-sex marriages made lawful by the State. DOMA singles out a class of persons deemed by a State entitled to recognition and protection to enhance their own liberty. It imposes a disability on the class by refusing to acknowledge a status the State finds to be dignified and proper. DOMA instructs all federal officials, and indeed all persons with whom same-sex couples interact, including their own children, that their marriage is less worthy than the marriages of others. The federal statute is invalid, for no legitimate purpose overcomes the purpose and effect to disparage and to injure those whom the State, by its marriage laws, sought to protect in personhood and dignity.  By seeking to displace this protection and treating those persons as living in marriages less respected than others, the federal statute is in violation of the Fifth Amendment.  This opinion and its holding are confined to those lawful marriages.  The judgment of the Court of Appeals for the Second Circuit is affirmed.  It is so ordered.”</p>
-</blockquote>
-<p>Associate Justice Antonin Scalia’s dissent has garnered the most praise, as—despite his clear disagreement with same-sex marriage—he is more concerned over the manner in which the majority supports its opinion.  In his opinion, the Court has basically paved the way to naming all forms of same-sex marriage discrimination unconstitutional (whether by Sate or the federal government) without actually doing so in fact.  Scalia, in his ever-so-eloquent style states:</p>
-<blockquote>
-<p>“In the majority’s telling, this story is black-and-white: Hate your neighbor or come along with us. The truth is more complicated. It is hard to admit that one’s political opponents are not monsters, especially in a struggle like this one, and the challenge in the end proves more than today’s Court can handle. Too bad. A reminder that disagreement over something so fundamental as marriage can still be politically legitimate would have been a fit task for what in earlier times was called the judicial temperament. We might have covered ourselves with honor today, by promising all sides of this debate that it was theirs to settle and that we would respect their resolution.  We might have let the People decide.  But that the majority will not do. Some will rejoice in today’s decision, and some will despair at it; that is the nature of a controversy that matters so much to so many.  But the Court has cheated both sides, robbing the winners of an honest victory, and the losers of the peace that comes from a fair defeat. We owed both of them better.  I dissent.”</p>
-</blockquote>
-<p>Though I don’t agree with Scalia often, I do agree that the High Court should have went full Loving v. Virginia on this issue.  Unfortunately, it did not happen.</p>
-<h1 id="impact"><a href="#Impact" class="headerlink" title="Impact"></a>Impact</h1><p>Only the future will tell, but I foresee lots of happily married human beings in our future!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/10/01/Issue-6-United-States-v-Windsor/" data-id="ciytsy1dn00045wdf0m0rdy3u" class="article-share-link">Share</a>
-      
-        <a href="http://blog.aaroney.com/2016/10/01/Issue-6-United-States-v-Windsor/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scotus/">scotus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/supreme-court/">supreme court</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Issue-5-Fred-Korematsu-v-United-States" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/" class="article-date">
-  <time datetime="2016-09-01T21:00:00.000Z" itemprop="datePublished">2016-09-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/The-Supreme-Court-is-Usually-Badass/">The Supreme Court is Usually Badass</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/">Issue 5: Fred Korematsu v. United States</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div class="toc">
-
-<!-- toc -->
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#background">Background</a><ul>
-<li><a href="#synopsis-of-proceedings">Synopsis of Proceedings</a></li>
-<li><a href="#questions-before-the-court">Questions before the Court:</a></li>
-</ul>
-</li>
-<li><a href="#decision">Decision</a></li>
-<li><a href="#impact">Impact</a></li>
-</ul>
-<!-- tocstop -->
-</div>
-
-<h1 id="introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>This is the fifth issue of “The Supreme Court is Usually Badass” (the first example where, in my opinion, the Supreme Court was not badass), where I discuss a Supreme Court case and my opinion on its effects throughout U.S. History.  I would also enjoy others to participate and discuss the decisions of the case, if one feels so inclined.</p>
-<p>Fred Korematsu v. United States 323 U.S. 214 (1944) (<a href="http://en.wikipedia.org/wiki/Korematsu_v._United_States" target="_blank" rel="external">http://en.wikipedia.org/wiki/Korematsu_v._United_States</a>).</p>
-<h1 id="background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>During World War II, Japanese-Americans were forced to relocate to internment camps, as stated by Civilian Restrictive Order Number 1, 8 Federal Regulation 982 (<a href="http://upload.wikimedia.org/wikipedia/commons/0/02/Instructions_to_japanese.png" target="_blank" rel="external">http://upload.wikimedia.org/wikipedia/commons/0/02/Instructions_to_japanese.png</a>).  This regulation was based upon Executive Order 9066 (<a href="http://en.wikipedia.org/wiki/Executive_Order_9066" target="_blank" rel="external">http://en.wikipedia.org/wiki/Executive_Order_9066</a>).  Fred Korematsu, in an act of planned civil disobedience, did not relocate himself to a Japanese internment camp.  In his opinion, Executive Order 9066 was unconstitutional and violated his rights under the Fourteenth Amendment to the U.S. Constitution, which states:</p>
-<blockquote>
-<p>“All persons born or naturalized in the United States, and subject to the jurisdiction thereof, are citizens of the United States and of the State wherein they reside. No State shall make or enforce any law which shall abridge the privileges or immunities of citizens of the United States; nor shall any State deprive any person of life, liberty, or property, without due process of law; nor deny to any person within its jurisdiction the equal protection of the laws.”</p>
-</blockquote>
-<p>Korematsu was convicted for his defiance, The Circuit Court of Appeals for the Ninth Circuit confirmed his conviction, and the U.S. Supreme Court filed a writ of ceriorari (higher court directing a lower court to send the given case for review).  Hilarity ensues.</p>
-<p>The U.S. Supreme Court heard the oral arguments for Korematsu v. United States on October 11-12, 1944.</p>
-<h2 id="synopsis-of-proceedings"><a href="#Synopsis-of-Proceedings" class="headerlink" title="Synopsis of Proceedings"></a>Synopsis of Proceedings</h2><p>The Solicitor General, Neal Katyal, curiously accused his predecessor, Solicitor General Charles Fahy of withholding evidence (made the case more fun).  This accusation is generally considered to be a terrible mistake on the part of Solicitor General Neal Katyal.</p>
-<h2 id="questions-before-the-court"><a href="#Questions-before-the-Court" class="headerlink" title="Questions before the Court:"></a>Questions before the Court:</h2><ol>
-<li>Is holding Japanese-American citizens in internment camps during wartime by the U.S. government constitutional under the Fourteenth Amendment?</li>
-</ol>
-<h1 id="decision"><a href="#Decision" class="headerlink" title="Decision"></a>Decision</h1><p>On December 18, 1944, the High Court ruled in a 6-3 decision that the actions of the U.S. government were constitutional with respect to the Fourteenth Amendment.  Justice Hugo Black issued the opinion of the court, stating:</p>
-<blockquote>
-<p>“Korematsu was not excluded from the Military Area because of hostility to him or his race. He was excluded because we are at war with the Japanese Empire, because the properly constituted military authorities feared an invasion of our West Coast and felt constrained to take proper security measures, because they decided that the military urgency of the situation demanded that all citizens of Japanese ancestry be segregated from the West Coast temporarily, and, finally, because Congress, reposing its confidence in this time of war in our military leaders — as inevitably it must — determined that they should have the power to do just this.”</p>
-</blockquote>
-<p>This was the first time that the strict scrutiny test (<a href="http://en.wikipedia.org/wiki/Strict_scrutiny" target="_blank" rel="external">http://en.wikipedia.org/wiki/Strict_scrutiny</a>) was applied by the U.S. Supreme Court to justify racial discrimination.  As is the case with most of the dissents in anti-progressive racial discrimination cases, the dissenters are quite vehement in their opinion.  Justice Frank Murphy issued his dissent, stating:</p>
-<blockquote>
-<p>“I dissent, therefore, from this legalization of racism. Racial discrimination in any form and in any degree has no justifiable part whatever in our democratic way of life. It is unattractive in any setting, but it is utterly revolting among a free people who have embraced the principles set forth in the Constitution of the United States. All residents of this nation are kin in some way by blood or culture to a foreign land. Yet they are primarily and necessarily a part of the new and distinct civilization of the United States. They must, accordingly, be treated at all times as the heirs of the American experiment, and as entitled to all the rights and freedoms guaranteed by the Constitution.”</p>
-</blockquote>
-<p>Justice Robert Jackson issued a separate dissent, stating:</p>
-<blockquote>
-<p>“Korematsu was born on our soil, of parents born in Japan. The Constitution makes him a citizen of the United States by nativity and a citizen of California by residence. No claim is made that he is not loyal to this country. There is no suggestion that apart from the matter involved here he is not law abiding and well disposed. Korematsu, however, has been convicted of an act not commonly a crime. It consists merely of being present in the state whereof he is a citizen, near the place where he was born, and where all his life he has lived. […] [H]is crime would result, not from anything he did, said, or thought, different than they, but only in that he was born of different racial stock. Now, if any fundamental assumption underlies our system, it is that guilt is personal and not inheritable. Even if all of one’s antecedents had been convicted of treason, the Constitution forbids its penalties to be visited upon him. But here is an attempt to make an otherwise innocent act a crime merely because this prisoner is the son of parents as to whom he had no choice, and belongs to a race from which there is no way to resign. If Congress in peace-time legislation should enact such a criminal law, I should suppose this Court would refuse to enforce it.”</p>
-</blockquote>
-<h1 id="impact"><a href="#Impact" class="headerlink" title="Impact"></a>Impact</h1><p>Korematsu v. United States has yet to be explicitly overturned (because the U.S. government has not, as of yet, repeated such heinous actions).  As such, if the U.S. government were to begin a war with Ireland and subsequently intern Americans of Irish descent, then Korematsu v. United States is the current precedent by which the U.S. Supreme Court would judge the U.S. government’s actions.  Let us hope that the U.S. Supreme Court is a little more badass the next time an issue like this comes up.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/" data-id="ciytsy1dp00055wdfax0dicsr" class="article-share-link">Share</a>
-      
-        <a href="http://blog.aaroney.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scotus/">scotus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/supreme-court/">supreme court</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/" class="article-date">
-  <time datetime="2016-07-01T21:00:00.000Z" itemprop="datePublished">2016-07-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/The-Supreme-Court-is-Usually-Badass/">The Supreme Court is Usually Badass</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/">Issue 3: George W. Bush and Richard Cheney, Petitioners v. Albert Gore, Jr. and Joseph Lieberman, et al.</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div class="toc">
-
-<!-- toc -->
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#background">Background</a><ul>
-<li><a href="#synopsis-of-proceedings">Synopsis of Proceedings</a></li>
-<li><a href="#questions-before-the-court">Questions before the Court</a></li>
-</ul>
-</li>
-<li><a href="#decision">Decision</a></li>
-<li><a href="#impact">Impact</a></li>
-</ul>
-<!-- tocstop -->
-</div>
-
-<h1 id="introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>This is the third issue of “The Supreme Court is Usually Badass”, where I discuss a Supreme Court case and my opinion on its effects throughout U.S. History.  I would also enjoy others to participate and discuss the decisions of the case, if one feels so inclined.  Also, I’ll get to some more recent ones soon; however, the older ones were a little more epic.  </p>
-<p>George W. Bush and Richard Cheney, Petitioners v. Albert Gore, Jr. and Joseph Lieberman, et al. 531 U.S. 98 (2000) (<a href="http://en.wikipedia.org/wiki/Bush_v._Gore" target="_blank" rel="external">http://en.wikipedia.org/wiki/Bush_v._Gore</a>).</p>
-<h1 id="background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>The infamous 2000 Presidential Election was particularly awesome.  Most people do not know that the U.S. Supreme Court single-handedly decided the results of the election in Bush v. Gore.  Obviously, the results from states other than Florida were important, but the decision made by the Court in this case was legend–wait for it–dary.  In short, George W. Bush’s margin of victory in the State of Florida was less than .5% (1,784 votes).  In Florida, a margin of victory so small was accompanied by a statutorily-mandated automatic machine recount.  This recount, as mandated, had to be completed by all counties within seven days of the election day.  As such, the recounted results had to be received by the Florida Secretary of State Katherine Harris by November 14, 2000 at 5:00 PM EST.  Several counties conducting the mandatory recount did not believe that they could complete the recount in time.  On November 14, 2000 at 5:00 PM EST, Katherine Harris had received certified returns from 67 counties, while Palm Beach, Broward and Miami-Dade counties were still conducting the recount.  At 2:00 PM EST the following day, Ms. Harris determined that none of the counties requiring extension were justified in the need for an extension.  As such, on Sunday, November 26, 2000, Katherine Harris certified George W. Bush as the winner of the 25 Florida electoral votes; this put Bush at 271 (of the 270 required) electoral votes, making him the next President of the United States.  Hilarity (and litigation) ensues.</p>
-<p>On December 9, 2000, while Florida counties continued to recount due to issues, the U.S. Supreme Court, as a precursor to an actual decision, stayed the Florida recount in a 5-4 vote (at this time, there were 5 conservative appointed justices and 4 liberal appointed justices…guess how they voted).  Justice Scalia, in his consenting opinion to stay the recount stated:</p>
-<blockquote>
-<p>“It suffices to say that the issuance of the stay suggests that a majority of the Court, while not deciding the issues presented, believe that the petitioner has a substantial probability of success. The issue is not, as the dissent puts it, whether “[c]ounting every legally cast vote ca[n] constitute irreparable harm.” One of the principal issues in the appeal we have accepted is precisely whether the votes that have been ordered to be counted are, under a reasonable interpretation of Florida law, “legally cast vote[s].” The counting of votes that are of questionable legality does in my view threaten irreparable harm to petitioner Bush, and to the country, by casting a cloud upon what he claims to be the legitimacy of his election. Count first, and rule upon legality afterwards, is not a recipe for producing election results that have the public acceptance democratic stability requires.”</p>
-</blockquote>
-<p>The U.S. Supreme Court heard the oral arguments for Bush v. Gore on December 11, 2000.  Continued hilarity ensues.</p>
-<h2 id="synopsis-of-proceedings"><a href="#Synopsis-of-Proceedings" class="headerlink" title="Synopsis of Proceedings"></a>Synopsis of Proceedings</h2><p>There is nothing particularly interesting about the proceedings.</p>
-<h2 id="questions-before-the-court"><a href="#Questions-before-the-Court" class="headerlink" title="Questions before the Court"></a>Questions before the Court</h2><ol>
-<li>Were the recounts, as they were being conducted, constitutional (under the Equal Protection Clause [<a href="http://en.wikipedia.org/wiki/Equal_Protection_Clause])?" target="_blank" rel="external">http://en.wikipedia.org/wiki/Equal_Protection_Clause])?</a></li>
-<li>If the recounts were unconstitutional, what is the remedy?</li>
-</ol>
-<h1 id="decision"><a href="#Decision" class="headerlink" title="Decision"></a>Decision</h1><p>In its per curiam (<a href="http://en.wikipedia.org/wiki/Per_curiam_decision" target="_blank" rel="external">http://en.wikipedia.org/wiki/Per_curiam_decision</a>) decision on December 12, 2000, just one day after oral arguments, the Court was heavily divided.  The decisions are as follows:</p>
-<ol>
-<li>In a 7-2 decision (Justices Kennedy, O’Connor, Rehnquist, Scalia, Thomas, Breyer and Souter in support, with Justices Ginsburg and Stevens in opposition), the Court ruled that different standards of counting different counties was in violation of the Equal Protection Clause.</li>
-<li>In a 5-4 decision (Justices Kennedy, O’Connor, Rehnquist, Scalia and Thomas in support, with Justices Breyer, Ginsburg, Souter and Stevens in opposition), the Court ruled that the recount was henceforth null and void.  The dissenting justices felt as though the recount should continue using contiguous standards of recounting as set forth by the Florida Supreme Court.</li>
-<li>In 3-4-2 decision, Justices Rehnquist, Scalia and Thomas felt that the Florida Supreme Court deliberately acted contrary to the inent of the Florida legislature, Justices Breyer, Souter, Ginsburg and Stevens specifically disputed this claim in their dissenting opinions and Justices Kennedy and O’Connor refused to join Rehnquist’s concurrence on (3).</li>
-</ol>
-<p>This decision caused the subsequent remedy as issued by the Court to end the recount permanently.  The four dissenting justices issued a scathing opinion, with the following excerpt (as written by Justice Stevens):</p>
-<blockquote>
-<p>“What must underlie petitioners’ entire federal assault on the Florida election procedures is an unstated lack of confidence in the impartiality and capacity of the state judges who would make the critical decisions if the vote count were to proceed. Otherwise, their position is wholly without merit. The endorsement of that position by the majority of this Court can only lend credence to the most cynical appraisal of the work of judges throughout the land. It is confidence in the men and women who administer the judicial system that is the true backbone of the rule of law. Time will one day heal the wound to that confidence that will be inflicted by today’s decision. One thing, however, is certain. Although we may never know with complete certainty the identity of the winner of this year’s Presidential election, the identity of the loser is perfectly clear. It is the Nation’s confidence in the judge as an impartial guardian of the rule of law.”</p>
-</blockquote>
-<h1 id="impact"><a href="#Impact" class="headerlink" title="Impact"></a>Impact</h1><p>The most interesting (and highly controversial) part of this tumultuous tale is that the decision, itself, stated that it could never be cited as precedent.  Yes, this means that the U.S. Supreme Court issued an opinion (which favored the Court’s political leanings), that stated it could not be used as precedent in future proceedings.  This begs the question as to whether the decision was made upon sound jurisprudence at all (according to the dissenting opinion, it was not).  Furthermore, many sources conducted a recount after Bush had been sworn in and determined that Gore had received more votes.  Therefore, had the recount continued, Al Gore may have become the 43rd President of the United States.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/" data-id="ciytsy1db00005wdfkmqvluyw" class="article-share-link">Share</a>
-      
-        <a href="http://blog.aaroney.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scotus/">scotus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/supreme-court/">supreme court</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/" class="article-date">
-  <time datetime="2016-06-01T21:00:00.000Z" itemprop="datePublished">2016-06-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/The-Supreme-Court-is-Usually-Badass/">The Supreme Court is Usually Badass</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/">Issue 2: James McCulloch v. The State of Maryland, John James</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div class="toc">
-
-<!-- toc -->
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#background">Background</a><ul>
-<li><a href="#synopsis-of-proceedings">Synopsis of Proceedings</a></li>
-<li><a href="#questions-before-the-court">Questions before the Court</a></li>
-</ul>
-</li>
-<li><a href="#decision">Decision</a></li>
-<li><a href="#impact">Impact</a></li>
-</ul>
-<!-- tocstop -->
-</div>
-
-<h1 id="introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>This is the second issue of “The Supreme Court is Usually Badass”, where I discuss a Supreme Court case and my opinion on its effects throughout U.S. History.  I would also enjoy others to participate and discuss the decisions of the case, if one feels so inclined.  Also, I’ll get to some more recent ones soon; however, the older ones were a little more epic.  </p>
-<p>James McCulloch v. The State of Maryland, John James, 17 U.S. 316 (1819) (<a href="http://en.wikipedia.org/wiki/McCulloch_v._Maryland" target="_blank" rel="external">http://en.wikipedia.org/wiki/McCulloch_v._Maryland</a>).</p>
-<h1 id="background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>In April 1816, the U.S. Congress passed an act that established the Second Bank of the United States.  At this time (as was briefly touched upon in the last issue), the big issue between political parties of the day was the rights of the Federal Government versus the rights of the States.  On one hand, the Federalists (e.g., Alexander Hamilton and John Adams) called for national banks, national tariffs and international trade; on the other hand, the Democratic-Republicans (e.g., Thomas Jefferson and James Madison) pushed for more States’ rights, and less federal interference.  As one might infer, the establishment of a national bank was a hot topic of the day.  Anyway, Maryland (the State) was not too keen on the fact that the Second Bank of the United States opened a branch in Baltimore, Maryland (the head of the Bank: James William McCulloch).  Naturally, the best course of action is to levy a tax on all banks in the State of Maryland that are not chartered by the state legislature (guess how many banks in Maryland were not charted by the legislature…that’s right, one…the Second Bank of the United States).  McCulloch refuses to pay the taxes, and the Maryland Court of Appeals rules in favor of Maryland demanding that the tax be paid because “the Constitution is silent on the subject of banks”.  Hilarity ensues.</p>
-<h2 id="synopsis-of-proceedings"><a href="#Synopsis-of-Proceedings" class="headerlink" title="Synopsis of Proceedings"></a>Synopsis of Proceedings</h2><p>There is nothing particularly interesting about the proceedings.</p>
-<h2 id="questions-before-the-court"><a href="#Questions-before-the-Court" class="headerlink" title="Questions before the Court"></a>Questions before the Court</h2><ol>
-<li>Do States retain ultimate sovereignty?</li>
-<li>Does the Necessary and Proper Clause (<a href="http://en.wikipedia.org/wiki/Necessary_and_Proper_Clause" target="_blank" rel="external">http://en.wikipedia.org/wiki/Necessary_and_Proper_Clause</a>) of the U.S. Constitution allow Congress to pass legislation upon implied powers?</li>
-<li>Can the Necessary and Proper Clause of the U.S. Constitution ever limit the powers of Congress?  As in, can legislation be struck down because the legislation is not necessary?</li>
-</ol>
-<h1 id="decision"><a href="#Decision" class="headerlink" title="Decision"></a>Decision</h1><p>In a 7-0 decision, Chief Justice John Marshall issued the opinion of the court joined by Justice Washington, Justice Johnson, Justice Livingston, Justice Todd, Justice Duvall and Justice Story.  In response to (1), the Court opined that the States are not sovereign based upon the fact that the Constitution was ratified by the states.  In the Court’s opinion, the people, alone, are the sovereign entity in the United States.  In response to (2), the Court opined that, despite the fact that the Constitution does not expressly give Congress the power to create a national bank, Congress has the right to do so under the Necessary and Proper Clause.  Finally, in response to (3), the Court opined that the Necessary and Proper Clause was a power of the Congress, and, therefore, could never be used to limit the powers of Congress.  Chief Justice Marshall sums up the opinion of the court by stating:</p>
-<blockquote>
-<p>“[A] criterion of what is constitutional, and of what is not so … is the end, to which the measure relates as a mean. If the end be clearly comprehended within any of the specified powers, and if the measure have an obvious relation to that end, and is not forbidden by any particular provision of the Constitution, it may safely be deemed to come within the compass of the national authority. There is also this further criterion which may materially assist the decision: Does the proposed measure abridge a pre-existing right of any State, or of any individual? If it does not, there is a strong presumption in favour of its constitutionality…”</p>
-</blockquote>
-<h1 id="impact"><a href="#Impact" class="headerlink" title="Impact"></a>Impact</h1><p>The Marshall Court, for the first time in U.S. history, sets the precedent that Congress maintains the right to implied powers for the use of implementing Congress’ express powers as outlined by the U.S. Constitution.  In addition, the Court also set the precedent that a State government may not impede a valid constitutional exercise of the federal government.  As one may note, this decision is one of the most important decisions in the history of the U.S.  Many subsequent cases utilize McCulloch v. Maryland as a means to justify federal action.  I believe it was even brought up in the proceedings of Florida, et al. v. Department of Health and Human Services, et al.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/" data-id="ciytsy1ds00065wdfahccrlk3" class="article-share-link">Share</a>
-      
-        <a href="http://blog.aaroney.com/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scotus/">scotus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/supreme-court/">supreme court</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/" class="article-date">
-  <time datetime="2016-05-01T21:00:00.000Z" itemprop="datePublished">2016-05-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/The-Supreme-Court-is-Usually-Badass/">The Supreme Court is Usually Badass</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/">Issue 1: Marbury v. Madison, 5 U.S. (1 Cranch) 137 (1803)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div class="toc">
-
-<!-- toc -->
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#background">Background</a><ul>
-<li><a href="#synopsis-of-proceedings">Synopsis of Proceedings</a></li>
-<li><a href="#questions-before-the-court">Questions before the Court</a></li>
-</ul>
-</li>
-<li><a href="#decision">Decision</a></li>
-<li><a href="#impact">Impact</a></li>
-</ul>
-<!-- tocstop -->
-</div>
-
-<h1 id="introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>This is the first issue of “The Supreme Court is Usually Badass”, where I discuss a Supreme Court case and my opinion on its effects throughout U.S. History.  I would also enjoy others to participate and discuss the decisions of the case, if one feels so inclined.</p>
-<p>First up is Marbury v. Madison, 5 U.S. (1 Cranch) 137 (1803) (<a href="http://en.wikipedia.org/wiki/Marbury_v._Madison)!" target="_blank" rel="external">http://en.wikipedia.org/wiki/Marbury_v._Madison)!</a></p>
-<h1 id="background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>Thomas Jefferson defeats John Adams to become the 3rd President of the United States.  During the lame duck period between presidencies, Congress passes the Judiciary Act of 1801 (<a href="http://en.wikipedia.org/wiki/Judiciary_Act_of_1801" target="_blank" rel="external">http://en.wikipedia.org/wiki/Judiciary_Act_of_1801</a>), which effectively separated the Supreme Court from the circuit and district courts (and gives to Supreme Court additional powers).  The passage of the Act created a multitude of empty seats in the circuit and district courts.  Being the devout Federalist that he was, President John Adams promptly filled 16 circuit seats and 42 justice of the peace seats with Federalists (known as the Midnight Judges).  This was in 1801, when the commissions for the 58 seats could not be sent by email; as such, not all of the commissions were sent before the end of Adams’ presidency.  After taking office on March 1, 1801, Jefferson decides that the commissions which have yet to be sent are better left unsent and, therefore, nullified in his opinion (this decision is carried out by Secretary of State James Madison).  William Marbury is now without a commission; thus, he cannot officially be the Justice of the Peace in the District of Columbia.  Hilarity ensues.</p>
-<h2 id="synopsis-of-proceedings"><a href="#Synopsis-of-Proceedings" class="headerlink" title="Synopsis of Proceedings"></a>Synopsis of Proceedings</h2><p>There is nothing particularly interesting about the proceedings.</p>
-<h2 id="questions-before-the-court"><a href="#Questions-before-the-Court" class="headerlink" title="Questions before the Court"></a>Questions before the Court</h2><ol>
-<li>Did Marbury have the right to the commission?</li>
-<li>Do the laws of the U.S. give a legal remedy for Marbury?</li>
-<li>Is asking the Supreme Court for a writ of mandamus (<a href="http://en.wikipedia.org/wiki/Mandamus" target="_blank" rel="external">http://en.wikipedia.org/wiki/Mandamus</a>) the correct legal remedy?</li>
-</ol>
-<h1 id="decision"><a href="#Decision" class="headerlink" title="Decision"></a>Decision</h1><p>In a 4-0 decision, Chief Justice John Marshall issued the opinion of the court joined by Justice Paterson, Justice Chase and Justice Washington (Justice Cushing and Justice Moore did not participate)–yes, there were only six Supreme Court seats at this time.  The opinion states that the U.S. Supreme Court answers questions (1) and (2) in the affirmative.  They believe that Marbury did have a legal right to the commission, and they opined that the legal remedy was a writ of mandamus filed against Madison (the Secretary of State): such an action would force Secretary Madison to issue the commissions which President Jefferson had asked him not to issue.  However, the Court stopped there.  Marshall points out that, in the Court’s opinion, the Congress did not have the power to expand the jurisdiction of the Supreme Court as defined by the U.S. Constitution (they expanded the jurisdiction in the Judiciary Act of 1801).  As such, the Court identifies the Judiciary Act of 1801 as unconstitutional, thereby revoking the power of the U.S. Supreme Court to file a writ of mandamus.  Having deemed the power of the U.S. Supreme Court to issue a writ of mandamus null and void, the case became moot, because the court could no longer, legally, carry out the prescribed legal remedy.  Marshall states:</p>
-<blockquote>
-<p>“It is emphatically the province and duty of the Judicial Department [the judicial branch] to say what the law is. Those who apply the rule to particular cases must, of necessity, expound and interpret that rule. If two laws conflict with each other, the Courts must decide on the operation of each.</p>
-<p>“So, if a law [e.g., a statute or treaty] be in opposition to the Constitution, if both the law and the Constitution apply to a particular case, so that the Court must either decide that case conformably to the law, disregarding the Constitution, or conformably to the Constitution, disregarding the law, the Court must determine which of these conflicting rules governs the case. This is of the very essence of judicial duty. If, then, the Courts are to regard the Constitution, and the Constitution is superior to any ordinary act of the Legislature, the Constitution, and not such ordinary act, must govern the case to which they both apply.</p>
-<p>“Those, then, who controvert the principle that the Constitution is to be considered in court as a paramount law are reduced to the necessity of maintaining that courts must close their eyes on the Constitution, and see only the law [e.g., the statute or treaty].</p>
-<p>“This doctrine would subvert the very foundation of all written constitutions.”</p>
-</blockquote>
-<h1 id="impact"><a href="#Impact" class="headerlink" title="Impact"></a>Impact</h1><p>The Marshall Court, for the first time in U.S. history, sets the precedent that all U.S. courts must abide by the Constitution, first and foremost.  In addition, the Marshall Court sets the precedent of Judicial Review, whereby the Court may declare an act or statute of the U.S. Congress or a State unconstitutional and, therefore, null and void.  This is the basis of the awesomeness of the U.S. Supreme Court for the next two centuries.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/" data-id="ciytsy1dh00015wdfwsy1y3d0" class="article-share-link">Share</a>
-      
-        <a href="http://blog.aaroney.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scotus/">scotus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/supreme-court/">supreme court</a></li></ul>
 
     </footer>
   </div>
@@ -747,7 +229,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Built-with-Azure-Tools/">Built with Azure Tools</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Supreme-Court-is-Usually-Badass/">The Supreme Court is Usually Badass</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Built-with-Azure-Tools/">Built with Azure Tools</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -757,7 +239,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure/">azure</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure-cli/">azure-cli</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csharp/">csharp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnet/">dotnet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/microsoft/">microsoft</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scotus/">scotus</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/supreme-court/">supreme court</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure/">azure</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure-cli/">azure-cli</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csharp/">csharp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnet/">dotnet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/microsoft/">microsoft</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -767,7 +249,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/azure/" style="font-size: 10px;">azure</a> <a href="/tags/azure-cli/" style="font-size: 10px;">azure-cli</a> <a href="/tags/csharp/" style="font-size: 10px;">csharp</a> <a href="/tags/dotnet/" style="font-size: 10px;">dotnet</a> <a href="/tags/microsoft/" style="font-size: 10px;">microsoft</a> <a href="/tags/scotus/" style="font-size: 20px;">scotus</a> <a href="/tags/supreme-court/" style="font-size: 20px;">supreme court</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a>
+      <a href="/tags/azure/" style="font-size: 10px;">azure</a> <a href="/tags/azure-cli/" style="font-size: 10px;">azure-cli</a> <a href="/tags/csharp/" style="font-size: 10px;">csharp</a> <a href="/tags/dotnet/" style="font-size: 10px;">dotnet</a> <a href="/tags/microsoft/" style="font-size: 10px;">microsoft</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a>
     </div>
   </div>
 
@@ -776,7 +258,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -790,22 +272,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2017/02/03/NET-Core-Web-App-in-Azure/">.NET Core Web App in Azure</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/">Issue 7: Burwell v. Hobby Lobby</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/01/Issue-6-United-States-v-Windsor/">Issue 6: United States v. Windsor</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/">Issue 5: Fred Korematsu v. United States</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/">Issue 3: George W. Bush and Richard Cheney, Petitioners v. Albert Gore, Jr. and Joseph Lieberman, et al.</a>
           </li>
         
       </ul>

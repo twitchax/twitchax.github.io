@@ -55,7 +55,7 @@ Publish to Azure
 Configur">
 <meta property="og:image" content="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/default_app.png">
 <meta property="og:image" content="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/add_cname.png">
-<meta property="og:updated_time" content="2017-02-06T06:33:01.000Z">
+<meta property="og:updated_time" content="2017-02-08T23:57:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content=".NET Core Web App in Azure">
 <meta name="twitter:description" content="#burn:before {
@@ -251,7 +251,7 @@ ga('send', 'pageview');
 <p>Navigating to this address (i.e., <a href="http://aarondemohelloapp.azurewebsites.net/" target="_blank" rel="external">http://aarondemohelloapp.azurewebsites.net/</a>) yields a default Azure web app screen.</p>
 <h3 id="deploy-to-azure-via-git"><a href="#Deploy-to-Azure-via-git" class="headerlink" title="Deploy to Azure via git"></a>Deploy to Azure via git</h3><p>At the moment, we are just eager to get our app up on Azure.  For now, we will configure deployment using local git.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ az appservice web <span class="built_in">source</span>-control config-local-git </div><div class="line">    -g DemoGroup </div><div class="line">    -n AaronDemoHelloApp </div><div class="line">    --out tsv</div><div class="line">https://twitchax@aarondemohelloapp.scm.azurewebsites.net/AaronDemoHelloApp.git</div></pre></td></tr></table></figure>
-<p>However, we need to create a username and password for this deplyoment endpoint.  Let’s set our deployment credentials through the Azure CLI.</p>
+<p>However, we need to create a username and password for this deployment endpoint.  Let’s set our deployment credentials through the Azure CLI.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">az appservice web deployment user <span class="built_in">set</span> </div><div class="line">    --user-name twitchax</div></pre></td></tr></table></figure>
 <p>You will be prompted to set a password, and that’s it for deployment authentication!</p>
 <p>Now, we can push our app straight from our shell with git.  </p>
@@ -270,7 +270,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/" data-id="ciytsy1dw00095wdfmy7hu0mq" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/" data-id="ciyz181a0000030df4s1annls" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -281,16 +281,6 @@ ga('send', 'pageview');
   </div>
   
     
-<nav id="article-nav">
-  
-  
-    <a href="/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Issue 7: Burwell v. Hobby Lobby</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
@@ -309,7 +299,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Built-with-Azure-Tools/">Built with Azure Tools</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Supreme-Court-is-Usually-Badass/">The Supreme Court is Usually Badass</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Built-with-Azure-Tools/">Built with Azure Tools</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -319,7 +309,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure/">azure</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure-cli/">azure-cli</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csharp/">csharp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnet/">dotnet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/microsoft/">microsoft</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scotus/">scotus</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/supreme-court/">supreme court</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure/">azure</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure-cli/">azure-cli</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csharp/">csharp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnet/">dotnet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/microsoft/">microsoft</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -329,7 +319,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/azure/" style="font-size: 10px;">azure</a> <a href="/tags/azure-cli/" style="font-size: 10px;">azure-cli</a> <a href="/tags/csharp/" style="font-size: 10px;">csharp</a> <a href="/tags/dotnet/" style="font-size: 10px;">dotnet</a> <a href="/tags/microsoft/" style="font-size: 10px;">microsoft</a> <a href="/tags/scotus/" style="font-size: 20px;">scotus</a> <a href="/tags/supreme-court/" style="font-size: 20px;">supreme court</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a>
+      <a href="/tags/azure/" style="font-size: 10px;">azure</a> <a href="/tags/azure-cli/" style="font-size: 10px;">azure-cli</a> <a href="/tags/csharp/" style="font-size: 10px;">csharp</a> <a href="/tags/dotnet/" style="font-size: 10px;">dotnet</a> <a href="/tags/microsoft/" style="font-size: 10px;">microsoft</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a>
     </div>
   </div>
 
@@ -338,7 +328,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -352,22 +342,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2017/02/03/NET-Core-Web-App-in-Azure/">.NET Core Web App in Azure</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/">Issue 7: Burwell v. Hobby Lobby</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/01/Issue-6-United-States-v-Windsor/">Issue 6: United States v. Windsor</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/">Issue 5: Fred Korematsu v. United States</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/">Issue 3: George W. Bush and Richard Cheney, Petitioners v. Albert Gore, Jr. and Joseph Lieberman, et al.</a>
           </li>
         
       </ul>

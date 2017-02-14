@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/</loc>
+    
+    <lastmod>2017-02-14T22:38:03.832Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/</loc>
     
-    <lastmod>2017-02-08T23:57:50.000Z</lastmod>
+    <lastmod>2017-02-14T22:35:40.677Z</lastmod>
     
   </url>
   

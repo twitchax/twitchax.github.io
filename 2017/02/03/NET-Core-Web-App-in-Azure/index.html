@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>.NET Core Web App in Azure | AaRoney&#39;s Blog</title>
+  <title>Build a .NET Core Web App in Azure | AaRoney&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="#burn:before {
   font-family: FontAwesome;
@@ -28,7 +28,7 @@ Add a Web API endpoint
 Publish to Azure
 Configur">
 <meta property="og:type" content="article">
-<meta property="og:title" content=".NET Core Web App in Azure">
+<meta property="og:title" content="Build a .NET Core Web App in Azure">
 <meta property="og:url" content="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/index.html">
 <meta property="og:site_name" content="AaRoney's Blog">
 <meta property="og:description" content="#burn:before {
@@ -53,11 +53,10 @@ Add a Web API endpoint
 
 Publish to Azure
 Configur">
-<meta property="og:image" content="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/default_app.png">
 <meta property="og:image" content="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/add_cname.png">
-<meta property="og:updated_time" content="2017-02-08T23:57:50.000Z">
+<meta property="og:updated_time" content="2017-02-14T22:35:40.677Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=".NET Core Web App in Azure">
+<meta name="twitter:title" content="Build a .NET Core Web App in Azure">
 <meta name="twitter:description" content="#burn:before {
   font-family: FontAwesome;
   content: &quot;\f06d&quot;;
@@ -80,7 +79,7 @@ Add a Web API endpoint
 
 Publish to Azure
 Configur">
-<meta name="twitter:image" content="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/default_app.png">
+<meta name="twitter:image" content="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/add_cname.png">
 <meta name="twitter:creator" content="@twitchax">
   
     <link rel="alternate" href="/atom.xml" title="AaRoney&#39;s Blog" type="application/atom+xml">
@@ -161,7 +160,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      .NET Core Web App in Azure
+      Build a .NET Core Web App in Azure
     </h1>
   
 
@@ -216,22 +215,25 @@ ga('send', 'pageview');
 
 <h1 id="introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Let’s build a .NET Core Web App in Azure!  We will be performing all operations using the <a href="https://github.com/Azure/azure-cli" target="_blank" rel="external">Azure CLI</a>, and all of our work will be built using <a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> on <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about" target="_blank" rel="external">Bash On Windows</a>, Linux, Mac OS, or a container (we’ll containerize our app in a few weeks).</p>
 <h2 id="prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
-<li>[Required] <a href="https://www.microsoft.com/net/core" target="_blank" rel="external">.NET Core</a>.</li>
-<li>[Required] <a href="https://azure.microsoft.com/en-us/free/" target="_blank" rel="external">Azure Subscription</a>.</li>
 <li>[Required] <a href="https://github.com/Azure/azure-cli" target="_blank" rel="external">Azure CLI</a> (<a href="https://docs.microsoft.com/en-us/cli/azure/install-az-cli2" target="_blank" rel="external">install guide</a>).</li>
+<li>[Required] <a href="https://www.microsoft.com/net/core" target="_blank" rel="external">.NET Core</a> (1.0.0-rc4-004800).</li>
+<li>[Required] <a href="https://azure.microsoft.com/en-us/free/" target="_blank" rel="external">Azure Subscription</a>.</li>
 <li>[Required] <a href="https://git-scm.com/downloads" target="_blank" rel="external">git</a>.</li>
 <li><a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a>.</li>
 <li><a href="https://msdn.microsoft.com/en-us/commandline/wsl/about" target="_blank" rel="external">Bash On Windows</a>.</li>
 </ul>
-<h1 id="build"><a href="#Build" class="headerlink" title="Build"></a>Build</h1><h2 id="create-a-net-core-web-app"><a href="#Create-a-NET-Core-Web-App" class="headerlink" title="Create a .NET Core Web App"></a>Create a .NET Core Web App</h2><h3 id="create-the-app"><a href="#Create-the-app" class="headerlink" title="Create the app"></a>Create the app</h3><p>First, we are going to create a new .NET Web App.  I am going to make a simple “Hello, World!” app.  To your favorite <strong>shell</strong>!</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir netcore_hello_world</div><div class="line"><span class="built_in">cd</span> netcore_hello_world</div><div class="line">dotnet new -t Web</div></pre></td></tr></table></figure>
+<h1 id="build"><a href="#Build" class="headerlink" title="Build"></a>Build</h1><blockquote>
+<p>NOTE: all command statements with multiple lines ignore the need for a newline escape.</p>
+</blockquote>
+<h2 id="create-a-net-core-web-app"><a href="#Create-a-NET-Core-Web-App" class="headerlink" title="Create a .NET Core Web App"></a>Create a .NET Core Web App</h2><h3 id="create-the-app"><a href="#Create-the-app" class="headerlink" title="Create the app"></a>Create the app</h3><p>First, we are going to create a new .NET Web App.  I am going to make a simple “Hello, World!” app.  To your favorite <strong>shell</strong>!</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir netcore_hello_world</div><div class="line"><span class="built_in">cd</span> netcore_hello_world</div><div class="line">dotnet new webapi</div></pre></td></tr></table></figure>
 <p>Next, we need to test that our app works locally.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dotnet restore</div><div class="line">dotnet run</div></pre></td></tr></table></figure>
-<p>At this point, your shell will block, and you can test your app by navigating to the URL specified (in my case, it is <a href="http://localhost:5000/" target="_blank" rel="external">http://localhost:5000/</a>).  Navigate to this URL, and you should see something like this.</p>
-<img src="/2017/02/03/NET-Core-Web-App-in-Azure/default_app.png" alt="The default landing page for a new .NET Core Web App." title="The default landing page for a new .NET Core Web App.">
+<p>At this point, your shell will block, and you can test your app by navigating to the URL specified (in my case, it is <a href="http://localhost:5000/" target="_blank" rel="external">http://localhost:5000/</a>).  Navigate to the simple web api endpoint that is provided by default (i.e., <a href="http://localhost:5000/api/values" target="_blank" rel="external">http://localhost:5000/api/values</a>), and you should see the expected response!</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="string">"value1"</span>,<span class="string">"value2"</span>]</div></pre></td></tr></table></figure>
 <h3 id="add-a-web-api-endpoint"><a href="#Add-a-Web-API-endpoint" class="headerlink" title="Add a Web API endpoint"></a>Add a Web API endpoint</h3><p>I have always wanted to have a website respond to my name, so I am going to add a Web API enpoint to my app which will respond the way I want.  You can add any endpoint you would like here, so have it respond in Klingon: it’s your app, do what you want.</p>
-<p>Awesomely enough, ASP.NET Core web apps have Web API routing built in.  In the <code>Controllers</code> directory, all I need do is simply emulate <code>HomeController.cs</code> to some degree.  My new controller is going to be pretty simple since I just want to say “hello”.  So, I simply create a new controller (<code>Controllers/ApiController.cs</code>), and I add my controller class to it (usings and namespace ommitted).</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ApiController</span> : <span class="title">Controller</span></div><div class="line">&#123;</div><div class="line">    [HttpGet]</div><div class="line">    [Route(<span class="string">"api/hello/&#123;name&#125;"</span>)]</div><div class="line">    <span class="function"><span class="keyword">public</span> IActionResult <span class="title">SayHello</span>(<span class="params"><span class="keyword">string</span> name</span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(name == <span class="string">"Drumpf"</span>)</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.BadRequest(<span class="string">"Drumpf?...Really?"</span>);</div><div class="line"></div><div class="line">        <span class="keyword">var</span> result = <span class="keyword">new</span> &#123; response = <span class="string">$"Hello, Awesome <span class="subst">&#123;name&#125;</span>‽"</span> &#125;;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.Ok(result);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Awesomely enough, ASP.NET Core web apps have Web API routing built in.  In the <code>Controllers</code> directory, all I need do is simply emulate <code>ValuesController.cs</code> to some degree.  My new controller is going to be pretty simple since I just want to say “hello”.  So, I simply create a new controller (<code>Controllers/HelloController.cs</code>), and I add my controller class to it (usings and namespace ommitted).</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">HelloController</span> : <span class="title">Controller</span></div><div class="line">&#123;</div><div class="line">    [HttpGet]</div><div class="line">    [Route(<span class="string">"api/hello/&#123;name&#125;"</span>)]</div><div class="line">    <span class="function"><span class="keyword">public</span> IActionResult <span class="title">SayHello</span>(<span class="params"><span class="keyword">string</span> name</span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(name == <span class="string">"Drumpf"</span>)</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.BadRequest(<span class="string">"Drumpf?...Really?"</span>);</div><div class="line"></div><div class="line">        <span class="keyword">var</span> result = <span class="keyword">new</span> &#123; response = <span class="string">$"Hello, Awesome <span class="subst">&#123;name&#125;</span>‽"</span> &#125;;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.Ok(result);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>You will notice a few key points here:</p>
 <ul>
 <li><code>[HttpGet]</code> informs the runtime that this method represents an HTTP GET endpoint.</li>
@@ -243,26 +245,26 @@ ga('send', 'pageview');
 <p>Navigate to the endpoint, and include your name (e.g., <a href="http://localhost:5000/api/hello/Aaron" target="_blank" rel="external">http://localhost:5000/api/hello/Aaron</a>).  You should see the expected response.</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; <span class="attr">"response"</span> : <span class="string">"Hello, Aaron‽"</span> &#125;</div></pre></td></tr></table></figure>
 <p>If “Drumpf” tries, we will get the expected error result (i.e., <code>Drumpf?...Really?</code>, with a <code>400</code> status code).  <span id="burn"></span> </p>
-<h2 id="publish-to-azure"><a href="#Publish-to-Azure" class="headerlink" title="Publish to Azure"></a>Publish to Azure</h2><h3 id="configure-azure-cli"><a href="#Configure-Azure-CLI" class="headerlink" title="Configure Azure CLI"></a>Configure Azure CLI</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">az login</div><div class="line">az account <span class="built_in">set</span> </div><div class="line">    --subscription <span class="string">"Aaron Personal (MSDN)"</span></div></pre></td></tr></table></figure>
+<h2 id="publish-to-azure"><a href="#Publish-to-Azure" class="headerlink" title="Publish to Azure"></a>Publish to Azure</h2><h3 id="configure-azure-cli"><a href="#Configure-Azure-CLI" class="headerlink" title="Configure Azure CLI"></a>Configure Azure CLI</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">az login</div><div class="line">az account <span class="built_in">set</span> --subscription <span class="string">"Aaron Personal (MSDN)"</span></div></pre></td></tr></table></figure>
 <h3 id="create-a-new-web-app-on-azure"><a href="#Create-a-new-web-app-on-Azure" class="headerlink" title="Create a new web app on Azure"></a>Create a new web app on Azure</h3><p>Using the Azure CLI, we can easily create a new web app instance on Azure.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Create a demo group for cleanup.</span></div><div class="line">az group create </div><div class="line">    <span class="_">-l</span> westus </div><div class="line">    -n DemoGroup </div><div class="line"></div><div class="line"><span class="comment"># Create a shared app service plan ($10 / month).</span></div><div class="line">az appservice plan create </div><div class="line">    -g DemoGroup </div><div class="line">    -n DemoAppPlan </div><div class="line">    --sku D1 <span class="comment"># F1 for free tier (no custom domains).</span></div><div class="line"></div><div class="line"><span class="comment"># Name must be unique to all of Azure.</span></div><div class="line">az appservice web create </div><div class="line">    -g DemoGroup </div><div class="line">    -p DemoAppPlan </div><div class="line">    -n AaronDemoHelloApp</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Create a demo group for cleanup.</span></div><div class="line">az group create <span class="_">-l</span> westus -n DemoGroup </div><div class="line"></div><div class="line"><span class="comment"># Create a shared app service plan ($10 / month).</span></div><div class="line">az appservice plan create -g DemoGroup -n DemoAppPlan --sku D1 <span class="comment"># F1 for free tier.</span></div><div class="line"></div><div class="line"><span class="comment"># Name must be unique to all of Azure.</span></div><div class="line">az appservice web create -g DemoGroup -p DemoAppPlan -n AaronDemoHelloApp</div></pre></td></tr></table></figure>
 <p>Now, we can verify the host name of our newly created app.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ az appservice web show </div><div class="line">    -g DemoGroup </div><div class="line">    -n AaronDemoHelloApp </div><div class="line">    --query hostNames --out tsv</div><div class="line">aarondemohelloapp.azurewebsites.net</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ az appservice web show -g DemoGroup -n AaronDemoHelloApp --query hostNames --out tsv</div><div class="line">aarondemohelloapp.azurewebsites.net</div></pre></td></tr></table></figure>
 <p>Navigating to this address (i.e., <a href="http://aarondemohelloapp.azurewebsites.net/" target="_blank" rel="external">http://aarondemohelloapp.azurewebsites.net/</a>) yields a default Azure web app screen.</p>
 <h3 id="deploy-to-azure-via-git"><a href="#Deploy-to-Azure-via-git" class="headerlink" title="Deploy to Azure via git"></a>Deploy to Azure via git</h3><p>At the moment, we are just eager to get our app up on Azure.  For now, we will configure deployment using local git.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ az appservice web <span class="built_in">source</span>-control config-local-git </div><div class="line">    -g DemoGroup </div><div class="line">    -n AaronDemoHelloApp </div><div class="line">    --out tsv</div><div class="line">https://twitchax@aarondemohelloapp.scm.azurewebsites.net/AaronDemoHelloApp.git</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ az appservice web <span class="built_in">source</span>-control config-local-git -g DemoGroup -n AaronDemoHelloApp --out tsv</div><div class="line">https://twitchax@aarondemohelloapp.scm.azurewebsites.net/AaronDemoHelloApp.git</div></pre></td></tr></table></figure>
 <p>However, we need to create a username and password for this deployment endpoint.  Let’s set our deployment credentials through the Azure CLI.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">az appservice web deployment user <span class="built_in">set</span> </div><div class="line">    --user-name twitchax</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">az appservice web deployment user <span class="built_in">set</span> --user-name twitchax</div></pre></td></tr></table></figure>
 <p>You will be prompted to set a password, and that’s it for deployment authentication!</p>
 <p>Now, we can push our app straight from our shell with git.  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Create a repository and make the first commit.</span></div><div class="line">git init</div><div class="line">git add .</div><div class="line">git commit -m <span class="string">"First commit!"</span></div><div class="line"></div><div class="line"><span class="comment"># Add the Azure endpoint (make sure to use your endpoint).</span></div><div class="line">git remote add azure https://twitchax@aarondemohelloapp.scm.azurewebsites.net/AaronDemoHelloApp.git</div><div class="line"></div><div class="line"><span class="comment"># Push this deploy directory to Azure.</span></div><div class="line">git push azure master</div><div class="line"></div><div class="line"><span class="comment"># Restart the app service (optional).</span></div><div class="line">az appservice web restart </div><div class="line">    -g DemoGroup </div><div class="line">    -n AaronDemoHelloApp</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Create a repository and make the first commit.</span></div><div class="line">git init</div><div class="line">git add .</div><div class="line">git commit -m <span class="string">"First commit!"</span></div><div class="line"></div><div class="line"><span class="comment"># Add the Azure endpoint (make sure to use your endpoint).</span></div><div class="line">git remote add azure https://twitchax@aarondemohelloapp.scm.azurewebsites.net/AaronDemoHelloApp.git</div><div class="line"></div><div class="line"><span class="comment"># Push this deploy directory to Azure.</span></div><div class="line">git push azure master</div><div class="line"></div><div class="line"><span class="comment"># Restart the app service (optional).</span></div><div class="line">az appservice web restart -g DemoGroup -n AaronDemoHelloApp</div></pre></td></tr></table></figure>
 <h3 id="revel-in-your-awesomeness"><a href="#Revel-in-your-awesomeness" class="headerlink" title="Revel in your awesomeness"></a>Revel in your awesomeness</h3><p>Navigate to your azure domain address (i.e., <a href="http://aarondemohelloapp.azurewebsites.net/api/hello/Aaron" target="_blank" rel="external">http://aarondemohelloapp.azurewebsites.net/api/hello/Aaron</a>) to test your deployment.  It’s alive!</p>
 <h1 id="share-optional"><a href="#Share-optional" class="headerlink" title="Share (optional)"></a>Share (optional)</h1><p>At this point, we can share our domain name with the world!  However, if we would like, we can fairly easily buy a custom domain and point that new domain (or a subdomain) at our new web app.</p>
 <h2 id="obtain-a-domain-name"><a href="#Obtain-a-domain-name" class="headerlink" title="Obtain a domain name"></a>Obtain a domain name</h2><p>Go buy a domain name.  I mean, why not?  Most of them are as low as <strong>$12 / year</strong>.  I, personally, use <a href="https://domains.google/#/" target="_blank" rel="external">Google Domains</a>, but you can use your favorite service.</p>
 <h2 id="configure-a-domain-name"><a href="#Configure-a-domain-name" class="headerlink" title="Configure a domain name"></a>Configure a domain name</h2><h3 id="configure-cname-with-your-registrar"><a href="#Configure-CNAME-with-your-registrar" class="headerlink" title="Configure CNAME with your registrar"></a>Configure CNAME with your registrar</h3><p>I added a CNAME record for <code>helloapp.twitchax.com</code> to <code>aarondemohelloapp.azurewebsites.net</code>.  In Google Domains, you just find your domain and click “DNS”.  Then, add a “custom resource record” which points to your web app.</p>
 <img src="/2017/02/03/NET-Core-Web-App-in-Azure/add_cname.png" alt="Add a CNAME in Google Domains." title="Add a CNAME in Google Domains.">
 <h3 id="bind-the-hostname-in-azure"><a href="#Bind-the-hostname-in-Azure" class="headerlink" title="Bind the hostname in Azure"></a>Bind the hostname in Azure</h3><p>Azure requires that we specify which custom domains are allowed to point to our web app.  So, back to the trusty Azure CLI, and we can bind to our custom domain name with one, simple command.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">az appservice web config hostname add </div><div class="line">    -g DemoGroup </div><div class="line">    --webapp AaronDemoHelloApp </div><div class="line">    -n helloapp.twitchax.com</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">az appservice web config hostname add -g DemoGroup --webapp AaronDemoHelloApp </div><div class="line">    -n helloapp.twitchax.com</div></pre></td></tr></table></figure>
 <p><strong>NOTE: There is currently a bug (<a href="https://github.com/Azure/azure-cli/issues/1984" target="_blank" rel="external">#1984</a>) in Azure CLI which prevents adding a host name, but a <a href="https://github.com/Azure/azure-cli/pull/1985" target="_blank" rel="external">proposed fix</a> is on the way!  This same operation can be completed in the Azure Portal for the time being (Settings &gt;&gt; Custom domains).</strong></p>
 <h1 id="done"><a href="#Done" class="headerlink" title="Done"></a>Done</h1><p>That’s it!  In about 10 minutes, we have built our web app and pushed it to Azure!</p>
 <p>Next week, we will add some data to our web app, so stay tuned.</p>
@@ -270,7 +272,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/" data-id="ciyz181a0000030df4s1annls" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/" data-id="ciz20oqnz0001xv12hpfj43vb" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -281,6 +283,20 @@ ga('send', 'pageview');
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2017/02/11/Add-DocumentDB-to-your-Web-App/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Add DocumentDB to your Web App
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -299,7 +315,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Built-with-Azure-Tools/">Built with Azure Tools</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Built-with-Azure-Tools/">Built with Azure Tools</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -309,7 +325,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure/">azure</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure-cli/">azure-cli</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csharp/">csharp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnet/">dotnet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/microsoft/">microsoft</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure/">azure</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure-cli/">azure-cli</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csharp/">csharp</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/documentdb/">documentdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnet/">dotnet</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/microsoft/">microsoft</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -319,7 +335,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/azure/" style="font-size: 10px;">azure</a> <a href="/tags/azure-cli/" style="font-size: 10px;">azure-cli</a> <a href="/tags/csharp/" style="font-size: 10px;">csharp</a> <a href="/tags/dotnet/" style="font-size: 10px;">dotnet</a> <a href="/tags/microsoft/" style="font-size: 10px;">microsoft</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a>
+      <a href="/tags/azure/" style="font-size: 20px;">azure</a> <a href="/tags/azure-cli/" style="font-size: 20px;">azure-cli</a> <a href="/tags/csharp/" style="font-size: 20px;">csharp</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/documentdb/" style="font-size: 10px;">documentdb</a> <a href="/tags/dotnet/" style="font-size: 20px;">dotnet</a> <a href="/tags/microsoft/" style="font-size: 20px;">microsoft</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a>
     </div>
   </div>
 
@@ -328,7 +344,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -341,7 +357,11 @@ ga('send', 'pageview');
       <ul>
         
           <li>
-            <a href="/2017/02/03/NET-Core-Web-App-in-Azure/">.NET Core Web App in Azure</a>
+            <a href="/2017/02/11/Add-DocumentDB-to-your-Web-App/">Add DocumentDB to your Web App</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/03/NET-Core-Web-App-in-Azure/">Build a .NET Core Web App in Azure</a>
           </li>
         
       </ul>

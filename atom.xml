@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.aaroney.com/"/>
-  <updated>2017-02-14T22:38:03.832Z</updated>
+  <updated>2017-02-14T22:38:03.000Z</updated>
   <id>http://blog.aaroney.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/"/>
     <id>http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/</id>
     <published>2017-02-12T01:49:10.000Z</published>
-    <updated>2017-02-14T22:38:03.832Z</updated>
+    <updated>2017-02-14T22:38:03.000Z</updated>
     
     <content type="html"><![CDATA[<div class="toc">
 
@@ -128,7 +128,7 @@
     <link href="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/"/>
     <id>http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/</id>
     <published>2017-02-03T23:49:24.000Z</published>
-    <updated>2017-02-14T22:35:40.677Z</updated>
+    <updated>2017-02-14T22:35:40.000Z</updated>
     
     <content type="html"><![CDATA[
 <style>

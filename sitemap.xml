@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.aaroney.com/Azure-PowerShell/index.html</loc>
+    
+    <lastmod>2017-04-26T21:31:51.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.aaroney.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/</loc>
+    
+    <lastmod>2017-04-26T21:31:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/</loc>
     
     <lastmod>2017-02-14T22:38:03.000Z</lastmod>
@@ -47,13 +61,6 @@
     <loc>http://blog.aaroney.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/</loc>
     
     <lastmod>2017-02-06T07:45:22.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.aaroney.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/</loc>
-    
-    <lastmod>2017-02-06T06:36:11.000Z</lastmod>
     
   </url>
   

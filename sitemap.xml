@@ -2,79 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.aaroney.com/Azure-PowerShell-Surveys/index.html</loc>
-    
-    <lastmod>2017-04-26T22:16:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.aaroney.com/Azure-PowerShell-Experiments/index.html</loc>
     
-    <lastmod>2017-04-26T22:16:18.000Z</lastmod>
+    <lastmod>2017-04-26T22:22:08.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html</loc>
     
-    <lastmod>2017-04-26T22:15:36.000Z</lastmod>
+    <lastmod>2017-04-26T22:22:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.aaroney.com/Azure-PowerShell-Surveys/index.html</loc>
+    
+    <lastmod>2017-04-26T22:22:04.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.aaroney.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/</loc>
     
-    <lastmod>2017-04-26T21:31:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/</loc>
-    
-    <lastmod>2017-02-14T22:38:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/</loc>
-    
-    <lastmod>2017-02-14T22:35:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.aaroney.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/</loc>
-    
-    <lastmod>2017-02-06T08:08:14.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.aaroney.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/</loc>
-    
-    <lastmod>2017-02-06T08:03:13.000Z</lastmod>
+    <lastmod>2017-04-26T22:21:33.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.aaroney.com/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/</loc>
     
-    <lastmod>2017-02-06T07:56:16.000Z</lastmod>
+    <lastmod>2017-04-26T22:21:21.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.aaroney.com/2016/10/01/Issue-6-United-States-v-Windsor/</loc>
+    <loc>http://blog.aaroney.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/</loc>
     
-    <lastmod>2017-02-06T07:51:21.000Z</lastmod>
+    <lastmod>2017-04-26T22:21:10.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.aaroney.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/</loc>
     
-    <lastmod>2017-02-06T07:45:22.000Z</lastmod>
+    <lastmod>2017-04-26T22:20:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.aaroney.com/2016/10/01/Issue-6-United-States-v-Windsor/</loc>
+    
+    <lastmod>2017-04-26T22:20:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.aaroney.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/</loc>
+    
+    <lastmod>2017-04-26T22:20:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/</loc>
+    
+    <lastmod>2017-04-26T22:20:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/</loc>
+    
+    <lastmod>2017-04-26T22:19:57.000Z</lastmod>
     
   </url>
   

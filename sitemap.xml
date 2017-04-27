@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.aaroney.com/Azure-PowerShell-Experiments/index.html</loc>
+    <loc>http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html</loc>
     
-    <lastmod>2017-04-26T22:22:08.000Z</lastmod>
+    <lastmod>2017-04-27T00:04:03.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html</loc>
+    <loc>http://blog.aaroney.com/Azure-PowerShell-Experiments/index.html</loc>
     
-    <lastmod>2017-04-26T22:22:07.000Z</lastmod>
+    <lastmod>2017-04-27T00:02:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/</loc>
+    
+    <lastmod>2017-04-26T22:35:51.000Z</lastmod>
     
   </url>
   
@@ -68,13 +75,6 @@
     <loc>http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/</loc>
     
     <lastmod>2017-04-26T22:20:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/</loc>
-    
-    <lastmod>2017-04-26T22:19:57.000Z</lastmod>
     
   </url>
   

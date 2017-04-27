@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.aaroney.com/"/>
-  <updated>2017-04-26T22:19:57.000Z</updated>
+  <updated>2017-04-26T22:35:51.000Z</updated>
   <id>http://blog.aaroney.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/"/>
     <id>http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/</id>
     <published>2017-02-12T01:49:00.000Z</published>
-    <updated>2017-04-26T22:19:57.000Z</updated>
+    <updated>2017-04-26T22:35:51.000Z</updated>
     
     <content type="html"><![CDATA[<div class="toc">
 
@@ -46,7 +46,7 @@
 <!-- tocstop -->
 </div>
 
-<h1 id="introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Let’s build add Add <a href="https://azure.microsoft.com/en-us/services/documentdb/" target="_blank" rel="external">DocumentDB</a> to your Web App!  We will be performing all operations using the <a href="https://github.com/Azure/azure-cli" target="_blank" rel="external">Azure CLI</a>, and all of our work will be built using <a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> on <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about" target="_blank" rel="external">Bash On Windows</a>, Linux, Mac OS, or a container (we’ll containerize our app in a few weeks).  If you have not already, make sure you have a <a href="/2017/02/03/NET-Core-Web-App-in-Azure/" title=".NET Core Web App">.NET Core Web App</a> ready to go!</p>
+<h1 id="introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Let’s add <a href="https://azure.microsoft.com/en-us/services/documentdb/" target="_blank" rel="external">DocumentDB</a> to your Web App!  We will be performing all operations using the <a href="https://github.com/Azure/azure-cli" target="_blank" rel="external">Azure CLI</a>, and all of our work will be built using <a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> on <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about" target="_blank" rel="external">Bash On Windows</a>, Linux, Mac OS, or a container (we’ll containerize our app in a few weeks).  If you have not already, make sure you have a <a href="/2017/02/03/NET-Core-Web-App-in-Azure/" title=".NET Core Web App">.NET Core Web App</a> ready to go!</p>
 <h2 id="prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
 <li>[Required] <a href="https://github.com/Azure/azure-cli" target="_blank" rel="external">Azure CLI</a> (<a href="https://docs.microsoft.com/en-us/cli/azure/install-az-cli2" target="_blank" rel="external">install guide</a>).</li>
 <li>[Required] <a href="https://www.microsoft.com/net/core" target="_blank" rel="external">.NET Core</a> (<a href="https://github.com/dotnet/cli" target="_blank" rel="external">CLI 1.0.0-rc4-004800+</a>).</li>

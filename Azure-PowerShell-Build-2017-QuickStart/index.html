@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Azure PowerShell Build 2017 QuickStart | AaRoney&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Azure PowerShell Build 2017 QuickStartThis challenge requires using Azure PowerShell.  You will not need any other programs or tools besides:  Windows machine. PowerShell 5.0+. MSTSC (Remote Desktop C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Azure PowerShell Build 2017 QuickStart">
+<meta property="og:url" content="http://blog.aaroney.com/Azure-PowerShell-Build-2017-QuickStart/index.html">
+<meta property="og:site_name" content="AaRoney's Blog">
+<meta property="og:description" content="Azure PowerShell Build 2017 QuickStartThis challenge requires using Azure PowerShell.  You will not need any other programs or tools besides:  Windows machine. PowerShell 5.0+. MSTSC (Remote Desktop C">
+<meta property="og:updated_time" content="2017-05-02T22:56:30.263Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Azure PowerShell Build 2017 QuickStart">
+<meta name="twitter:description" content="Azure PowerShell Build 2017 QuickStartThis challenge requires using Azure PowerShell.  You will not need any other programs or tools besides:  Windows machine. PowerShell 5.0+. MSTSC (Remote Desktop C">
+<meta name="twitter:creator" content="@twitchax">
+  
+    <link rel="alternate" href="/atom.xml" title="AaRoney&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-91476707-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">AaRoney&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.aaroney.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Azure-PowerShell-Build-2017-QuickStart/index.html" class="article-date">
+  <time datetime="2017-05-02T21:08:08.000Z" itemprop="datePublished">2017-05-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Azure PowerShell Build 2017 QuickStart
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="azure-powershell-build-2017-quickstart"><a href="#Azure-PowerShell-Build-2017-QuickStart" class="headerlink" title="Azure PowerShell Build 2017 QuickStart"></a>Azure PowerShell Build 2017 QuickStart</h1><p>This challenge requires using Azure PowerShell.  You will not need any other programs or tools besides:</p>
+<ul>
+<li>Windows machine.</li>
+<li>PowerShell 5.0+.</li>
+<li>MSTSC (Remote Desktop Client).</li>
+</ul>
+<h2 id="setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h2><p>These steps can also be completed by following the <a href="https://docs.microsoft.com/en-us/powershell/azure/get-started-azureps" target="_blank" rel="external">Azure PowerShell Get Started Documentation</a>.</p>
+<h3 id="install-azure-powershell"><a href="#Install-Azure-PowerShell" class="headerlink" title="Install Azure PowerShell"></a>Install Azure PowerShell</h3><p>Using the instructions found in the <a href="https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps#step-2-install-azure-powershell" target="_blank" rel="external">Azure PowerShell Documentation</a>, install the <code>AzureRM</code> module.</p>
+<blockquote>
+<p>NOTE: You may need to run PowerShell as an administrator.</p>
+</blockquote>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ Install-Module AzureRM</div></pre></td></tr></table></figure>
+<h3 id="login"><a href="#Login" class="headerlink" title="Login"></a>Login</h3><p>Login to Azure PowerShell with one command.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ Login-AzureRmAccount</div></pre></td></tr></table></figure>
+<p>A dialog box will appear, prompting you to enter your credentials.  Upon completion, you should see some basic information.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Environment           : AzureCloud</div><div class="line">Account               : your@email.com</div><div class="line">TenantId              : <span class="comment">########-####-####-####-############</span></div><div class="line">SubscriptionId        : <span class="comment">########-####-####-####-############</span></div><div class="line">SubscriptionName      : SubName</div><div class="line">CurrentStorageAccount :</div></pre></td></tr></table></figure>
+<p>Your “default subscription” is denoted as <code>SubName</code> above.</p>
+<h3 id="select-subscription"><a href="#Select-subscription" class="headerlink" title="Select subscription"></a>Select subscription</h3><p>You may want to use a different subscription, so you need to select your preferred subscription.  First, get a list of your subscriptions.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ Get-AzureRmSubscription</div><div class="line"></div><div class="line">SubscriptionName : SubName1</div><div class="line">SubscriptionId   : <span class="comment">########-####-####-####-############</span></div><div class="line">TenantId         : <span class="comment">########-####-####-####-############</span></div><div class="line">State            : Enabled</div><div class="line"></div><div class="line">SubscriptionName : SubName2</div><div class="line">SubscriptionId   : <span class="comment">########-####-####-####-############</span></div><div class="line">TenantId         : <span class="comment">########-####-####-####-############</span></div><div class="line">State            : Disabled</div></pre></td></tr></table></figure>
+<p>The easiest way to select your preferred subscription is by selecting the subscription and piping it to <code>Select-AzureRmSubscription</code>.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ Get-AzureRmSubscription -SubscriptionName <span class="string">"SubName1"</span> | Select-AzureRmSubscription</div></pre></td></tr></table></figure>
+<h3 id="create-a-resource-group"><a href="#Create-a-resource-group" class="headerlink" title="Create a resource group"></a>Create a resource group</h3><p><strong>Create a new resource group</strong></p>
+<p>A good first step for exploring Azure is to create a new resource group in which you can experiment.   Let’s take a look at the resource group commands and find how to create one.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">Get-Command</span> *ResourceGroup</div><div class="line"></div><div class="line">CommandType     Name                                               Version    Source</div><div class="line">-----------     ----                                               -------    ------</div><div class="line">Cmdlet          Export-AzureRmResourceGroup                        <span class="number">3.8</span>.<span class="number">0</span>      AzureRM.Resources</div><div class="line">Cmdlet          Find-AzureRmResourceGroup                          <span class="number">3.8</span>.<span class="number">0</span>      AzureRM.Resources</div><div class="line">Cmdlet          Get-AzureRmResourceGroup                           <span class="number">3.8</span>.<span class="number">0</span>      AzureRM.Resources</div><div class="line">Cmdlet          New-AzureRmResourceGroup                           <span class="number">3.8</span>.<span class="number">0</span>      AzureRM.Resources</div><div class="line">Cmdlet          Remove-AzureRmResourceGroup                        <span class="number">3.8</span>.<span class="number">0</span>      AzureRM.Resources</div><div class="line">Cmdlet          Set-AzureRmResourceGroup                           <span class="number">3.8</span>.<span class="number">0</span>      AzureRM.Resources</div></pre></td></tr></table></figure>
+<p>In this case, you want to create a new resource group.  You can get help for the <code>New-AzureRmResourceGroup</code> cmdlet (and any other cmdlet) in a few different ways.  First, you can get help straight from the PowerShell prompt.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">Get-Help</span> New-AzureRmResourceGroup</div><div class="line"></div><div class="line">NAME</div><div class="line">    New-AzureRmResourceGroup</div><div class="line"></div><div class="line">SYNOPSIS</div><div class="line">    Creates an Azure resource group</div><div class="line"></div><div class="line">SYNTAX</div><div class="line">    New-AzureRmResourceGroup -Name &lt;String&gt; -Location &lt;String&gt; [-Tag &lt;Hashtable&gt;] [-Force &lt;SwitchParameter&gt;]</div><div class="line">    [&lt;CommonParameters&gt;]</div><div class="line"></div><div class="line">DESCRIPTION</div><div class="line">    The New-AzureRmResourceGroup cmdlet creates an Azure resource group and returns an object that represents the</div><div class="line">    resource group.</div><div class="line"></div><div class="line">    <span class="keyword">If</span> you find an issue with this cmdlet, please create an issue on https://github.com/Azure/azure-powershell/issues,</div><div class="line">    with a label <span class="string">"ResourceManager"</span>.</div><div class="line"></div><div class="line">RELATED LINKS</div><div class="line">    Online Version: http://go.microsoft.com/fwlink/?LinkID=<span class="number">393048</span></div><div class="line"></div><div class="line">REMARKS</div><div class="line">    To see the examples, type: <span class="string">"get-help New-AzureRmResourceGroup -examples"</span>.</div><div class="line">    <span class="keyword">For</span> more information, type: <span class="string">"get-help New-AzureRmResourceGroup -detailed"</span>.</div><div class="line">    <span class="keyword">For</span> technical information, type: <span class="string">"get-help New-AzureRmResourceGroup -full"</span>.</div><div class="line">    <span class="keyword">For</span> online help, type: <span class="string">"get-help New-AzureRmResourceGroup -online"</span></div></pre></td></tr></table></figure>
+<p>Alternatively, you can get help information from the <a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/new-azurermresourcegroup" target="_blank" rel="external">Azure PowerShell Reference Documentation</a>.</p>
+<p>In this case, we want to create a resource group in the <code>West US 2</code> location.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ New-AzureRmResourceGroup -Name MyQuickStartRg -Location WestUS2</div><div class="line"></div><div class="line">ResourceGroupName : MyQuickStartRg</div><div class="line">Location          : westus2</div><div class="line">ProvisioningState : Succeeded</div><div class="line">Tags              :</div><div class="line">ResourceId        : /subscriptions/<span class="comment">########-####-####-####-############/resourceGroups/MyQuickStartRg</span></div></pre></td></tr></table></figure>
+<h2 id="create-a-windows-virtual-machine"><a href="#Create-a-Windows-virtual-machine" class="headerlink" title="Create a Windows virtual machine"></a>Create a Windows virtual machine</h2><p>Each application uses different Azure services, but let’s start with the common task of creating a VM.  This quickstart challenge uses a Windows VM so that you can remote into the VM.  All subsequent calls follow an <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm?toc=%2fpowershell%2fmodule%2ftoc.json" target="_blank" rel="external">Azure PowerShell Sample Script</a> and could be run as part of a <code>*.ps1</code> file.  For this challenge, you will walk through a few steps at a time.</p>
+<h3 id="helpful-variables"><a href="#Helpful-variables" class="headerlink" title="Helpful variables"></a>Helpful variables</h3><p>You should first set a few variables in PowerShell to make issuing the cmdlets easier.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="variable">$resourceGroup</span> = <span class="string">"MyQuickStartRg"</span></div><div class="line">$ <span class="variable">$location</span> = <span class="string">"WestUS2"</span></div><div class="line">$ <span class="variable">$vmName</span> = <span class="string">"MyQuickStartVm"</span></div><div class="line">$ <span class="variable">$dnsName</span> = <span class="string">"<span class="variable">$vmName</span>$(Get-Random)"</span></div></pre></td></tr></table></figure>
+<h3 id="setup-network-configuration"><a href="#Setup-network-configuration" class="headerlink" title="Setup network configuration"></a>Setup network configuration</h3><p>Create a subnet.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="variable">$subnetConfig</span> = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet -AddressPrefix <span class="number">192.168</span>.<span class="number">1.0</span>/<span class="number">24</span></div></pre></td></tr></table></figure>
+<p>Create a virtual network.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="variable">$vnet</span> = New-AzureRmVirtualNetwork -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -Name MYvNET -AddressPrefix <span class="number">192.168</span>.<span class="number">0.0</span>/<span class="number">16</span> -Subnet <span class="variable">$subnetConfig</span></div></pre></td></tr></table></figure>
+<p>Create a public IP address and give the VM a public DNS name.<br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="variable">$pip</span> = New-AzureRmPublicIpAddress -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -Name  -AllocationMethod Static -IdleTimeoutInMinutes <span class="number">4</span></div></pre></td></tr></table></figure></p>
+<p>Create an inbound network security rule for port 3389 (this allows RDP).</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="variable">$nsgRuleRDP</span> = New-AzureRmNetworkSecurityRuleConfig -Name myNetworkSecurityGroupRuleRDP  -Protocol Tcp -Direction Inbound -Priority <span class="number">1000</span> -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange <span class="number">3389</span> -Access Allow</div></pre></td></tr></table></figure>
+<p>Create a network security group.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="variable">$nsg</span> = New-AzureRmNetworkSecurityGroup -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -Name myNetworkSecurityGroup -SecurityRules <span class="variable">$nsgRuleRDP</span></div></pre></td></tr></table></figure>
+<p>Create a virtual network card and associate with public IP address and NSG.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="variable">$nic</span> = New-AzureRmNetworkInterface -Name myNic -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -SubnetId <span class="variable">$vnet</span>.Subnets[<span class="number">0</span>].Id -PublicIpAddressId <span class="variable">$pip</span>.Id -NetworkSecurityGroupId <span class="variable">$nsg</span>.Id</div></pre></td></tr></table></figure>
+<h3 id="create-the-vm-configuration"><a href="#Create-the-VM-configuration" class="headerlink" title="Create the VM configuration"></a>Create the VM configuration</h3><p>First, you must create a VM configuration <code>PSObject</code>.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="variable">$vmConfig</span> = New-AzureRmVMConfig -VMName <span class="variable">$vmName</span> -VMSize Standard_DS1_v2</div></pre></td></tr></table></figure>
+<p>Now, set the operating system values.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="variable">$vmConfig</span> = <span class="variable">$vmConfig</span> | Set-AzureRmVMOperatingSystem -Windows -ComputerName <span class="variable">$vmName</span> -Credential $(<span class="built_in">Get-Credential</span> -Message <span class="string">"Enter a username and password for the virtual machine."</span>)</div></pre></td></tr></table></figure>
+<p>Set the source image.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="variable">$vmConfig</span> = <span class="variable">$vmConfig</span> | Set-AzureRmVMSourceImage -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus <span class="number">2016</span>-Datacenter -Version latest</div></pre></td></tr></table></figure>
+<p>Add the network interface.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="variable">$vmConfig</span> = <span class="variable">$vmConfig</span> | Add-AzureRmVMNetworkInterface -Id <span class="variable">$nic</span>.Id</div></pre></td></tr></table></figure>
+<h3 id="create-the-vm"><a href="#Create-the-VM" class="headerlink" title="Create the VM"></a>Create the VM</h3><p>At this point, you can issue the statement to create the VM.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ New-AzureRmVM -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -VM <span class="variable">$vmConfig</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>NOTE: This step may take a few minutes to complete.  Check out the <a href="https://docs.microsoft.com/en-us/powershell/azure/overview" target="_blank" rel="external">Azure PowerShell Documentation</a> while you wait!</p>
+</blockquote>
+<h2 id="remote-into-vm"><a href="#Remote-into-VM" class="headerlink" title="Remote into VM"></a>Remote into VM</h2><p>Start the RDP session by initiating the connection from the command-line.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mstsc /v:$(<span class="variable">$pip</span>.IpAddress)</div></pre></td></tr></table></figure>
+<h2 id="cleanup"><a href="#Cleanup" class="headerlink" title="Cleanup"></a>Cleanup</h2><p>To prevent extraneous cost, clean up your resource group (unless you plan to interact with this VM at a later date).</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ Remove-AzureRmResourceGroup -Name MyQuickStartRg</div></pre></td></tr></table></figure>
+<h2 id="send-feedback"><a href="#Send-feedback" class="headerlink" title="Send feedback"></a>Send feedback</h2><p>If you’ve followed along, you should now be aware of another tool available for you.  Azure PowerShell is <a href="https://github.com/Azure/azure-powershell" target="_blank" rel="external">open source</a> and available for Windows (coming to Mac/Linux soon).</p>
+<p>Your final step to complete this challenge: provide us feedback!</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ Send-Feedback</div></pre></td></tr></table></figure>
+<h2 id="conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>For more information, visit us online:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/powershell/azure" target="_blank" rel="external">Azure PowerShell Documentation</a>.</li>
+<li><a href="https://github.com/Azure/azure-powershell" target="_blank" rel="external">Our GitHub Repo</a>.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.aaroney.com/Azure-PowerShell-Build-2017-QuickStart/index.html" data-id="cj281pngk001s6fdf1k18uuyn" class="article-share-link">Share</a>
+      
+        <a href="http://blog.aaroney.com/Azure-PowerShell-Build-2017-QuickStart/index.html#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  <img src="/images/self.jpg" width="200" style="margin-top: 80px;">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Built-with-Azure-Tools/">Built with Azure Tools</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Supreme-Court-is-Usually-Badass/">The Supreme Court is Usually Badass</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure/">azure</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure-cli/">azure-cli</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csharp/">csharp</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/documentdb/">documentdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnet/">dotnet</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/microsoft/">microsoft</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scotus/">scotus</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/supreme-court/">supreme court</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/azure/" style="font-size: 15px;">azure</a> <a href="/tags/azure-cli/" style="font-size: 15px;">azure-cli</a> <a href="/tags/csharp/" style="font-size: 15px;">csharp</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/documentdb/" style="font-size: 10px;">documentdb</a> <a href="/tags/dotnet/" style="font-size: 15px;">dotnet</a> <a href="/tags/microsoft/" style="font-size: 15px;">microsoft</a> <a href="/tags/scotus/" style="font-size: 20px;">scotus</a> <a href="/tags/supreme-court/" style="font-size: 20px;">supreme court</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/11/Add-DocumentDB-to-your-Web-App/">Add DocumentDB to your Web App</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/03/NET-Core-Web-App-in-Azure/">Build a .NET Core Web App in Azure</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/">Issue 7: Burwell v. Hobby Lobby</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/01/Issue-6-United-States-v-Windsor/">Issue 6: United States v. Windsor</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/">Issue 5: Fred Korematsu v. United States</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Aaron Roney<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'twitchax-blog';
+  
+  var disqus_url = 'http://blog.aaroney.com/Azure-PowerShell-Build-2017-QuickStart/index.html';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

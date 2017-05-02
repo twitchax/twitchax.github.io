@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.aaroney.com/Azure-PowerShell-Build-2017-QuickStart/index.html</loc>
+    
+    <lastmod>2017-05-02T22:56:30.263Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.aaroney.com/Azure-PowerShell-Build-2017-QuickStart-Description/index.html</loc>
+    
+    <lastmod>2017-05-02T21:25:12.267Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.aaroney.com/Azure-PowerShell-Surveys/index.html</loc>
+    
+    <lastmod>2017-05-02T21:17:06.271Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.aaroney.com/Azure-PowerShell-Experiments/index.html</loc>
+    
+    <lastmod>2017-05-02T21:16:19.391Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html</loc>
     
     <lastmod>2017-05-02T09:16:39.304Z</lastmod>
@@ -9,23 +37,9 @@
   </url>
   
   <url>
-    <loc>http://blog.aaroney.com/Azure-PowerShell-Experiments/index.html</loc>
-    
-    <lastmod>2017-04-27T00:15:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/</loc>
     
     <lastmod>2017-04-26T22:35:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.aaroney.com/Azure-PowerShell-Surveys/index.html</loc>
-    
-    <lastmod>2017-04-26T22:22:04.000Z</lastmod>
     
   </url>
   

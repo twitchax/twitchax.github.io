@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Dockerize your Web App | AaRoney&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Introduction Prerequisites   Build Build and pubish docker image Dockerfile Build image Publish image   Create and deploy web app Test   Done     IntroductionLet’s dockerize our web app!  We will">
+<meta name="keywords" content="azure,dotnet,azure-cli,csharp,microsoft,docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dockerize your Web App">
+<meta property="og:url" content="http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/index.html">
+<meta property="og:site_name" content="AaRoney's Blog">
+<meta property="og:description" content="Introduction Prerequisites   Build Build and pubish docker image Dockerfile Build image Publish image   Create and deploy web app Test   Done     IntroductionLet’s dockerize our web app!  We will">
+<meta property="og:updated_time" content="2017-05-06T00:55:59.725Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dockerize your Web App">
+<meta name="twitter:description" content="Introduction Prerequisites   Build Build and pubish docker image Dockerfile Build image Publish image   Create and deploy web app Test   Done     IntroductionLet’s dockerize our web app!  We will">
+<meta name="twitter:creator" content="@twitchax">
+  
+    <link rel="alternate" href="/atom.xml" title="AaRoney&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-91476707-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">AaRoney&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.aaroney.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Dockerize-your-Web-App" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/05/Dockerize-your-Web-App/" class="article-date">
+  <time datetime="2017-05-06T00:00:00.000Z" itemprop="datePublished">2017-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Built-with-Azure-Tools/">Built with Azure Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Dockerize your Web App
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+</ul>
+</li>
+<li><a href="#build">Build</a><ul>
+<li><a href="#build-and-pubish-docker-image">Build and pubish docker image</a><ul>
+<li><a href="#dockerfile">Dockerfile</a></li>
+<li><a href="#build-image">Build image</a></li>
+<li><a href="#publish-image">Publish image</a></li>
+</ul>
+</li>
+<li><a href="#create-and-deploy-web-app">Create and deploy web app</a></li>
+<li><a href="#test">Test</a></li>
+</ul>
+</li>
+<li><a href="#done">Done</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<h1 id="introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Let’s dockerize our web app!  We will be performing all operations using the <a href="https://github.com/Azure/azure-cli" target="_blank" rel="external">Azure CLI</a>, and all of our work will be built using <a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> on <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about" target="_blank" rel="external">Bash On Windows</a>, Linux, Mac OS.  If you have not already, make sure you have a <a href="/2017/02/03/NET-Core-Web-App-in-Azure/" title=".NET Core Web App">.NET Core Web App</a> ready to go.</p>
+<h2 id="prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
+<li>[Required] <a href="https://github.com/Azure/azure-cli" target="_blank" rel="external">Azure CLI</a> (<a href="https://docs.microsoft.com/en-us/cli/azure/install-az-cli2" target="_blank" rel="external">install guide</a>).</li>
+<li>[Required] <a href="https://www.microsoft.com/net/core" target="_blank" rel="external">.NET Core</a> (<a href="https://github.com/dotnet/cli" target="_blank" rel="external">CLI 1.0.0-rc4-004800+</a>).</li>
+<li>[Required] <a href="https://azure.microsoft.com/en-us/free/" target="_blank" rel="external">Azure Subscription</a>.</li>
+<li>[Required] <a href="https://git-scm.com/downloads" target="_blank" rel="external">git</a>.</li>
+<li>[Required] <a href="https://docs.docker.com/engine/installation/" target="_blank" rel="external">Docker</a>.</li>
+</ul>
+<h1 id="build"><a href="#Build" class="headerlink" title="Build"></a>Build</h1><blockquote>
+<p>NOTE: all command statements with multiple lines ignore the need for a newline escape.</p>
+</blockquote>
+<h2 id="build-and-pubish-docker-image"><a href="#Build-and-pubish-docker-image" class="headerlink" title="Build and pubish docker image"></a>Build and pubish docker image</h2><h3 id="dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h3><p>First, we need a dockerfile.  Minimally, we need a docker file that looks like this.</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">FROM</span> microsoft/aspnetcore</div><div class="line"><span class="keyword">LABEL</span> name="NetCoreHello"</div><div class="line"><span class="keyword">ENTRYPOINT</span> ["dotnet", "NetCoreHello.dll"]</div><div class="line">ARG source=bin/Release/netcoreapp1.<span class="number">1</span>/publish</div><div class="line"><span class="keyword">WORKDIR</span> /app</div><div class="line"><span class="keyword">EXPOSE</span> <span class="number">80</span></div><div class="line"><span class="keyword">COPY</span> $source .</div></pre></td></tr></table></figure>
+<h3 id="build-image"><a href="#Build-image" class="headerlink" title="Build image"></a>Build image</h3><p>Next, let’s create a docker image of our web app.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ dotnet publish -c Release</div><div class="line">$ docker build -t twitchax/netcorehello:v1 .</div></pre></td></tr></table></figure>
+<p>If you would like, you can check that your image was built properly.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ docker run -p 80:80 -it twitchax/netcorehello:v1</div><div class="line"></div><div class="line">Hosting environment: Production</div><div class="line">Content root path: /app</div><div class="line">Now listening on: http://+:80</div><div class="line">Application started. Press Ctrl+C to shut down.</div></pre></td></tr></table></figure>
+<p>We can verify that our site is working by navigating to <a href="http://localhost/api/name/Aaron" target="_blank" rel="external">http://localhost/api/name/Aaron</a> (or any endpoint in your app).</p>
+<h3 id="publish-image"><a href="#Publish-image" class="headerlink" title="Publish image"></a>Publish image</h3><p>Let’s pubish our image to docker hub (though, you can use any container registry).</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ docker login</div><div class="line">$ docker push twitchax/netcorehello:v1</div></pre></td></tr></table></figure>
+<h2 id="create-and-deploy-web-app"><a href="#Create-and-deploy-web-app" class="headerlink" title="Create and deploy web app"></a>Create and deploy web app</h2><p>First, we need to do some setup if you have not already done so (some of these steps may have been completed before, but we need an <code>--is-linux</code> container).</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ az group create -n DemoGroup <span class="_">-l</span> westus</div><div class="line">$ az appservice plan create -n DemoPlan -g DemoGroup --location westus --is-linux --sku B1</div><div class="line">$ az appservice web create -n DockerNetCoreHello -p DemoPlan -g DemoGroup</div></pre></td></tr></table></figure>
+<p>Finally, we need to configure our web app to run of our docker image.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ az appservice web config container update --docker-custom-image-name twitchax/netcorehello:v1 -n DockerNetCoreHello -g DemoGroup</div></pre></td></tr></table></figure>
+<h2 id="test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><p>You can use whatever method you prefer to test your new web app interaction with DocumentDB.  In my case, I am using <code>curl</code> with <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about" target="_blank" rel="external">Bash On Windows</a>.</p>
+<p>Get from an endpoint.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ curl http://https://dockernetcorehello.azurewebsites.net/api/hello/Aaron</div><div class="line">&#123;</div><div class="line">  <span class="string">"response"</span>: <span class="string">"Hello, Awesome Aaron‽"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="done"><a href="#Done" class="headerlink" title="Done"></a>Done</h1><p>That’s it!  In about 10 minutes, we have dockerized our web app and deployed it to Azure!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/" data-id="cj2cjk7vo0000rcp6dj69ucs1" class="article-share-link">Share</a>
+      
+        <a href="http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/azure/">azure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/azure-cli/">azure-cli</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/csharp/">csharp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dotnet/">dotnet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/microsoft/">microsoft</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/11/Add-DocumentDB-to-your-Web-App/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Add DocumentDB to your Web App
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  <img src="/images/self.jpg" width="200" style="margin-top: 80px;">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Built-with-Azure-Tools/">Built with Azure Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Supreme-Court-is-Usually-Badass/">The Supreme Court is Usually Badass</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure/">azure</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure-cli/">azure-cli</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csharp/">csharp</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/documentdb/">documentdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnet/">dotnet</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/microsoft/">microsoft</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scotus/">scotus</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/supreme-court/">supreme court</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/azure/" style="font-size: 16.67px;">azure</a> <a href="/tags/azure-cli/" style="font-size: 16.67px;">azure-cli</a> <a href="/tags/csharp/" style="font-size: 16.67px;">csharp</a> <a href="/tags/docker/" style="font-size: 13.33px;">docker</a> <a href="/tags/documentdb/" style="font-size: 10px;">documentdb</a> <a href="/tags/dotnet/" style="font-size: 16.67px;">dotnet</a> <a href="/tags/microsoft/" style="font-size: 16.67px;">microsoft</a> <a href="/tags/scotus/" style="font-size: 20px;">scotus</a> <a href="/tags/supreme-court/" style="font-size: 20px;">supreme court</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/05/Dockerize-your-Web-App/">Dockerize your Web App</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/11/Add-DocumentDB-to-your-Web-App/">Add DocumentDB to your Web App</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/03/NET-Core-Web-App-in-Azure/">Build a .NET Core Web App in Azure</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/">Issue 7: Burwell v. Hobby Lobby</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/01/Issue-6-United-States-v-Windsor/">Issue 6: United States v. Windsor</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Aaron Roney<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'twitchax-blog';
+  
+  var disqus_url = 'http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

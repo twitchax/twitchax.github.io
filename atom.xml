@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.aaroney.com/"/>
-  <updated>2017-04-26T22:35:51.000Z</updated>
+  <updated>2017-05-06T00:55:59.725Z</updated>
   <id>http://blog.aaroney.com/</id>
   
   <author>
@@ -14,6 +14,96 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Dockerize your Web App</title>
+    <link href="http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/"/>
+    <id>http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/</id>
+    <published>2017-05-06T00:00:00.000Z</published>
+    <updated>2017-05-06T00:55:59.725Z</updated>
+    
+    <content type="html"><![CDATA[<div class="toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+</ul>
+</li>
+<li><a href="#build">Build</a><ul>
+<li><a href="#build-and-pubish-docker-image">Build and pubish docker image</a><ul>
+<li><a href="#dockerfile">Dockerfile</a></li>
+<li><a href="#build-image">Build image</a></li>
+<li><a href="#publish-image">Publish image</a></li>
+</ul>
+</li>
+<li><a href="#create-and-deploy-web-app">Create and deploy web app</a></li>
+<li><a href="#test">Test</a></li>
+</ul>
+</li>
+<li><a href="#done">Done</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<h1 id="introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Let’s dockerize our web app!  We will be performing all operations using the <a href="https://github.com/Azure/azure-cli" target="_blank" rel="external">Azure CLI</a>, and all of our work will be built using <a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> on <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about" target="_blank" rel="external">Bash On Windows</a>, Linux, Mac OS.  If you have not already, make sure you have a <a href="/2017/02/03/NET-Core-Web-App-in-Azure/" title=".NET Core Web App">.NET Core Web App</a> ready to go.</p>
+<h2 id="prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
+<li>[Required] <a href="https://github.com/Azure/azure-cli" target="_blank" rel="external">Azure CLI</a> (<a href="https://docs.microsoft.com/en-us/cli/azure/install-az-cli2" target="_blank" rel="external">install guide</a>).</li>
+<li>[Required] <a href="https://www.microsoft.com/net/core" target="_blank" rel="external">.NET Core</a> (<a href="https://github.com/dotnet/cli" target="_blank" rel="external">CLI 1.0.0-rc4-004800+</a>).</li>
+<li>[Required] <a href="https://azure.microsoft.com/en-us/free/" target="_blank" rel="external">Azure Subscription</a>.</li>
+<li>[Required] <a href="https://git-scm.com/downloads" target="_blank" rel="external">git</a>.</li>
+<li>[Required] <a href="https://docs.docker.com/engine/installation/" target="_blank" rel="external">Docker</a>.</li>
+</ul>
+<h1 id="build"><a href="#Build" class="headerlink" title="Build"></a>Build</h1><blockquote>
+<p>NOTE: all command statements with multiple lines ignore the need for a newline escape.</p>
+</blockquote>
+<h2 id="build-and-pubish-docker-image"><a href="#Build-and-pubish-docker-image" class="headerlink" title="Build and pubish docker image"></a>Build and pubish docker image</h2><h3 id="dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h3><p>First, we need a dockerfile.  Minimally, we need a docker file that looks like this.</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">FROM</span> microsoft/aspnetcore</div><div class="line"><span class="keyword">LABEL</span> name="NetCoreHello"</div><div class="line"><span class="keyword">ENTRYPOINT</span> ["dotnet", "NetCoreHello.dll"]</div><div class="line">ARG source=bin/Release/netcoreapp1.<span class="number">1</span>/publish</div><div class="line"><span class="keyword">WORKDIR</span> /app</div><div class="line"><span class="keyword">EXPOSE</span> <span class="number">80</span></div><div class="line"><span class="keyword">COPY</span> $source .</div></pre></td></tr></table></figure>
+<h3 id="build-image"><a href="#Build-image" class="headerlink" title="Build image"></a>Build image</h3><p>Next, let’s create a docker image of our web app.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ dotnet publish -c Release</div><div class="line">$ docker build -t twitchax/netcorehello:v1 .</div></pre></td></tr></table></figure>
+<p>If you would like, you can check that your image was built properly.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ docker run -p 80:80 -it twitchax/netcorehello:v1</div><div class="line"></div><div class="line">Hosting environment: Production</div><div class="line">Content root path: /app</div><div class="line">Now listening on: http://+:80</div><div class="line">Application started. Press Ctrl+C to shut down.</div></pre></td></tr></table></figure>
+<p>We can verify that our site is working by navigating to <a href="http://localhost/api/name/Aaron" target="_blank" rel="external">http://localhost/api/name/Aaron</a> (or any endpoint in your app).</p>
+<h3 id="publish-image"><a href="#Publish-image" class="headerlink" title="Publish image"></a>Publish image</h3><p>Let’s pubish our image to docker hub (though, you can use any container registry).</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ docker login</div><div class="line">$ docker push twitchax/netcorehello:v1</div></pre></td></tr></table></figure>
+<h2 id="create-and-deploy-web-app"><a href="#Create-and-deploy-web-app" class="headerlink" title="Create and deploy web app"></a>Create and deploy web app</h2><p>First, we need to do some setup if you have not already done so (some of these steps may have been completed before, but we need an <code>--is-linux</code> container).</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ az group create -n DemoGroup <span class="_">-l</span> westus</div><div class="line">$ az appservice plan create -n DemoPlan -g DemoGroup --location westus --is-linux --sku B1</div><div class="line">$ az appservice web create -n DockerNetCoreHello -p DemoPlan -g DemoGroup</div></pre></td></tr></table></figure>
+<p>Finally, we need to configure our web app to run of our docker image.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ az appservice web config container update --docker-custom-image-name twitchax/netcorehello:v1 -n DockerNetCoreHello -g DemoGroup</div></pre></td></tr></table></figure>
+<h2 id="test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><p>You can use whatever method you prefer to test your new web app interaction with DocumentDB.  In my case, I am using <code>curl</code> with <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about" target="_blank" rel="external">Bash On Windows</a>.</p>
+<p>Get from an endpoint.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ curl http://https://dockernetcorehello.azurewebsites.net/api/hello/Aaron</div><div class="line">&#123;</div><div class="line">  <span class="string">"response"</span>: <span class="string">"Hello, Awesome Aaron‽"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="done"><a href="#Done" class="headerlink" title="Done"></a>Done</h1><p>That’s it!  In about 10 minutes, we have dockerized our web app and deployed it to Azure!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;div class=&quot;toc&quot;&gt;
+
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;Introduction&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#prerequisites&quot;&gt;Prerequisites&lt;/a&gt;&lt;/li&gt;
+&lt;/
+    
+    </summary>
+    
+      <category term="Built with Azure Tools" scheme="http://blog.aaroney.com/categories/Built-with-Azure-Tools/"/>
+    
+    
+      <category term="azure" scheme="http://blog.aaroney.com/tags/azure/"/>
+    
+      <category term="dotnet" scheme="http://blog.aaroney.com/tags/dotnet/"/>
+    
+      <category term="azure-cli" scheme="http://blog.aaroney.com/tags/azure-cli/"/>
+    
+      <category term="csharp" scheme="http://blog.aaroney.com/tags/csharp/"/>
+    
+      <category term="microsoft" scheme="http://blog.aaroney.com/tags/microsoft/"/>
+    
+      <category term="docker" scheme="http://blog.aaroney.com/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>Add DocumentDB to your Web App</title>

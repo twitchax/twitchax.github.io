@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html">
 <meta property="og:site_name" content="AaRoney's Blog">
 <meta property="og:description" content="What are killer demos for Azure PowerShell?  How do we get there?  IntroductionAs the de facto standard for Azure automation scenarios, Azure PowerShell is ubiquitous in its penetration of the cloud">
-<meta property="og:updated_time" content="2017-05-15T05:54:08.498Z">
+<meta property="og:updated_time" content="2017-05-15T05:58:56.346Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Azure PowerShell Strategy">
 <meta name="twitter:description" content="What are killer demos for Azure PowerShell?  How do we get there?  IntroductionAs the de facto standard for Azure automation scenarios, Azure PowerShell is ubiquitous in its penetration of the cloud">
@@ -160,7 +160,7 @@ ga('send', 'pageview');
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$ Login-Az</div><div class="line">$ New-AzRg MyRg | Set-AzDefaultRg</div><div class="line">$ <span class="variable">$webApp</span> = New-AzWeb -Name MyWebApp -Plan MyWebAppPlan</div><div class="line">$ git remote add azure <span class="variable">$webapp</span>.ScmUri</div><div class="line">$ git push azure master</div><div class="line"></div><div class="line">remote: Updating branch <span class="string">'master'</span>.        </div><div class="line">remote: Updating submodules.        </div><div class="line">remote: Preparing deployment <span class="keyword">for</span> commit id <span class="string">'ca1d79273a'</span>.        </div><div class="line">remote: Generating deployment script.        </div><div class="line">remote: Generating deployment script <span class="keyword">for</span> Web Site        </div><div class="line">remote: Generated deployment script files        </div><div class="line">remote: Running deployment command...        </div><div class="line">remote: Handling Basic Web Site deployment.        </div><div class="line">remote: KuduSync.NET from: <span class="string">'D:\home\site\repository'</span> to: <span class="string">'D:\home\site\wwwroot'</span>        </div><div class="line">remote: Deleting file: <span class="string">'hostingstart.html'</span>        </div><div class="line">remote: Copying file: <span class="string">'index.html'</span>        </div><div class="line">remote: Finished successfully.        </div><div class="line">remote: Running post deployment command(s)...        </div><div class="line">remote: Deployment successful.        </div><div class="line">To https://test-oytapcve.scm.azurewebsites.net</div><div class="line"> * [new branch]      master -&gt; master</div></pre></td></tr></table></figure>
 <h3 id="storage-scenarios"><a href="#Storage-scenarios" class="headerlink" title="Storage scenarios?"></a>Storage scenarios?</h3><h3 id="sql-scenarios"><a href="#SQL-scenarios" class="headerlink" title="SQL scenarios?"></a>SQL scenarios?</h3><h3 id="network-scenarios"><a href="#Network-scenarios" class="headerlink" title="Network scenarios?"></a>Network scenarios?</h3><h3 id="acsacrcontainer-scenarios"><a href="#ACS-ACR-Container-scenarios" class="headerlink" title="ACS/ACR/Container scenarios?"></a>ACS/ACR/Container scenarios?</h3><h3 id="function-app-awesomeness"><a href="#Function-app-awesomeness" class="headerlink" title="Function app awesomeness?"></a>Function app awesomeness?</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ Login-Az</div><div class="line">$ New-AzRg MyRg | Set-AzDefaultRg</div><div class="line">$ New-AzFunction -AppName MyFunctionApp -Source myFunction.js</div></pre></td></tr></table></figure>
 <h2 id="customer-feedback"><a href="#Customer-Feedback" class="headerlink" title="Customer Feedback"></a>Customer Feedback</h2><p>Some of these examples were shown to customers.  We received some good feedback on these strategy ideas.<br>All of the feedback compiled was in reference to <a href="#createVmWithGray">creating a VM with gray parameters</a> versus <a href="#createVmOld">creating a VM today</a>.</p>
-<h3 id="mark-gu"><a href="#Mark-Gu" class="headerlink" title="Mark Gu"></a>Mark Gu</h3><ul>
+<h3 id="mark-g"><a href="#Mark-G" class="headerlink" title="Mark G."></a>Mark G.</h3><ul>
 <li>About current script:<ul>
 <li>The script as it is today is not bad: variables could be serialized.</li>
 <li>Does not mind the length of the script because most of the networking entities would already be around for him to pull in.</li>
@@ -176,7 +176,7 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<h3 id="lenny-self"><a href="#Lenny-Self" class="headerlink" title="Lenny Self"></a>Lenny Self</h3><ul>
+<h3 id="lenny-s"><a href="#Lenny-S" class="headerlink" title="Lenny S."></a>Lenny S.</h3><ul>
 <li>About current script:<ul>
 <li>Logical defaults for most of the network setup stuff - it is great to have the capability, but this is too difficult to start up with.</li>
 <li>Length of cmdlet name: tab completion makes this less interesting.</li>
@@ -191,7 +191,7 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<h3 id="chris-dickerson"><a href="#Chris-Dickerson" class="headerlink" title="Chris Dickerson"></a>Chris Dickerson</h3><ul>
+<h3 id="chris-d"><a href="#Chris-D" class="headerlink" title="Chris D."></a>Chris D.</h3><ul>
 <li>About current script:<ul>
 <li>“It doesn’t look terrible.”</li>
 <li>“Not terribly convoluted, this is actually not that complex.”</li>
@@ -207,7 +207,7 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<h3 id="jon-cwiak"><a href="#Jon-Cwiak" class="headerlink" title="Jon Cwiak"></a>Jon Cwiak</h3><ul>
+<h3 id="jon-c"><a href="#Jon-C" class="headerlink" title="Jon C."></a>Jon C.</h3><ul>
 <li>About current script:<ul>
 <li>Immediate reaction is that this shows me the logical progression. It shows intent. Very procedural.</li>
 <li>“If I am an IT Pro, this makes perfect sense.”</li>
@@ -229,7 +229,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html" data-id="cj2pnigam00080mdfqb34spom" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html" data-id="cj2ppv443001w2adfc836m511" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html#disqus_thread" class="article-comment-link">Comments</a>
       

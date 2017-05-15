@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Azure PowerShell Customer Day 2017 | AaRoney&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Lenny SelfSenior Software Engineer, New Relic, https://github.com/geekexplorer.  Not a lot of powershell  Lots of azure stuff going forward  For automation, would use a scripting language like Python,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Azure PowerShell Customer Day 2017">
+<meta property="og:url" content="http://blog.aaroney.com/Azure-PowerShell-Customer-Day-2017/index.html">
+<meta property="og:site_name" content="AaRoney's Blog">
+<meta property="og:description" content="Lenny SelfSenior Software Engineer, New Relic, https://github.com/geekexplorer.  Not a lot of powershell  Lots of azure stuff going forward  For automation, would use a scripting language like Python,">
+<meta property="og:updated_time" content="2017-05-15T05:54:58.644Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Azure PowerShell Customer Day 2017">
+<meta name="twitter:description" content="Lenny SelfSenior Software Engineer, New Relic, https://github.com/geekexplorer.  Not a lot of powershell  Lots of azure stuff going forward  For automation, would use a scripting language like Python,">
+<meta name="twitter:creator" content="@twitchax">
+  
+    <link rel="alternate" href="/atom.xml" title="AaRoney&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-91476707-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">AaRoney&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.aaroney.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Azure-PowerShell-Customer-Day-2017/index.html" class="article-date">
+  <time datetime="2017-05-15T04:52:13.000Z" itemprop="datePublished">2017-05-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Azure PowerShell Customer Day 2017
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="lenny-self"><a href="#Lenny-Self" class="headerlink" title="Lenny Self"></a>Lenny Self</h2><p>Senior Software Engineer, New Relic, <a href="https://github.com/geekexplorer" target="_blank" rel="external">https://github.com/geekexplorer</a>.</p>
+<ul>
+<li>Not a lot of powershell </li>
+<li>Lots of azure stuff going forward </li>
+<li>For automation, would use a scripting language like Python, not a compiled language, not necessarily<br>PowerShell.</li>
+<li>2 people will be doing automation tasks related to the cloud </li>
+<li>Do you constantly update scripts, or write and pass off? Bit of both, spinning up resources are more constantly developing, build/test pipleine tends to be the other </li>
+<li>Do you develop in repl or in editor?  Use both, depends on familiarity - more start in editor </li>
+<li>Azure: more azure services in the org - different language agents working in Azure - for testing and internal processes.</li>
+<li>Containers? Functions? VM? More VMs but open to the new stuff, especially to increase their surface </li>
+<li>What would you use to choose? Containers are cool because you can move it, spin up multiple copies, easliy, Being able to run their profile in a container would be more important </li>
+<li>On the create vm script: <ul>
+<li>certificates instead of password for the vm </li>
+<li>pulling in your windows account credentials and add to the VM </li>
+<li>logical defaults for most of the network setup stuff - it is great to have the capability, but this is too difficult to start up with </li>
+<li>set up a default using a cmdlet </li>
+<li>fill out a couple of fields and default everything else</li>
+<li>Length of cmdlet name: tab completion makes this less interesting </li>
+<li>likes descriptive names by default</li>
+<li>doesn’t mind azure being spelled out, but abbreviations </li>
+<li>Set up a default resource group? Likes </li>
+<li>How to select images - value completion not important for this? </li>
+<li>Prompts with Force are a good way to balance prompting with scriptins </li>
+</ul>
+</li>
+<li>Output data for creating vm</li>
+<li>Default size? <ul>
+<li>Should default to smaller size </li>
+<li>Prompt for input plus default </li>
+<li>Setting up a session default </li>
+<li>Maintain across sessions + override locally</li>
+</ul>
+</li>
+</ul>
+<h2 id="mark-gu"><a href="#Mark-Gu" class="headerlink" title="Mark Gu"></a>Mark Gu</h2><p>Product Architect, Xero, <a href="https://www.linkedin.com/in/xuangu" target="_blank" rel="external">https://www.linkedin.com/in/xuangu</a>.</p>
+<ul>
+<li>Company is mainly AWS, not really using Azure.</li>
+<li>Use PowerShell for AWS.<ul>
+<li>Provision VMs.</li>
+<li>Deploy services.</li>
+<li>Getting status.</li>
+<li>Automation.</li>
+<li>Hooking up a new instance.</li>
+</ul>
+</li>
+<li>Do not really use the AWS Portal.</li>
+<li>150 people in organization.  80 engineers.</li>
+<li>10 using PowerShell/scripting for AWS.</li>
+<li>Using PowerShell from command line and scripts.</li>
+<li>Do a lot of resource management for VMs.</li>
+<li>Maintain a library of scripts that they all share.</li>
+<li>Maintain a lot of troubleshooting scripts to get information back.</li>
+<li>Recently wrote a script to write a script.  For DNS settings, migrating to a DNS zone.</li>
+<li>The love of PowerShell comes from the underlying .NET infrastructure.</li>
+<li>Loves the object model.</li>
+<li>Resisted using PowerShell for a long time, but loved it once he used it.</li>
+<li>Normally goes to MSDN/StackOverflow for help.</li>
+<li>Would only use PowerShell on Windows.  PowerShell Core is limited.</li>
+<li>AWS does not provide PowerShell Core cmdlets.</li>
+<li>Uses full virtual machines.</li>
+<li>Notes on current create VM example:<ul>
+<li>Made a note that you could serialize network variables and reload.</li>
+<li>Uses “Cloud Formation” (ARM template) to configure AWS VMs.</li>
+<li>Mostly has existing instances of things, so does not really mind the “longness” of the script for one*off VMs.</li>
+</ul>
+</li>
+<li>Notes on proposed create VM scenario:<ul>
+<li>“This is brilliant!”</li>
+<li>Loves the smart defaults.</li>
+<li>“What’s frustrating at AWS is that if you get something wrong, you just get exception…I Like the ‘guided’ experience.”</li>
+<li>Prompts should give a “suggested” default that happens when you hit ENTER, but if you want to type  specific name, then you can:<ul>
+<li>Create resource group (MyRg12345)?</li>
+<li>Choose size (Standard_DS_v2)?</li>
+<li>Choose image (WindowsServer2016)?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HATES INCONSISTENCIES BETWEEN CMDLETS IN AWS.</li>
+<li>WANTS CONSISTENCY.</li>
+</ul>
+<h2 id="chris-dickerson"><a href="#Chris-Dickerson" class="headerlink" title="Chris Dickerson"></a>Chris Dickerson</h2><p>Software Engineer, Technology Service Corporation, <a href="https://github.com/dev-cdd/" target="_blank" rel="external">https://github.com/dev-cdd/</a>.</p>
+<ul>
+<li>DOD: fips compliance not necessary</li>
+<li>Labview, MatLab/C</li>
+<li>Java to C Bridges</li>
+<li>People really need Labview, don’t work with compiled languages</li>
+<li>Labview records data very fast</li>
+<li>Barcode scanning with the last available Windows CE</li>
+<li>Programming on those platforms</li>
+<li>VM: Windows XP, Server 2008</li>
+<li>Programs scanner VMs</li>
+<li>Lots of Windows 10</li>
+<li>PowerShell workflow: Build a product for them to deploy<ul>
+<li>Detecting if I have a DVD Drive</li>
+<li>Build out a deployment for an existing customer</li>
+<li>Deploy using your scripts</li>
+</ul>
+</li>
+<li>Reaction to vm script:<ul>
+<li>It doesn’t look terrible</li>
+<li>Not terifically convoluted, this is actually not that complex</li>
+<li>Where to go for help: Books on PowerShell</li>
+<li>Custom modules: os is too old to run it</li>
+<li>Writes a script</li>
+<li>No central place for powershell scripts like nuget</li>
+<li>No nuget ui for powershell gallery</li>
+<li>No getting started stuff for PowerShell</li>
+</ul>
+</li>
+<li>New script:<ul>
+<li>Reduced set is way better</li>
+<li>Important to keep the power</li>
+<li>Json template is a good idea for creating complex objects</li>
+</ul>
+</li>
+<li>How would you discover templates?<ul>
+<li>Use the samples to build up your own template</li>
+<li>Comments inside the sample templates</li>
+<li>Samples are a preferred method of learning</li>
+<li>Reference based help doesn’t really tell you what you need to know, but the samples sjhow the pieces and the intent</li>
+</ul>
+</li>
+</ul>
+<h2 id="jon-cwiak"><a href="#Jon-Cwiak" class="headerlink" title="Jon Cwiak"></a>Jon Cwiak</h2><p>Software Architect, Humana, <a href="https://github.com/binaryjanitor" target="_blank" rel="external">https://github.com/binaryjanitor</a>.</p>
+<ul>
+<li>Do not use Azure PowerShell.</li>
+<li>Adopting Azure…heading there <em>really</em> fast.</li>
+<li>SQL, AD, Dynamics, Office 365, Custom Apps…all in Azure.</li>
+<li>External and internal partners.</li>
+<li>Tons of legacy code that they are trying to upgrade.</li>
+<li>His team owns the productivity tools, deployment pipelines, etc.</li>
+<li>Deploys via PowerShell, DSC.</li>
+<li>The scripts will soon become Azure PowerShell ARM templates.</li>
+<li>Loooooves PowerShell…he is trying to script everything and move it to Azure.</li>
+<li>Also looking at Azure Stack.</li>
+<li>Had HP and Cisco in to talk about implementing Azure Stack.</li>
+<li>Very excited to see shared ARM templates across Stack and Global Cloud.</li>
+<li>Not ready to put secrets outside the corporate firewall.</li>
+<li>DoD, government agreements.</li>
+<li>FIPS compliance!!!!1</li>
+<li>DevTest workloads are a must.</li>
+<li>Use a lot of TFS steps, but use DSC/PowerShell for automation.</li>
+<li>REALLY wants a declarative state of the system in source control.</li>
+<li>ALSO want the system, including the DB, infrastructure.</li>
+<li>Would not necessarily gravitate towards ARM template, but a lot of his team would be at a disadvantage when writing scripts because they aren’t programmers.</li>
+<li>How do you write your scripts? “Copy/paste a reference example, change what I need.”</li>
+<li>They use a Phoenix model.  Burn it to the ground and rebuild!</li>
+<li>He uses PowerShell as command*line ALL THE TIME: health monitoring, API automation, all sorts of things.</li>
+<li>Notes on current “create VM” scenario:<ul>
+<li>Immediate reaction is that this shows me the logical progression.  It shows intent.  Very procedural.</li>
+<li>“If I am an IT Pro, this makes perfect sense.”</li>
+<li>“To me, it seems awfully verbose.  There’s a lot of words.”</li>
+<li>“Lots of opportunities to make a mistake.”</li>
+</ul>
+</li>
+<li>Notes on proposed “create a VM” scenario:<ul>
+<li>“I like DSC.  It is declaritive.  I am describing the ‘what’ I want instead of ‘how’ I want.”</li>
+<li>“I like the declarative nature of this…not necessarily because it is shorter.”</li>
+<li>Length of cmdlet name makes almost no difference to you.</li>
+<li>It is declarative and more easy to read.</li>
+<li>“DSC is my best friend”, and this is like that.</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.aaroney.com/Azure-PowerShell-Customer-Day-2017/index.html" data-id="cj2pnkp7r000017dftthp3586" class="article-share-link">Share</a>
+      
+        <a href="http://blog.aaroney.com/Azure-PowerShell-Customer-Day-2017/index.html#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  <img src="/images/self.jpg" width="200" style="margin-top: 80px;">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Built-with-Azure-Tools/">Built with Azure Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Supreme-Court-is-Usually-Badass/">The Supreme Court is Usually Badass</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure/">azure</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure-cli/">azure-cli</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csharp/">csharp</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/documentdb/">documentdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnet/">dotnet</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/microsoft/">microsoft</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scotus/">scotus</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/supreme-court/">supreme court</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/azure/" style="font-size: 16.67px;">azure</a> <a href="/tags/azure-cli/" style="font-size: 16.67px;">azure-cli</a> <a href="/tags/csharp/" style="font-size: 16.67px;">csharp</a> <a href="/tags/docker/" style="font-size: 13.33px;">docker</a> <a href="/tags/documentdb/" style="font-size: 10px;">documentdb</a> <a href="/tags/dotnet/" style="font-size: 16.67px;">dotnet</a> <a href="/tags/microsoft/" style="font-size: 16.67px;">microsoft</a> <a href="/tags/scotus/" style="font-size: 20px;">scotus</a> <a href="/tags/supreme-court/" style="font-size: 20px;">supreme court</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/05/Dockerize-your-Web-App/">Dockerize your Web App</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/11/Add-DocumentDB-to-your-Web-App/">Add DocumentDB to your Web App</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/03/NET-Core-Web-App-in-Azure/">Build a .NET Core Web App in Azure</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/">Issue 7: Burwell v. Hobby Lobby</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/01/Issue-6-United-States-v-Windsor/">Issue 6: United States v. Windsor</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Aaron Roney<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'twitchax-blog';
+  
+  var disqus_url = 'http://blog.aaroney.com/Azure-PowerShell-Customer-Day-2017/index.html';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

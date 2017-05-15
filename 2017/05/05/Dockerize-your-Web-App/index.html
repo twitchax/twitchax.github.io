@@ -140,7 +140,7 @@ ga('send', 'pageview');
 <p>NOTE: all command statements with multiple lines ignore the need for a newline escape.</p>
 </blockquote>
 <h2 id="build-and-pubish-docker-image"><a href="#Build-and-pubish-docker-image" class="headerlink" title="Build and pubish docker image"></a>Build and pubish docker image</h2><h3 id="dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h3><p>First, we need a dockerfile.  Minimally, we need a docker file that looks like this.</p>
-<figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">FROM</span> microsoft/aspnetcore</div><div class="line"><span class="keyword">LABEL</span> name="NetCoreHello"</div><div class="line"><span class="keyword">ENTRYPOINT</span> ["dotnet", "NetCoreHello.dll"]</div><div class="line">ARG source=bin/Release/netcoreapp1.<span class="number">1</span>/publish</div><div class="line"><span class="keyword">WORKDIR</span> /app</div><div class="line"><span class="keyword">EXPOSE</span> <span class="number">80</span></div><div class="line"><span class="keyword">COPY</span> $source .</div></pre></td></tr></table></figure>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">FROM</span> microsoft/aspnetcore</div><div class="line"><span class="keyword">LABEL</span><span class="bash"> name=<span class="string">"NetCoreHello"</span></span></div><div class="line"><span class="keyword">ENTRYPOINT</span><span class="bash"> [<span class="string">"dotnet"</span>, <span class="string">"NetCoreHello.dll"</span>]</span></div><div class="line">ARG source=bin/Release/netcoreapp1.<span class="number">1</span>/publish</div><div class="line"><span class="keyword">WORKDIR</span><span class="bash"> /app</span></div><div class="line"><span class="keyword">EXPOSE</span> <span class="number">80</span></div><div class="line"><span class="keyword">COPY</span><span class="bash"> <span class="variable">$source</span> .</span></div></pre></td></tr></table></figure>
 <h3 id="build-image"><a href="#Build-image" class="headerlink" title="Build image"></a>Build image</h3><p>Next, let’s create a docker image of our web app.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ dotnet publish -c Release</div><div class="line">$ docker build -t twitchax/netcorehello:v1 .</div></pre></td></tr></table></figure>
 <p>If you would like, you can check that your image was built properly.</p>
@@ -160,7 +160,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/" data-id="cj2pq1qrn00073ndfm1a5pli4" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/" data-id="cj2ptyfty000m5ndf5fs7tlxw" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/#disqus_thread" class="article-comment-link">Comments</a>
       

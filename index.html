@@ -140,7 +140,7 @@ ga('send', 'pageview');
 <p>NOTE: all command statements with multiple lines ignore the need for a newline escape.</p>
 </blockquote>
 <h2 id="build-and-pubish-docker-image"><a href="#Build-and-pubish-docker-image" class="headerlink" title="Build and pubish docker image"></a>Build and pubish docker image</h2><h3 id="dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h3><p>First, we need a dockerfile.  Minimally, we need a docker file that looks like this.</p>
-<figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">FROM</span> microsoft/aspnetcore</div><div class="line"><span class="keyword">LABEL</span><span class="bash"> name=<span class="string">"NetCoreHello"</span></span></div><div class="line"><span class="keyword">ENTRYPOINT</span><span class="bash"> [<span class="string">"dotnet"</span>, <span class="string">"NetCoreHello.dll"</span>]</span></div><div class="line">ARG source=bin/Release/netcoreapp1.<span class="number">1</span>/publish</div><div class="line"><span class="keyword">WORKDIR</span><span class="bash"> /app</span></div><div class="line"><span class="keyword">EXPOSE</span> <span class="number">80</span></div><div class="line"><span class="keyword">COPY</span><span class="bash"> <span class="variable">$source</span> .</span></div></pre></td></tr></table></figure>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">FROM</span> microsoft/aspnetcore</div><div class="line"><span class="keyword">LABEL</span> name="NetCoreHello"</div><div class="line"><span class="keyword">ENTRYPOINT</span> ["dotnet", "NetCoreHello.dll"]</div><div class="line">ARG source=bin/Release/netcoreapp1.<span class="number">1</span>/publish</div><div class="line"><span class="keyword">WORKDIR</span> /app</div><div class="line"><span class="keyword">EXPOSE</span> <span class="number">80</span></div><div class="line"><span class="keyword">COPY</span> $source .</div></pre></td></tr></table></figure>
 <h3 id="build-image"><a href="#Build-image" class="headerlink" title="Build image"></a>Build image</h3><p>Next, let’s create a docker image of our web app.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ dotnet publish -c Release</div><div class="line">$ docker build -t twitchax/netcorehello:v1 .</div></pre></td></tr></table></figure>
 <p>If you would like, you can check that your image was built properly.</p>
@@ -160,7 +160,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/" data-id="cj3266hoj0003u4129c6x2017" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/" data-id="cj326720z0001vg12ompgtt4p" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -272,7 +272,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/" data-id="cj3266hoa0001u412bpsdds3m" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/" data-id="cj32672160003vg12gwk090l7" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -416,7 +416,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/" data-id="cj3266hpj000mu412bnn24bim" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/" data-id="cj326722a000mvg12m3sbaho4" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -520,7 +520,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/" data-id="cj3266hpg000ku4121yn574en" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/" data-id="cj3267227000kvg12dahcszub" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -614,7 +614,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/10/01/Issue-6-United-States-v-Windsor/" data-id="cj3266hp9000fu412iemll1ke" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2016/10/01/Issue-6-United-States-v-Windsor/" data-id="cj3267220000hvg1227i7uezx" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2016/10/01/Issue-6-United-States-v-Windsor/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -699,7 +699,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/" data-id="cj3266hp5000bu4122fu31pyl" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/" data-id="cj326721x000fvg1223kqcaom" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -783,7 +783,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/" data-id="cj3266hp20009u4122mceefy9" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/" data-id="cj326721t000bvg12wa41wg4o" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -857,7 +857,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/" data-id="cj3266hov0007u4122415fz1i" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/" data-id="cj326721r0009vg127rcuj1ha" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -934,7 +934,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/" data-id="cj3266hpb000hu412o8d3k5xv" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/" data-id="cj326721g0007vg12oedv78pb" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/#disqus_thread" class="article-comment-link">Comments</a>
       

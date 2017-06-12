@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.aaroney.com/Azure-PowerShell-Feature-Interviews/index.html</loc>
+    
+    <lastmod>2017-06-12T08:25:38.888Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html</loc>
     
-    <lastmod>2017-06-12T07:51:21.884Z</lastmod>
+    <lastmod>2017-06-12T08:22:27.537Z</lastmod>
     
   </url>
   

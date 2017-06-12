@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Azure PowerShell Feature Interviews | AaRoney&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="General VM Interview Current Cmdlet Design Hypotheses Cmdlet Output Hypotheses   Web App Interview Current Cmdlet Design Hypotheses Cmdlet Output Hypotheses   Conclusion     General How do you use">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Azure PowerShell Feature Interviews">
+<meta property="og:url" content="http://blog.aaroney.com/Azure-PowerShell-Feature-Interviews/index.html">
+<meta property="og:site_name" content="AaRoney's Blog">
+<meta property="og:description" content="General VM Interview Current Cmdlet Design Hypotheses Cmdlet Output Hypotheses   Web App Interview Current Cmdlet Design Hypotheses Cmdlet Output Hypotheses   Conclusion     General How do you use">
+<meta property="og:updated_time" content="2017-06-12T08:25:38.888Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Azure PowerShell Feature Interviews">
+<meta name="twitter:description" content="General VM Interview Current Cmdlet Design Hypotheses Cmdlet Output Hypotheses   Web App Interview Current Cmdlet Design Hypotheses Cmdlet Output Hypotheses   Conclusion     General How do you use">
+<meta name="twitter:creator" content="@twitchax">
+  
+    <link rel="alternate" href="/atom.xml" title="AaRoney&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-91476707-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">AaRoney&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.aaroney.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Azure-PowerShell-Feature-Interviews/index.html" class="article-date">
+  <time datetime="2017-06-12T07:53:14.000Z" itemprop="datePublished">2017-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Azure PowerShell Feature Interviews
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#general">General</a></li>
+<li><a href="#vm-interview">VM Interview</a><ul>
+<li><a href="#current">Current</a></li>
+<li><a href="#cmdlet-design-hypotheses">Cmdlet Design Hypotheses</a></li>
+<li><a href="#cmdlet-output-hypotheses">Cmdlet Output Hypotheses</a></li>
+</ul>
+</li>
+<li><a href="#web-app-interview">Web App Interview</a><ul>
+<li><a href="#current-1">Current</a></li>
+<li><a href="#cmdlet-design-hypotheses-1">Cmdlet Design Hypotheses</a></li>
+<li><a href="#cmdlet-output-hypotheses-1">Cmdlet Output Hypotheses</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<h2 id="general"><a href="#General" class="headerlink" title="General"></a>General</h2><ul>
+<li>How do you use PowerShell currently? </li>
+<li>How many on your team use Powershell? </li>
+<li>Do you share or distribute scripts and templates? How do you share these currently? </li>
+<li>How do you decide when to create a template or re-usable script versus entering commands?</li>
+<li>How often do you write scripts?  What are these scripts doing? </li>
+<li>What is the most important item that we could fix, change, or add to Powershell that would help you the most? </li>
+<li>Where do you go to find help on Powershell? How do you find what you need?</li>
+</ul>
+<h2 id="vm-interview"><a href="#VM-Interview" class="headerlink" title="VM Interview"></a>VM Interview</h2><h3 id="current"><a href="#Current" class="headerlink" title="Current"></a>Current</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Variables for common values</span></div><div class="line">$ <span class="variable">$resourceGroup</span> = <span class="string">"myResourceGroup"</span></div><div class="line">$ <span class="variable">$location</span> = <span class="string">"westeurope"</span></div><div class="line">$ <span class="variable">$vmName</span> = <span class="string">"myVM"</span></div><div class="line"></div><div class="line"><span class="comment"># Create user object</span></div><div class="line">$ <span class="variable">$cred</span> = <span class="built_in">Get-Credential</span> -Message <span class="string">"Enter a username and password for the virtual machine."</span></div><div class="line"></div><div class="line"><span class="comment"># Create a resource group</span></div><div class="line">$ New-AzureRmResourceGroup -Name <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span></div><div class="line"></div><div class="line"><span class="comment"># Create a subnet configuration</span></div><div class="line">$ <span class="variable">$subnetConfig</span> = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet -AddressPrefix <span class="number">192.168</span>.<span class="number">1.0</span>/<span class="number">24</span></div><div class="line"></div><div class="line"><span class="comment"># Create a virtual network</span></div><div class="line">$ <span class="variable">$vnet</span> = New-AzureRmVirtualNetwork -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -Name MYvNET -AddressPrefix <span class="number">192.168</span>.<span class="number">0.0</span>/<span class="number">16</span> -Subnet <span class="variable">$subnetConfig</span></div><div class="line"></div><div class="line"><span class="comment"># Create a public IP address and specify a DNS name</span></div><div class="line">$ <span class="variable">$pip</span> = New-AzureRmPublicIpAddress -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -Name <span class="string">"mypublicdns$(Get-Random)"</span> -AllocationMethod Static -IdleTimeoutInMinutes <span class="number">4</span></div><div class="line"></div><div class="line"><span class="comment"># Create an inbound network security group rule for port 3389</span></div><div class="line">$ <span class="variable">$nsgRuleRDP</span> = New-AzureRmNetworkSecurityRuleConfig -Name myNetworkSecurityGroupRuleRDP  -Protocol Tcp -Direction Inbound -Priority <span class="number">1000</span> -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange <span class="number">3389</span> -Access Allow</div><div class="line"></div><div class="line"><span class="comment"># Create a network security group</span></div><div class="line">$ <span class="variable">$nsg</span> = New-AzureRmNetworkSecurityGroup -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -Name myNetworkSecurityGroup -SecurityRules <span class="variable">$nsgRuleRDP</span></div><div class="line"></div><div class="line"><span class="comment"># Create a virtual network card and associate with public IP address and NSG</span></div><div class="line">$ <span class="variable">$nic</span> = New-AzureRmNetworkInterface -Name myNic -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -SubnetId <span class="variable">$vnet</span>.Subnets[<span class="number">0</span>].Id -PublicIpAddressId <span class="variable">$pip</span>.Id -NetworkSecurityGroupId <span class="variable">$nsg</span>.Id</div><div class="line"></div><div class="line"><span class="comment"># Create a virtual machine configuration</span></div><div class="line">$ <span class="variable">$vmConfig</span> = New-AzureRmVMConfig -VMName <span class="variable">$vmName</span> -VMSize Standard_D1 | Set-AzureRmVMOperatingSystem -Windows -ComputerName <span class="variable">$vmName</span> -Credential <span class="variable">$cred</span> | Set-AzureRmVMSourceImage -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus <span class="number">2016</span>-Datacenter -Version latest | Add-AzureRmVMNetworkInterface -Id <span class="variable">$nic</span>.Id</div><div class="line"></div><div class="line"><span class="comment"># Create a virtual machine</span></div><div class="line">$ New-AzureRmVM -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -VM <span class="variable">$vmConfig</span></div></pre></td></tr></table></figure>
+<h3 id="cmdlet-design-hypotheses"><a href="#Cmdlet-Design-Hypotheses" class="headerlink" title="Cmdlet Design Hypotheses"></a>Cmdlet Design Hypotheses</h3><ul>
+<li>Get live feedback from users on their general thoughts.</li>
+<li><p>Stack rank each of these features.</p>
+</li>
+<li><p>How would you use each of these features at the REPL?</p>
+</li>
+<li>How would you use each of these features in a script?</li>
+<li>Any of these options strike you as particularly confusing?</li>
+<li>Any of these options strike you as particularly awesome?</li>
+</ul>
+<h4 id="users-want-azure-powershell-to-automate-everything-for-them"><a href="#Users-want-Azure-PowerShell-to-automate-everything-for-them" class="headerlink" title="Users want Azure PowerShell to automate everything for them"></a>Users want Azure PowerShell to automate everything for them</h4><p>All parameters autogenerated.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ Login-AzAccount</div><div class="line">$ New-AzVm</div><div class="line">$</div></pre></td></tr></table></figure>
+<h4 id="users-want-azure-powershell-to-guide-them-with-smart-prompts"><a href="#Users-want-Azure-PowerShell-to-guide-them-with-smart-prompts" class="headerlink" title="Users want Azure PowerShell to guide them with smart prompts"></a>Users want Azure PowerShell to guide them with smart prompts</h4><p>Required parameters are prompted.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ Login-AzAccount</div><div class="line">$ New-AzVm -Name MyVm -Image WinServer2016</div><div class="line"></div><div class="line">Resource group options:</div><div class="line">   [Default] MyRg12345</div><div class="line">   [<span class="number">1</span>] MyRg1</div><div class="line">   [<span class="number">2</span>] MyRg2</div><div class="line">Enter your selection or a new resource group (leave blank <span class="keyword">for</span> default): MyCustomRgName</div><div class="line">$</div></pre></td></tr></table></figure>
+<h4 id="users-want-azure-powershell-to-provide-an-autogenerate-mechanism"><a href="#Users-want-Azure-PowerShell-to-provide-an-autogenerate-mechanism" class="headerlink" title="Users want Azure PowerShell to provide an autogenerate mechanism"></a>Users want Azure PowerShell to provide an autogenerate mechanism</h4><p>Unprovided parameters are autogenerated.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ Login-AzAccount</div><div class="line">$ New-AzVm -Auto</div><div class="line">$</div></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ Login-AzAccount</div><div class="line">$ New-AzVm -Name MyAwesomeVm -Auto</div><div class="line">$</div></pre></td></tr></table></figure>
+<h4 id="users-want-settable-defaults"><a href="#Users-want-settable-defaults" class="headerlink" title="Users want settable defaults"></a>Users want settable defaults</h4><p>A default resource group is persisted for this session.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ Login-Az</div><div class="line">$ New-AzRg MyRg | Set-AzDefaultRg</div><div class="line">$ New-AzVm -Name MyVm -Image WinServer2016</div><div class="line">$</div></pre></td></tr></table></figure>
+<h4 id="users-want-semantic-sizes"><a href="#Users-want-semantic-sizes" class="headerlink" title="Users want semantic sizes"></a>Users want semantic sizes</h4><p>A VM size that costs less than or equal to $50/month will be selected.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ Login-Az</div><div class="line">$ New-AzVm -Name MyVm -ResourceGroup MyRg -Image Ubuntu -Size <span class="number">50</span></div><div class="line">$</div></pre></td></tr></table></figure>
+<h3 id="cmdlet-output-hypotheses"><a href="#Cmdlet-Output-Hypotheses" class="headerlink" title="Cmdlet Output Hypotheses"></a>Cmdlet Output Hypotheses</h3><ul>
+<li>Stack rank each of the output options,</li>
+</ul>
+<h4 id="users-do-not-want-console-output-they-just-want-a-psobject"><a href="#Users-do-not-want-console-output-they-just-want-a-PSObject" class="headerlink" title="Users do not want console output: they just want a PSObject"></a>Users do not want console output: they just want a <code>PSObject</code></h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ Login-AzAccount</div><div class="line">$ <span class="variable">$result</span> = New-AzVm -Name MyAwesomeVm -Auto</div><div class="line">$</div></pre></td></tr></table></figure>
+<h4 id="users-want-output-regarding-smart-defaults-and-dependent-resources"><a href="#Users-want-output-regarding-smart-defaults-and-dependent-resources" class="headerlink" title="Users want output regarding smart defaults and dependent resources"></a>Users want output regarding smart defaults and dependent resources</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ Login-AzAccount</div><div class="line">$ New-AzVm -Name MyAwesomeVm -Auto</div><div class="line"></div><div class="line">Name: MyAwesomeVm.</div><div class="line">Resource group: MyRg12345.</div><div class="line">Image: WinServer2016.</div><div class="line">NIC: NicName.</div><div class="line">NSG: NSGName.</div><div class="line">  NSG Rule: Open, RDP (<span class="number">3389</span>).</div><div class="line">  NSG Rule: Open, PSRemote (<span class="number">5985</span>).</div><div class="line">  NSG Rule: Closed, all.</div><div class="line">Public IP: <span class="number">21.32</span>.<span class="number">43.54</span>.</div><div class="line">Size: Standard_DS1_v2.</div><div class="line">$</div></pre></td></tr></table></figure>
+<h4 id="users-want-output-with-helpful-next-steps"><a href="#Users-want-output-with-helpful-next-steps" class="headerlink" title="Users want output with helpful next steps"></a>Users want output with helpful next steps</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ Login-Az</div><div class="line">$ New-AzRg MyRg | Set-AzDefaultRg</div><div class="line">$ New-AzVm -Name MyVm -Image Ubuntu -Size <span class="number">50</span></div><div class="line"></div><div class="line">Connect to the VM with `ssh myvmdnslabel.centralus.cloudapp.azure.com`.</div><div class="line">$</div></pre></td></tr></table></figure>
+<h2 id="web-app-interview"><a href="#Web-App-Interview" class="headerlink" title="Web App Interview"></a>Web App Interview</h2><h3 id="current"><a href="#Current-1" class="headerlink" title="Current"></a>Current</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">$ <span class="variable">$gitdirectory</span>=<span class="string">"&lt;Replace with path to local Git repo&gt;"</span></div><div class="line">$ <span class="variable">$webappname</span>=<span class="string">"mywebapp$(Get-Random)"</span></div><div class="line">$ <span class="variable">$location</span>=<span class="string">"West Europe"</span></div><div class="line"></div><div class="line"><span class="comment"># Create a resource group.</span></div><div class="line">$ New-AzureRmResourceGroup -Name myResourceGroup -Location <span class="variable">$location</span></div><div class="line"></div><div class="line"><span class="comment"># Create an App Service plan in `Free` tier.</span></div><div class="line">$ New-AzureRmAppServicePlan -Name <span class="variable">$webappname</span> -Location <span class="variable">$location</span> -ResourceGroupName myResourceGroup -Tier Free</div><div class="line"></div><div class="line"><span class="comment"># Create a web app.</span></div><div class="line">$ New-AzureRmWebApp -Name <span class="variable">$webappname</span> -Location <span class="variable">$location</span> -AppServicePlan <span class="variable">$webappname</span> -ResourceGroupName myResourceGroup</div><div class="line"></div><div class="line"><span class="comment"># Configure GitHub deployment from your GitHub repo and deploy once.</span></div><div class="line">$ <span class="variable">$PropertiesObject</span> = @&#123;</div><div class="line">    scmType = <span class="string">"LocalGit"</span>;</div><div class="line">&#125;</div><div class="line">$ Set-AzureRmResource -PropertyObject <span class="variable">$PropertiesObject</span> -ResourceGroupName myResourceGroup -ResourceType Microsoft.Web/sites/config -ResourceName <span class="variable">$webappname</span>/web -ApiVersion <span class="number">2015</span>-<span class="number">08</span>-<span class="number">01</span> -Force</div><div class="line"></div><div class="line"><span class="comment"># Get app-level deployment credentials</span></div><div class="line">$ <span class="variable">$xml</span> = (Get-AzureRmWebAppPublishingProfile -Name <span class="variable">$webappname</span> -ResourceGroupName myResourceGroup -OutputFile null)</div><div class="line">$ <span class="variable">$username</span> = <span class="variable">$xml</span>.SelectNodes(<span class="string">"//publishProfile[@publishMethod=`"MSDeploy`"]/@userName"</span>).value</div><div class="line">$ <span class="variable">$password</span> = <span class="variable">$xml</span>.SelectNodes(<span class="string">"//publishProfile[@publishMethod=`"MSDeploy`"]/@userPWD"</span>).value</div><div class="line"></div><div class="line"><span class="comment"># Add the Azure remote to your local Git respository and push your code</span></div><div class="line"><span class="comment">#### This method saves your password in the git remote. You can use a Git credential manager to secure your password instead.</span></div><div class="line">$ git remote add azure <span class="string">"https://$&#123;username&#125;:<span class="variable">$password</span>@<span class="variable">$webappname</span>.scm.azurewebsites.net"</span></div><div class="line">$ git push azure master</div></pre></td></tr></table></figure>
+<h3 id="cmdlet-design-hypotheses"><a href="#Cmdlet-Design-Hypotheses-1" class="headerlink" title="Cmdlet Design Hypotheses"></a>Cmdlet Design Hypotheses</h3><ul>
+<li>Get live feedback from users on their general thoughts.</li>
+<li><p>Stack rank each of these features.</p>
+</li>
+<li><p>How would you use each of these features at the REPL?</p>
+</li>
+<li>How would you use each of these features in a script?</li>
+<li>Any of these options strike you as particularly confusing?</li>
+<li>Any of these options strike you as particularly awesome?</li>
+</ul>
+<h4 id="users-want-azure-powershell-to-automate-everything-for-them"><a href="#Users-want-Azure-PowerShell-to-automate-everything-for-them-1" class="headerlink" title="Users want Azure PowerShell to automate everything for them"></a>Users want Azure PowerShell to automate everything for them</h4><p>All parameters autogenerated.  The remote “azure” is added as a git remote if a repository exists.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ Login-Az</div><div class="line">$ New-AzWeb</div></pre></td></tr></table></figure>
+<h4 id="users-want-azure-powershell-to-guide-them-with-smart-prompts"><a href="#Users-want-Azure-PowerShell-to-guide-them-with-smart-prompts-1" class="headerlink" title="Users want Azure PowerShell to guide them with smart prompts"></a>Users want Azure PowerShell to guide them with smart prompts</h4><p>Required parameters are prompted.<br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ Login-Az</div><div class="line">$ New-AzRg MyRg | Set-AzDefaultRg</div><div class="line">$ New-AzWeb -Name MyWebApp</div><div class="line"></div><div class="line">Plan options:</div><div class="line">   [Default] MyPlan12345</div><div class="line">   [<span class="number">1</span>] MyPlan1</div><div class="line">   [<span class="number">2</span>] MyPlan2</div><div class="line">Enter your selection or a new resource group (leave blank <span class="keyword">for</span> default): <span class="comment"># &#123;Can skip to use default.&#125;</span></div><div class="line"></div><div class="line">A git repository was detected, would you like to add this web app as a remote named <span class="string">"azure"</span> (Y/n)? Y</div><div class="line">$</div></pre></td></tr></table></figure></p>
+<h4 id="users-want-azure-powershell-to-provide-an-autogenerate-mechanism"><a href="#Users-want-Azure-PowerShell-to-provide-an-autogenerate-mechanism-1" class="headerlink" title="Users want Azure PowerShell to provide an autogenerate mechanism"></a>Users want Azure PowerShell to provide an autogenerate mechanism</h4><p>Unprovided parameters are autogenerated.  As in “just do it”, git remotes are added automatically.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ Login-Az</div><div class="line">$ New-AzRg MyRg | Set-AzDefaultRg</div><div class="line">$ New-AzWeb -Auto</div><div class="line">$</div></pre></td></tr></table></figure>
+<h4 id="users-want-explicit-action-switches"><a href="#Users-want-explicit-action-switches" class="headerlink" title="Users want explicit action switches"></a>Users want explicit action switches</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ Login-Az</div><div class="line">$ New-AzRg MyRg | Set-AzDefaultRg</div><div class="line">$ New-AzWeb -Name MyWebApp -Plan MyWebAppPlan -AddRemote</div><div class="line"></div><div class="line">Git repository detected, added remote <span class="string">"azure"</span>.</div><div class="line">$</div></pre></td></tr></table></figure>
+<h4 id="users-want-the-source-code-management-uri-returned-as-part-of-the-response"><a href="#Users-want-the-source-code-management-URI-returned-as-part-of-the-response" class="headerlink" title="Users want the source code management URI returned as part of the response"></a>Users want the source code management URI returned as part of the response</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ Login-Az</div><div class="line">$ New-AzRg MyRg | Set-AzDefaultRg</div><div class="line">$ <span class="variable">$webApp</span> = New-AzWeb -Name MyWebApp -Plan MyWebAppPlan</div><div class="line">$ git remote add azure <span class="variable">$webapp</span>.ScmUri</div><div class="line">$ git push azure master</div><div class="line">$</div></pre></td></tr></table></figure>
+<h3 id="cmdlet-output-hypotheses"><a href="#Cmdlet-Output-Hypotheses-1" class="headerlink" title="Cmdlet Output Hypotheses"></a>Cmdlet Output Hypotheses</h3><ul>
+<li>Stack rank each of the output options,</li>
+</ul>
+<h4 id="users-do-not-want-console-output-they-just-want-a-psobject"><a href="#Users-do-not-want-console-output-they-just-want-a-PSObject-1" class="headerlink" title="Users do not want console output: they just want a PSObject"></a>Users do not want console output: they just want a <code>PSObject</code></h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ Login-AzAccount</div><div class="line">$ <span class="variable">$result</span> = New-AzVm -Name MyAwesomeVm -Auto</div><div class="line"></div><div class="line">Resource Group: MyRg12345.</div><div class="line">Plan: MyPlan12345.</div><div class="line">$</div></pre></td></tr></table></figure>
+<h4 id="users-want-output-regarding-smart-defaults-and-dependent-resources"><a href="#Users-want-output-regarding-smart-defaults-and-dependent-resources-1" class="headerlink" title="Users want output regarding smart defaults and dependent resources"></a>Users want output regarding smart defaults and dependent resources</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ Login-Az</div><div class="line">$ New-AzRg MyRg | Set-AzDefaultRg</div><div class="line">$ <span class="variable">$webApp</span> = New-AzWeb -Name MyWebApp -Plan MyWebAppPlan</div><div class="line"></div><div class="line">Use `ScmUri` to deploy via git, GitHub or FTP.  <span class="keyword">For</span> example, you can configure a local git remote with `git remote add azure <span class="variable">$result</span>.ScmUri`.</div><div class="line">$</div></pre></td></tr></table></figure>
+<h4 id="users-want-output-with-helpful-next-steps"><a href="#Users-want-output-with-helpful-next-steps-1" class="headerlink" title="Users want output with helpful next steps"></a>Users want output with helpful next steps</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ Login-Az</div><div class="line">$ New-AzRg MyRg | Set-AzDefaultRg</div><div class="line">$ <span class="variable">$webApp</span> = New-AzWeb -Name MyWebApp -Plan MyWebAppPlan</div><div class="line"></div><div class="line">Use `ScmUri` to deploy via git, GitHub or FTP.  <span class="keyword">For</span> example, you can configure a local git remote with `git remote add azure <span class="variable">$result</span>.ScmUri`.</div><div class="line">$</div></pre></td></tr></table></figure>
+<h2 id="conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.aaroney.com/Azure-PowerShell-Feature-Interviews/index.html" data-id="cj3tvjmp5000020dfaw3zfvf6" class="article-share-link">Share</a>
+      
+        <a href="http://blog.aaroney.com/Azure-PowerShell-Feature-Interviews/index.html#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  <img src="/images/self.jpg" width="200" style="margin-top: 80px;">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Built-with-Azure-Tools/">Built with Azure Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Supreme-Court-is-Usually-Badass/">The Supreme Court is Usually Badass</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure/">azure</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure-cli/">azure-cli</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csharp/">csharp</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/documentdb/">documentdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnet/">dotnet</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/microsoft/">microsoft</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scotus/">scotus</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/supreme-court/">supreme court</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/azure/" style="font-size: 16.67px;">azure</a> <a href="/tags/azure-cli/" style="font-size: 16.67px;">azure-cli</a> <a href="/tags/csharp/" style="font-size: 16.67px;">csharp</a> <a href="/tags/docker/" style="font-size: 13.33px;">docker</a> <a href="/tags/documentdb/" style="font-size: 10px;">documentdb</a> <a href="/tags/dotnet/" style="font-size: 16.67px;">dotnet</a> <a href="/tags/microsoft/" style="font-size: 16.67px;">microsoft</a> <a href="/tags/scotus/" style="font-size: 20px;">scotus</a> <a href="/tags/supreme-court/" style="font-size: 20px;">supreme court</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/05/Dockerize-your-Web-App/">Dockerize your Web App</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/11/Add-DocumentDB-to-your-Web-App/">Add DocumentDB to your Web App</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/03/NET-Core-Web-App-in-Azure/">Build a .NET Core Web App in Azure</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/">Issue 7: Burwell v. Hobby Lobby</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/01/Issue-6-United-States-v-Windsor/">Issue 6: United States v. Windsor</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Aaron Roney<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'twitchax-blog';
+  
+  var disqus_url = 'http://blog.aaroney.com/Azure-PowerShell-Feature-Interviews/index.html';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

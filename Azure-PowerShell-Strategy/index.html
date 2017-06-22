@@ -5,17 +5,17 @@
   
   <title>Azure PowerShell Strategy | AaRoney&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Introduction Compete Azure PowerShell Azure CLI 2.0 GCloud AWS Heroku Zeit Now   Proposed Areas of Improvement Core Improvements Scenario-based Cmdlets Experimental Improvements Other   Killer Dem">
+  <meta name="description" content="Introduction Investment Areas Compete Azure PowerShell Azure CLI 2.0 GCloud AWS Heroku Zeit Now   Proposed Areas of Improvement Core Improvements Scenario-based Cmdlets Experimental Improvements O">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Azure PowerShell Strategy">
 <meta property="og:url" content="http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html">
 <meta property="og:site_name" content="AaRoney's Blog">
-<meta property="og:description" content="Introduction Compete Azure PowerShell Azure CLI 2.0 GCloud AWS Heroku Zeit Now   Proposed Areas of Improvement Core Improvements Scenario-based Cmdlets Experimental Improvements Other   Killer Dem">
+<meta property="og:description" content="Introduction Investment Areas Compete Azure PowerShell Azure CLI 2.0 GCloud AWS Heroku Zeit Now   Proposed Areas of Improvement Core Improvements Scenario-based Cmdlets Experimental Improvements O">
 <meta property="og:image" content="http://blog.aaroney.com/Azure-PowerShell-Strategy/index/PS_Experiment_Discussion.jpg">
-<meta property="og:updated_time" content="2017-06-12T08:22:27.537Z">
+<meta property="og:updated_time" content="2017-06-22T07:02:45.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Azure PowerShell Strategy">
-<meta name="twitter:description" content="Introduction Compete Azure PowerShell Azure CLI 2.0 GCloud AWS Heroku Zeit Now   Proposed Areas of Improvement Core Improvements Scenario-based Cmdlets Experimental Improvements Other   Killer Dem">
+<meta name="twitter:description" content="Introduction Investment Areas Compete Azure PowerShell Azure CLI 2.0 GCloud AWS Heroku Zeit Now   Proposed Areas of Improvement Core Improvements Scenario-based Cmdlets Experimental Improvements O">
 <meta name="twitter:image" content="http://blog.aaroney.com/Azure-PowerShell-Strategy/index/PS_Experiment_Discussion.jpg">
 <meta name="twitter:creator" content="@twitchax">
   
@@ -106,6 +106,7 @@ ga('send', 'pageview');
 <!-- toc -->
 <ul>
 <li><a href="#introduction">Introduction</a></li>
+<li><a href="#investment-areas">Investment Areas</a></li>
 <li><a href="#compete">Compete</a><ul>
 <li><a href="#azure-powershell">Azure PowerShell</a></li>
 <li><a href="#azure-cli-20">Azure CLI 2.0</a></li>
@@ -151,6 +152,110 @@ ga('send', 'pageview');
 <h2 id="introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>As the de facto standard for Azure automation scenarios, Azure PowerShell is ubiquitous in its penetration of the cloud market.  This penetration means that all services across Azure must provide their users with workable Azure PowerShell cmdlets.  Historically, Azure PowerShell was largely owned by a single team; however, over time, the model for Azure PowerShell has become a “hub and spoke”, where the Azure PowerShell feature team provides repositories, guidelines, static analysis, reviews, build tools, and publish tools, and service teams own the design and functionality of their cmdlets.  This model functions well, and it is within this model that Azure PowerShell successfully cemented itself as the de facto standard for Azure automation scenarios.</p>
 <p>Through the years of this “hub and spoke” model, Azure PowerShell became, for all intents and purposes, a “mature” product.  We say this because most of the practices, guidelines, and processes have been in place and well-oiled for quite some time.  Its maturity has brought high usage and a solid customer base.  However, this maturity and stable complacency comes at a cost to investment in innovation.</p>
 <p>Azure PowerShell has become somewhat of a “second thought” to service teams; however, the recent emphasis on Azure CLI 2.0 by management has led this team and others to re-evaluate the value of Azure PowerShell and its place in the each resource provider’s lifecycle.  It is with this renewed emphasis on developer tools (especially CLIs) in Azure that our team hopes to accomplish drastic improvements to the Azure PowerShell experience.  This document will view other cloud platforms and Azure CLI 2.0 itself as competitors in an effort to properly determine how Azure PowerShell stacks up with the innovations of other CLIs (both internal and external).</p>
+<h2 id="investment-areas"><a href="#Investment-Areas" class="headerlink" title="Investment Areas"></a>Investment Areas</h2><table>
+<thead>
+<tr>
+<th>Investment</th>
+<th>Goal</th>
+<th>Scenarios</th>
+<th>Priority</th>
+<th>Cost Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cmdlet Modernization, Reduce Barrier to Entry</td>
+<td>TBD</td>
+<td>Shorten cmdlet and parameter names which will improve script readability and tab completion scenarios.</td>
+<td>1</td>
+<td>Dev</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Improve smart defaults to enable users to work through scenarios (especially creation scenarios) with greater ease.  This includes product-wide defaults and environment-specific defaults.</td>
+<td>0</td>
+<td>Dev</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Improve creation scenarios by redesigning cmdlets with common scenarios in mind.  This includes interactive experiences, directed experiences and lower overall barrier to entry via the aforementioned improvements.</td>
+<td>1</td>
+<td>PM, Dev</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Improve utility by providing directed output for users.  That is, ensure users are aware of “common next steps” by providing output which directs users towards those common subsequent tasks.</td>
+<td>2</td>
+<td>PM, Dev</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Approach consistency in the low complexity of scenarios by converging on a ”mostly shared” ARM template layer with Azure CLI.</td>
+<td>1</td>
+<td>PM, Dev</td>
+</tr>
+<tr>
+<td>Ecosystem Support</td>
+<td>TBD</td>
+<td>Convert all of the AzureRM modules to PowerShell Core (via the Azure SDK for .NET Core).  This enables key scenarios which the PowerShell Core team is attempting to deliver, and allows for AzureRM usage on Mac/Linux.</td>
+<td>0</td>
+<td>Dev</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Support Azure Stack scenarios with improvements to the Profile system.</td>
+<td>1</td>
+<td>Dev</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Support the Consistent Cloud in Azure PowerShell Integration in Cloud Shell by providing improvements (such as .NET Core support) which ensure key scenarios in the browser.</td>
+<td>1</td>
+<td>Dev</td>
+</tr>
+<tr>
+<td>Engineering Improvements</td>
+<td>TBD</td>
+<td>Improve documentation and samples, along with the planned product improvements, to empower users in their engineering efforts.</td>
+<td>2</td>
+<td>PM, Docs</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Manage issues and improvements in GitHub by fixing or closing issues within a specified time period SLA.  We will first cleanup existing issues to achieve a well-known state.</td>
+<td>1</td>
+<td>PM, Management</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Author reporting tools which supply common statistics (e.g., issue close rate, documentation quality, etc.) to partner teams.</td>
+<td>2</td>
+<td>PM, Dev</td>
+</tr>
+<tr>
+<td>Awareness</td>
+<td>TBD</td>
+<td>Make telemetry improvements which will paint a consistent picture across Azure developer tools and drive meaningful insight into how our product changes impact our customers.</td>
+<td>2</td>
+<td>PM, Dev</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Engage the community by publishing community standups, regular tutorial videos, and interviews with team members.</td>
+<td>1</td>
+<td>PM</td>
+</tr>
+</tbody>
+</table>
 <h2 id="compete"><a href="#Compete" class="headerlink" title="Compete"></a>Compete</h2><h3 id="azure-powershell"><a href="#Azure-PowerShell" class="headerlink" title="Azure PowerShell"></a>Azure PowerShell</h3><p>Create VM.<a name="createVmOld"></a></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Variables for common values</span></div><div class="line">$ <span class="variable">$resourceGroup</span> = <span class="string">"myResourceGroup"</span></div><div class="line">$ <span class="variable">$location</span> = <span class="string">"westeurope"</span></div><div class="line">$ <span class="variable">$vmName</span> = <span class="string">"myVM"</span></div><div class="line"></div><div class="line"><span class="comment"># Create user object</span></div><div class="line">$ <span class="variable">$cred</span> = <span class="built_in">Get-Credential</span> -Message <span class="string">"Enter a username and password for the virtual machine."</span></div><div class="line"></div><div class="line"><span class="comment"># Create a resource group</span></div><div class="line">$ New-AzureRmResourceGroup -Name <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span></div><div class="line"></div><div class="line"><span class="comment"># Create a subnet configuration</span></div><div class="line">$ <span class="variable">$subnetConfig</span> = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet -AddressPrefix <span class="number">192.168</span>.<span class="number">1.0</span>/<span class="number">24</span></div><div class="line"></div><div class="line"><span class="comment"># Create a virtual network</span></div><div class="line">$ <span class="variable">$vnet</span> = New-AzureRmVirtualNetwork -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -Name MYvNET -AddressPrefix <span class="number">192.168</span>.<span class="number">0.0</span>/<span class="number">16</span> -Subnet <span class="variable">$subnetConfig</span></div><div class="line"></div><div class="line"><span class="comment"># Create a public IP address and specify a DNS name</span></div><div class="line">$ <span class="variable">$pip</span> = New-AzureRmPublicIpAddress -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -Name <span class="string">"mypublicdns$(Get-Random)"</span> -AllocationMethod Static -IdleTimeoutInMinutes <span class="number">4</span></div><div class="line"></div><div class="line"><span class="comment"># Create an inbound network security group rule for port 3389</span></div><div class="line">$ <span class="variable">$nsgRuleRDP</span> = New-AzureRmNetworkSecurityRuleConfig -Name myNetworkSecurityGroupRuleRDP  -Protocol Tcp -Direction Inbound -Priority <span class="number">1000</span> -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange <span class="number">3389</span> -Access Allow</div><div class="line"></div><div class="line"><span class="comment"># Create a network security group</span></div><div class="line">$ <span class="variable">$nsg</span> = New-AzureRmNetworkSecurityGroup -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -Name myNetworkSecurityGroup -SecurityRules <span class="variable">$nsgRuleRDP</span></div><div class="line"></div><div class="line"><span class="comment"># Create a virtual network card and associate with public IP address and NSG</span></div><div class="line">$ <span class="variable">$nic</span> = New-AzureRmNetworkInterface -Name myNic -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -SubnetId <span class="variable">$vnet</span>.Subnets[<span class="number">0</span>].Id -PublicIpAddressId <span class="variable">$pip</span>.Id -NetworkSecurityGroupId <span class="variable">$nsg</span>.Id</div><div class="line"></div><div class="line"><span class="comment"># Create a virtual machine configuration</span></div><div class="line">$ <span class="variable">$vmConfig</span> = New-AzureRmVMConfig -VMName <span class="variable">$vmName</span> -VMSize Standard_D1 | Set-AzureRmVMOperatingSystem -Windows -ComputerName <span class="variable">$vmName</span> -Credential <span class="variable">$cred</span> | Set-AzureRmVMSourceImage -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus <span class="number">2016</span>-Datacenter -Version latest | Add-AzureRmVMNetworkInterface -Id <span class="variable">$nic</span>.Id</div><div class="line"></div><div class="line"><span class="comment"># Create a virtual machine</span></div><div class="line">$ New-AzureRmVM -ResourceGroupName <span class="variable">$resourceGroup</span> -Location <span class="variable">$location</span> -VM <span class="variable">$vmConfig</span></div></pre></td></tr></table></figure>
 <p>Create and deploy web app.</p>
@@ -316,7 +421,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html" data-id="cj3tvnuij002i4kdfnhrpavro" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html" data-id="cj482xitu00020bdf2aygenes" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html#disqus_thread" class="article-comment-link">Comments</a>
       

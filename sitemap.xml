@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.aaroney.com/OSS-Summit-Talk/index.html</loc>
+    
+    <lastmod>2017-09-13T19:33:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.aaroney.com/Azure-PowerShell-Strategy/index.html</loc>
     
-    <lastmod>2017-07-24T05:43:44.540Z</lastmod>
+    <lastmod>2017-07-24T05:43:44.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.aaroney.com/Azure-PowerShell-Feature-Interviews/index.html</loc>
     
-    <lastmod>2017-06-22T09:41:38.373Z</lastmod>
+    <lastmod>2017-06-22T09:41:38.000Z</lastmod>
     
   </url>
   

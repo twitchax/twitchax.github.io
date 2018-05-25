@@ -141,7 +141,7 @@ ga('send', 'pageview');
 <p>NOTE: all command statements with multiple lines ignore the need for a newline escape.</p>
 </blockquote>
 <h2><span id="build-and-pubish-docker-image">Build and pubish docker image</span></h2><h3><span id="dockerfile">Dockerfile</span></h3><p>First, we need a dockerfile.  Minimally, we need a docker file that looks like this.</p>
-<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> microsoft/aspnetcore</span><br><span class="line"><span class="keyword">LABEL</span><span class="bash"> name=<span class="string">"NetCoreHello"</span></span></span><br><span class="line"><span class="bash">ENTRYPOINT [<span class="string">"dotnet"</span>, <span class="string">"NetCoreHello.dll"</span>]</span></span><br><span class="line"><span class="bash">ARG <span class="built_in">source</span>=bin/Release/netcoreapp1.1/publish</span></span><br><span class="line"><span class="bash">WORKDIR /app</span></span><br><span class="line"><span class="bash">EXPOSE 80</span></span><br><span class="line"><span class="bash">COPY <span class="variable">$source</span> .</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> microsoft/aspnetcore</span><br><span class="line"><span class="keyword">LABEL</span> name="NetCoreHello"</span><br><span class="line">ENTRYPOINT ["dotnet", "NetCoreHello.dll"]</span><br><span class="line">ARG source=bin/Release/netcoreapp1.1/publish</span><br><span class="line">WORKDIR /app</span><br><span class="line">EXPOSE 80</span><br><span class="line">COPY $source .</span><br></pre></td></tr></table></figure>
 <h3><span id="build-image">Build image</span></h3><p>Next, let’s create a docker image of our web app.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ dotnet publish -c Release</span><br><span class="line">$ docker build -t twitchax/netcorehello:v1 .</span><br></pre></td></tr></table></figure>
 <p>If you would like, you can check that your image was built properly.</p>
@@ -161,7 +161,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/" data-id="cjh9nxf7g00035f12wgyu0c26" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/" data-id="cjhmjhipu0001v4122cb386cx" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2017/05/05/Dockerize-your-Web-App/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -273,7 +273,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/" data-id="cjh9nxf7900015f12cc9ita0v" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/" data-id="cjhmjhiq40003v412n4f41j6w" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2017/02/11/Add-DocumentDB-to-your-Web-App/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -417,7 +417,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/" data-id="cjh9nxf82000f5f121a34uav4" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/" data-id="cjhmjhiqv000ev412610rn94x" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2017/02/03/NET-Core-Web-App-in-Azure/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -521,7 +521,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/" data-id="cjh9nxf9200285f1281a6lovh" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/" data-id="cjhmjhis00027v412etq43a63" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -621,7 +621,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/10/01/Issue-6-United-States-v-Windsor/" data-id="cjh9nxf9000265f12dqmg18dc" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2016/10/01/Issue-6-United-States-v-Windsor/" data-id="cjhmjhirz0025v412fwlscxcm" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2016/10/01/Issue-6-United-States-v-Windsor/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -706,7 +706,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/" data-id="cjh9nxf80000e5f12qeqs8y1i" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/" data-id="cjhmjhiqp000dv412w9etgymf" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2016/09/01/Issue-5-Fred-Korematsu-v-United-States/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -790,7 +790,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/" data-id="cjh9nxf7s000b5f12kuyr4d9j" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/" data-id="cjhmjhiqg000av412waouseja" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2016/07/01/Issue-3-George-W-Bush-and-Richard-Cheney-Petitioners-v-Albert-Gore-Jr-and-Joseph-Lieberman-et-al/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -864,7 +864,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/" data-id="cjh9nxf7q00095f12fezseph3" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/" data-id="cjhmjhiqd0009v412dcnebzwr" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2016/06/01/Issue-2-James-McCulloch-v-The-State-of-Maryland-John-James/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -947,7 +947,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/" data-id="cjh9nxf7n00075f12nin20c1x" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/" data-id="cjhmjhiqa0007v412km2irfuf" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/2016/05/01/Issue-1-Marbury-v-Madison-5-U-S-1-Cranch-137-1803/#disqus_thread" class="article-comment-link">Comments</a>
       

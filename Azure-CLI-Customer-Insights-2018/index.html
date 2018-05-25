@@ -13,7 +13,7 @@
 <meta property="og:description" content="Azure CLI Customer Insights (201805) Survey Results 1 For approximately how long have you been using Azure CLI? 2 How likely is it that you would recommend Azure CLI to a friend or colleague (1 is">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://blog.aaroney.com/Azure-CLI-Customer-Insights-2018/index/FeatureRanking.png">
-<meta property="og:updated_time" content="2018-05-16T20:00:01.883Z">
+<meta property="og:updated_time" content="2018-05-25T22:08:12.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Azure CLI Customer Insights 2018">
 <meta name="twitter:description" content="Azure CLI Customer Insights (201805) Survey Results 1 For approximately how long have you been using Azure CLI? 2 How likely is it that you would recommend Azure CLI to a friend or colleague (1 is">
@@ -250,11 +250,57 @@ ga('send', 'pageview');
 <li>A little of both, but power users are definitely using scripts.</li>
 <li>Most customers have not heard of or used <code>az interactive</code>, but many thought it was cool when shown to them.</li>
 </ul>
-<h2><span id="customer-summary">Customer Summary</span></h2><h2><span id="next-steps">Next Steps</span></h2><h3><span id="team-brainstorming">Team Brainstorming</span></h3><h3><span id="customer-interviews">Customer Interviews</span></h3><h3><span id="hci-interviews">HCI Interviews</span></h3>
+<h2><span id="customer-summary">Customer Summary</span></h2><h2><span id="next-steps">Next Steps</span></h2><h3><span id="team-brainstorming">Team Brainstorming</span></h3><ul>
+<li>Problem Hypotheses:<ul>
+<li>Customers are frustrated with some packages (dep, rpm, yum) because it brings in Python 3 unnecessarily.</li>
+</ul>
+</li>
+<li>Brand New Features:<ul>
+<li><code>az hub</code>: cli-based dashboard for IT Pros, monitoring, deployment status.  Maybe not live…just print useful pre-set stuff.</li>
+<li><code>--example</code> that can query samples from GitHub.  As in, keep the examples in <code>--help</code>, but also allow the user to query against GitHub samples.</li>
+<li>“Broadcast” feature in the product that can query an endpoint and display announcements (e.g., breaking or major change announcements).</li>
+<li>“Update Broadcast” that lets people know that updates are available.</li>
+<li>Print release notes on install.</li>
+<li>Add an easter egg for some event.</li>
+<li>CLI leveraged as an SDK.  Call CLI commands from Python.</li>
+</ul>
+</li>
+<li>Improvements:<ul>
+<li>Better logging between none and <code>--debug</code> for <strong>troubleshooting</strong>.  <code>--debug</code> is too verbose and <code>--verbose</code> is, ironically, not verbose enough.</li>
+<li>Status code differentiation is not consistent.  The error messages are often not descriptive enough.</li>
+<li>Conditional creates: “create this thing if it does not exist”.</li>
+<li><code>az find</code> improvements: better spell checking.</li>
+<li>Opt-in to autocorrect.  That is, <code>az newtork</code> would automatically assume <code>az network</code> if you turned the feature on.</li>
+<li>Allow <code>rg/name</code> for an <code>--id</code> field on <code>show</code> commands.</li>
+<li><code>az aladdin query</code>: query aladdin for doc suggestions.</li>
+</ul>
+</li>
+<li>Infrastructure:<ul>
+<li>There should be a common pattern for CRUD operations across the product.  Possible make this <strong>fully automated</strong>.  Evaluate internal limitations and recognize problems that make this untenable.</li>
+<li>Better mechanisms for managing customer interest in feature ideas, etc.  GitHub, UserVoice.  Announcement or feature repository?</li>
+<li>KILL PYTHON 2.</li>
+</ul>
+</li>
+<li>Documentation:<ul>
+<li>Stack Overflow Day: everyone go in and self answer questions about certain scenarios.</li>
+<li>Better documentation for <code>az interactive</code> and <code>az alias</code> to drive usage.</li>
+</ul>
+</li>
+<li>Telemetry:<ul>
+<li>Failure telemetry is difficult to understand.  Johan and Troy to sync.</li>
+</ul>
+</li>
+<li>VS Code / Cloud Shell:<ul>
+<li>Invest into VS Code extension from our team.</li>
+<li>Put <code>az interactive</code> in VS Code.</li>
+</ul>
+</li>
+</ul>
+<h3><span id="customer-interviews">Customer Interviews</span></h3><h3><span id="hci-interviews">HCI Interviews</span></h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/Azure-CLI-Customer-Insights-2018/index.html" data-id="cjh9nxf7600005f123bgvedgf" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/Azure-CLI-Customer-Insights-2018/index.html" data-id="cjhmjhis00026v412c2vlx4ll" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/Azure-CLI-Customer-Insights-2018/index.html#disqus_thread" class="article-comment-link">Comments</a>
       

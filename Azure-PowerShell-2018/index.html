@@ -13,7 +13,7 @@
 <meta property="og:description" content="Azure PowerShell 2018 Survey Results 1 For approximately how long have you been using Azure PowerShell? 2 How likely is it that you would recommend Azure PowerShell to a friend or colleague (1 is">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://blog.aaroney.com/Azure-PowerShell-2018/index/FeatureRanking.png">
-<meta property="og:updated_time" content="2018-05-30T07:48:51.927Z">
+<meta property="og:updated_time" content="2018-05-30T23:02:25.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Azure PowerShell 2018">
 <meta name="twitter:description" content="Azure PowerShell 2018 Survey Results 1 For approximately how long have you been using Azure PowerShell? 2 How likely is it that you would recommend Azure PowerShell to a friend or colleague (1 is">
@@ -297,7 +297,60 @@ ga('send', 'pageview');
 <li>“I use Azure CLI because that’s what the docs tell me to use” </li>
 <li>“there are many things that seemed to cause it to be installed” </li>
 </ul>
-<h2><span id="customer-summary">Customer Summary</span></h2><h2><span id="next-steps">Next Steps</span></h2><h3><span id="team-brainstorming">Team Brainstorming</span></h3><h3><span id="problemconcept-interviews">Problem/Concept Interviews</span></h3><p>June 2018.</p>
+<h2><span id="customer-summary">Customer Summary</span></h2><h2><span id="next-steps">Next Steps</span></h2><h3><span id="team-brainstorming">Team Brainstorming</span></h3><ul>
+<li>Customer Hypotheses:<ul>
+<li>Customers are using versions that are so old, they are unaware of sovereign cloud issues.</li>
+</ul>
+</li>
+<li>Problem Hypotheses:<ul>
+<li>Customers are frustrated with lacking support for sovereign cloud management.</li>
+<li>Customers are frustrated when using a machine with multiple AzureRM versions installed due to version loading precedence in PowerShell.</li>
+</ul>
+</li>
+<li>Brand New Features:<ul>
+<li><code>Start-AzureRmCommandCenter</code>: like dashboard for Portal, but like <code>htop</code>.</li>
+<li>Fuzzy search for command names and command descriptions in cmdlet form, maybe <code>Find-AzureRmCommand</code>.</li>
+<li>Cross-service providers with awesome <code>ls</code>ing (e.g., <code>ls</code> in a vnet could actually list resources attached to the vnet).</li>
+</ul>
+</li>
+<li>Improvements:<ul>
+<li>Resource Id completers, and “linked” completers between the pieces of a resource Id.</li>
+<li><code>My-Cmd -ResourceGroupName rg -Name name</code> =&gt; <code>My-Cmd -Id rg/name</code>.<ul>
+<li>We need questions to tease out what customers would want here.  “Validated hypothesis is that it sucks to work with Ids and their component parts”.</li>
+</ul>
+</li>
+<li>[In response to above hypothesis] Azure PowerShell should have “stub” cmdlets after breaking changes when cmdlets are removed to notify customers.</li>
+<li>Convenience cmdlets with high level of specificity (e.g., <code>New-AzureRmWindowsVm</code>).</li>
+<li>Better alias strategy: that is, come up with an “alias formula” that is consistent (e.g., but not limited to, <code>Get-AzureRmVM</code> =&gt; <code>gazvm</code>).</li>
+</ul>
+</li>
+<li>Infrastructure:</li>
+<li>Documentation:<ul>
+<li>Stack Overflow Day.`</li>
+<li>Ensure that we have good reference examples.</li>
+<li>Ensure that we have good service team PowerShell documentation (from customer feedback).</li>
+<li>Up-to-date model documentation to go along with reference documentation.</li>
+<li>Start a medium blog series that actually works.</li>
+<li>Add aliases to documentation (this should <em>possibly</em> be done the right way [e.g., with PowerShell/PlatyPS cooperation]).</li>
+</ul>
+</li>
+<li>Telemetry:</li>
+<li>VS Code / Cloud Shell:</li>
+<li>PowerShell Core:<ul>
+<li><code>Install-Module</code> hook for <code>OnInstallScript</code>.</li>
+<li>There should be an actually good <code>Uninstall-Module</code>.</li>
+<li>There should be an actually good <code>Update-Module</code>.</li>
+<li>There should be some notification system for <code>PowerShellGet</code> that informs user of updates to modules.</li>
+<li>Work with PowerShell team to “bless” third party utilities that make the customer experience better.</li>
+<li><code>Verb-Noun</code> continues to be the worst syntax on the planet: plz fix.</li>
+</ul>
+</li>
+<li>Azure Automation:<ul>
+<li>Better versioning/upgrading in Azure Automation: get rid of older versions.</li>
+</ul>
+</li>
+</ul>
+<h3><span id="problemconcept-interviews">Problem/Concept Interviews</span></h3><p>June 2018.</p>
 <h3><span id="hcifeature-interviews">HCI/Feature Interviews</span></h3><p>September 2018.</p>
 <h2><span id="titanium-themes">Titanium Themes</span></h2><p><strong>Azure PowerShell Team to provide feedback on the theme titles, and I will fill them in.</strong></p>
 <p>All items here are <em>themes</em>: i.e., specific items are pending customer feedback.</p>
@@ -337,7 +390,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/Azure-PowerShell-2018/index.html" data-id="cjhst7ock002635ys3eqijc9a" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/Azure-PowerShell-2018/index.html" data-id="cjhtpud420021xy12mns0m7k4" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/Azure-PowerShell-2018/index.html#disqus_thread" class="article-comment-link">Comments</a>
       

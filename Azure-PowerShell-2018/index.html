@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Azure PowerShell 2018 | AaRoney&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Azure PowerShell Customer Insights (201805) Survey Results 1 For approximately how long have you been using Azure PowerShell? 2 How likely is it that you would recommend Azure PowerShell to a frie">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Azure PowerShell 2018">
+<meta property="og:url" content="http://blog.aaroney.com/Azure-PowerShell-2018/index.html">
+<meta property="og:site_name" content="AaRoney&#39;s Blog">
+<meta property="og:description" content="Azure PowerShell Customer Insights (201805) Survey Results 1 For approximately how long have you been using Azure PowerShell? 2 How likely is it that you would recommend Azure PowerShell to a frie">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://blog.aaroney.com/Azure-PowerShell-2018/index/FeatureRanking.png">
+<meta property="og:updated_time" content="2018-05-30T07:46:58.962Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Azure PowerShell 2018">
+<meta name="twitter:description" content="Azure PowerShell Customer Insights (201805) Survey Results 1 For approximately how long have you been using Azure PowerShell? 2 How likely is it that you would recommend Azure PowerShell to a frie">
+<meta name="twitter:image" content="http://blog.aaroney.com/Azure-PowerShell-2018/index/FeatureRanking.png">
+<meta name="twitter:creator" content="@twitchax">
+  
+    <link rel="alternate" href="/atom.xml" title="AaRoney&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-91476707-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">AaRoney&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.aaroney.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Azure-PowerShell-2018/index.html" class="article-date">
+  <time datetime="2018-05-16T07:00:00.000Z" itemprop="datePublished">2018-05-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Azure PowerShell 2018
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#azure-powershell-customer-insights-201805">Azure PowerShell Customer Insights (201805)</a><ul>
+<li><a href="#survey-results">Survey Results</a><ul>
+<li><a href="#1-for-approximately-how-long-have-you-been-using-azure-powershell">1 For approximately how long have you been using Azure PowerShell?</a></li>
+<li><a href="#2-how-likely-is-it-that-you-would-recommend-azure-powershell-to-a-friend-or-colleague-1-is-the-least-10-is-the-most">2 How likely is it that you would recommend Azure PowerShell to a friend or colleague (1 is the least, 10 is the most)?</a></li>
+<li><a href="#3-what-could-azure-powershell-change-to-make-you-more-likely-to-recommend-it">3 What could Azure PowerShell change to make you more likely to recommend it?</a></li>
+<li><a href="#4-how-would-you-rate-the-overall-quality-of-azure-powershell-1-is-the-least-10-is-the-most">4 How would you rate the overall quality of Azure PowerShell (1 is the least, 10 is the most)?</a></li>
+<li><a href="#5-what-could-azure-powershell-change-to-improve-its-overall-quality">5 What could Azure PowerShell change to improve its overall quality?</a></li>
+<li><a href="#6-how-well-does-azure-powershell-meet-your-needs-1-is-the-least-10-is-the-most">6 How well does Azure PowerShell meet your needs (1 is the least, 10 is the most)?</a></li>
+<li><a href="#7-what-could-azure-powershell-change-to-help-meet-your-needs-better">7 What could Azure PowerShell change to help meet your needs better?</a></li>
+<li><a href="#8-what-currentfuture-azure-powershell-features-are-most-important-to-you">8 What current/future Azure PowerShell features are most important to you?</a></li>
+<li><a href="#9-please-describe-a-new-feature-eg-create-vm-convenience-cmdlets-or-design-eg-asjob-support-that-recently-delighted-you-in-your-experience-with-azure-powershell">9 Please describe a new feature (e.g., create VM convenience cmdlets) or design (e.g., -AsJob support) that recently delighted you in your experience with Azure PowerShell.</a></li>
+<li><a href="#10-do-you-have-any-other-recommendations-comments-questions-or-concerns-for-the-azure-powershell-team">10 Do you have any other recommendations, comments, questions, or concerns for the Azure PowerShell team?</a></li>
+</ul>
+</li>
+<li><a href="#build-developer-day">Build Developer Day</a><ul>
+<li><a href="#hypothesis-types">Hypothesis Types</a></li>
+<li><a href="#problem-we-believe-azure-powershell-customers-are-frustrated-by-the-rollup-package-because-it-is-getting-too-big-and-unwieldy">Problem: We believe Azure Powershell customers are frustrated by the rollup package because it is getting too big and unwieldy.</a></li>
+<li><a href="#problem-we-believe-azure-powershell-customers-encounter-difficulty-when-using-documentation-in-azure-powershell-because-a-bad-in-product-samples-b-too-many-commands-c-too-flat-of-structure-d-poor-search-capabilities-etc">Problem: We believe Azure PowerShell customers encounter difficulty when using documentation in Azure PowerShell because: (a) bad in-product samples, (b) too many commands, (c) too flat of structure, (d) poor search capabilities, etc.</a></li>
+<li><a href="#problem-we-believe-azure-powershell-customers-want-even-more-convenience-commands-and-they-want-them-to-extend-to-update-scenarios">Problem: We believe Azure PowerShell customers want even more convenience commands, and they want them to extend to <code>Update-</code> scenarios.</a></li>
+<li><a href="#problem-we-believe-that-customers-are-disheartened-when-documentation-and-samples-prioritize-azure-cli">Problem: We believe that customers are disheartened when documentation and samples prioritize Azure CLI.</a></li>
+</ul>
+</li>
+<li><a href="#customer-summary">Customer Summary</a></li>
+<li><a href="#next-steps">Next Steps</a><ul>
+<li><a href="#team-brainstorming">Team Brainstorming</a></li>
+<li><a href="#problemconcept-interviews">Problem/Concept Interviews</a></li>
+<li><a href="#hcifeature-interviews">HCI/Feature Interviews</a></li>
+</ul>
+</li>
+<li><a href="#titanium-themes">Titanium Themes</a><ul>
+<li><a href="#1-realization-of-az">1 Realization of <code>Az</code></a></li>
+<li><a href="#2-customer-engagement">2 Customer Engagement</a></li>
+<li><a href="#3-featurecmdlet-discovery">3 Feature/Cmdlet Discovery</a></li>
+<li><a href="#4-documentation">4 Documentation</a></li>
+<li><a href="#5-convenience-and-consistency">5 Convenience and Consistency</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<h1><span id="azure-powershell-customer-insights-201805">Azure PowerShell Customer Insights (201805)</span></h1><h2><span id="survey-results">Survey Results</span></h2><p>There were 72 responses to the survey.</p>
+<h3><span id="1-for-approximately-how-long-have-you-been-using-azure-powershell">1 For approximately how long have you been using Azure PowerShell?</span></h3><p>The responses were fairly spread out.</p>
+<table>
+<thead>
+<tr>
+<th>Answer</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Less than 1 year</td>
+<td>6</td>
+</tr>
+<tr>
+<td>1 - 2 years</td>
+<td>17</td>
+</tr>
+<tr>
+<td>2 - 3 years</td>
+<td>18</td>
+</tr>
+<tr>
+<td>3 - 4 years.</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Over 4 years</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="2-how-likely-is-it-that-you-would-recommend-azure-powershell-to-a-friend-or-colleague-1-is-the-least-10-is-the-most">2 How likely is it that you would recommend Azure PowerShell to a friend or colleague (1 is the least, 10 is the most)?</span></h3><p>The average rating was 8.86 with the following breakdown.</p>
+<table>
+<thead>
+<tr>
+<th>Answer</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 - 6 (detractors)</td>
+<td>2 (2.78%)</td>
+</tr>
+<tr>
+<td>7 - 8 (neutrals)</td>
+<td>26 (36.11%)</td>
+</tr>
+<tr>
+<td>9 - 10 (promoters)</td>
+<td>44 (61.11%)</td>
+</tr>
+</tbody>
+</table>
+<p>These results yield an approximate <a href="https://en.wikipedia.org/wiki/Net_Promoter" target="_blank" rel="noopener"><strong>NPS</strong></a> of <strong>58</strong>.</p>
+<h3><span id="3-what-could-azure-powershell-change-to-make-you-more-likely-to-recommend-it">3 What could Azure PowerShell change to make you more likely to recommend it?</span></h3><p>The following are customer verbatims (bolding applied post):</p>
+<ul>
+<li>“Beter [sic] help with more examples”</li>
+<li>“<strong>Documentation</strong>“</li>
+<li>“There are a lot of opportunities to simplify the PowerShell commands while retaining the level of control that we expect when using it. Streamlining some of the <strong>commands</strong> so that they are <strong>uniquely valuable</strong> rather than mimicking the REST API would make it easier to adopt and therefore recommend.”</li>
+<li>“Make Azure PowerShell embrace the <strong>fundamentals</strong> of what makes <strong>PowerShell</strong> so powerful”</li>
+<li>“<strong>Simplified</strong> AAD commands similar to <code>az ad sp create-for-rbac</code> [formatting added] would also be awesome.”</li>
+<li>“Implement fixes given through GitHib issues.”</li>
+<li>“Additional <strong>tab complete</strong> on resources”</li>
+<li>“Make it more interoperable with C# and make the <strong>commands more discoverable</strong>.”</li>
+<li>“<strong>Documentation</strong> improvements. e.g. more examples.”</li>
+<li>“<strong>Documented</strong> changes between releases and guidance how to migrate your scripts from one version to another.”</li>
+<li>“More <strong>consistency</strong> across each of the modules. Some components like ASR are practically learning an entirely new component.”</li>
+<li>“Improve the <strong>documentation</strong>, there is a lack of documentation and examples on many powershell cmdlets, this can sometimes make it difficult to work out how to correctly use some parameters”</li>
+<li>“<strong>Consistency</strong> improvements, less low-level, atomic commands, more high level commands, adhere to PowerShell standards.”</li>
+<li>“I feel the key here is to ensure that <strong>feature parity</strong> for all areas is maintained for PowerShell over the cli/web gui.”</li>
+<li>“Maintain <strong>parity</strong> with features/commands released with Azure CLI”</li>
+</ul>
+<h3><span id="4-how-would-you-rate-the-overall-quality-of-azure-powershell-1-is-the-least-10-is-the-most">4 How would you rate the overall quality of Azure PowerShell (1 is the least, 10 is the most)?</span></h3><p>The average rating was 8.22.</p>
+<h3><span id="5-what-could-azure-powershell-change-to-improve-its-overall-quality">5 What could Azure PowerShell change to improve its overall quality?</span></h3><p>The following are customer verbatims (bolding applied post):</p>
+<ul>
+<li>“<strong>DOCUMENTATION</strong> OF COMMANDLETS. Some teams are great in documenting their commandlets. Others don’t do it at all.”</li>
+<li>“Commandlet <strong>inconsistency</strong> is one of the most <strong>frustrating</strong> parts (parameters within and between modules don’t always use the same naming, for example)”</li>
+<li>“<strong>examples</strong> and <strong>docs</strong> for everything”</li>
+<li>“More accurate/complete help <strong>documentation</strong>. Better examples of how some commands relate to each other so that examples are more effective.”</li>
+<li>“More <strong>testing</strong>. There are a lot of commands that only partially support the services features. Often they fail in unexpected ways and often there’s no easy way to pipe commands together when it would be expected.”</li>
+<li>“<strong>make it easier</strong> and <strong>less typing</strong> (make complex tasks simpler) better support for jobs”</li>
+<li>“Improve <strong>documentation</strong>.”</li>
+<li>“Pretty good as is”</li>
+</ul>
+<h3><span id="6-how-well-does-azure-powershell-meet-your-needs-1-is-the-least-10-is-the-most">6 How well does Azure PowerShell meet your needs (1 is the least, 10 is the most)?</span></h3><p>The average rating was 8.56.</p>
+<h3><span id="7-what-could-azure-powershell-change-to-help-meet-your-needs-better">7 What could Azure PowerShell change to help meet your needs better?</span></h3><p>The following are customer verbatims (bolding applied post):</p>
+<ul>
+<li>“There are functionalities which are available only via CLI”</li>
+<li>“Be more <strong>efficient</strong> in terms of commands. One easy example: If I’m creating a VM, then I need a NIC and obviously a VNET. The VNET has a location so why do the NIC/VM/disk/etc all also mandate separate prompts for location?”</li>
+<li>“More <strong>consistency</strong> - lots of per-service differences between Update- and Set- operations.”</li>
+<li>“More <strong>examples</strong> and better explainantions [sic] on how the exampels [sic] work.”</li>
+<li>“<strong>Simplify</strong> some actions”</li>
+<li>“Better and conplete [sic] support for <strong>PowerShell core</strong>.”</li>
+<li>“<strong>Auto upgrade</strong> of commandlets”</li>
+</ul>
+<h3><span id="8-what-currentfuture-azure-powershell-features-are-most-important-to-you">8 What current/future Azure PowerShell features are most important to you?</span></h3><p>Customers were asked to rank certain features, and these were the results.</p>
+<p><img src="index/FeatureRanking.png" alt="Feature Ranking"></p>
+<h3><span id="9-please-describe-a-new-feature-eg-create-vm-convenience-cmdlets-or-design-eg-asjob-support-that-recently-delighted-you-in-your-experience-with-azure-powershell">9 Please describe a new feature (e.g., create VM convenience cmdlets) or design (e.g., -AsJob support) that recently delighted you in your experience with Azure PowerShell.</span></h3><p>The following are customer verbatims (bolding applied post):</p>
+<ul>
+<li>“The simplified <code>New-AzureRmVM</code> command was a great addition (creating a VM with one command)”</li>
+<li>“<code>-AsJob</code> for sure and the <strong>tab completion</strong> for things like resource groups etc”</li>
+<li>“<code>-asjob</code> support is great!”</li>
+<li>“<strong>AKS</strong>“</li>
+<li>“Getting <code>Connect-AzureRmAccount</code> and <code>Disconnect-AzureRmAccount</code> in place instead of other poor command names.”</li>
+<li>“definitely <code>-AsJob</code>!”</li>
+<li>“Parameter <strong>completion</strong>“</li>
+</ul>
+<h3><span id="10-do-you-have-any-other-recommendations-comments-questions-or-concerns-for-the-azure-powershell-team">10 Do you have any other recommendations, comments, questions, or concerns for the Azure PowerShell team?</span></h3><p>The following are customer verbatims (bolding applied post):</p>
+<ul>
+<li>“keep up the good work. More public / customer engagements to put the word out.”</li>
+<li>“Good job!”</li>
+<li>“Doing a great job, PowerShell in Azure makes life so much easier!”</li>
+<li>“Thank you”</li>
+<li>“The PowerShell team is awesome!”</li>
+<li>“Convenience command seem fine but a pattern that allows conposavility [sic] is important when doing that”</li>
+<li>“Please, where there is a portal action build this in PowerShell also. Recent experience we here this hasn’t been the case in setting default OMS workspace in ASC”</li>
+</ul>
+<h2><span id="build-developer-day">Build Developer Day</span></h2><h3><span id="hypothesis-types">Hypothesis Types</span></h3><ul>
+<li>Customer: We believe that type of customers are motivated to motivation when doing job-to-be-done.</li>
+<li>Problem: We believe that type of customers are frustrated by job-to-be-done because of problem.</li>
+<li>Concept: We believe that concept will solve problem and be valuable to type of customers while doing job-to-be-done.  We will know this to be true when we see criteria.</li>
+<li>Feature: We believe type of customers will be successful solving problem using feature while doing job-to-be-done.  We will know they were successful when we see criteria.</li>
+<li>Business: We believe type of customers will realize business outcome by employing business action.  We will know this to be true when we see criteria.</li>
+</ul>
+<h3><span id="problem-we-believe-azure-powershell-customers-are-frustrated-by-the-rollup-package-because-it-is-getting-too-big-and-unwieldy">Problem: We believe Azure Powershell customers are frustrated by the rollup package because it is getting too big and unwieldy.</span></h3><p><strong>Invalidated</strong>: customers are not frustrated by the number of modules or the size, in general, but they are frustrated by an inability to sift through the documentation and cmdlets to find the specific cmdlets they need.</p>
+<h3><span id="problem-we-believe-azure-powershell-customers-encounter-difficulty-when-using-documentation-in-azure-powershell-because-a-bad-in-product-samples-b-too-many-commands-c-too-flat-of-structure-d-poor-search-capabilities-etc">Problem: We believe Azure PowerShell customers encounter difficulty when using documentation in Azure PowerShell because: (a) bad in-product samples, (b) too many commands, (c) too flat of structure, (d) poor search capabilities, etc.</span></h3><p><strong>Validated</strong>: customers generally report an inability to reach a workable solution in the product or documentation alone, and they typically go somewhere like Stack Overflow for quick solutions.</p>
+<ul>
+<li>Most customers continue to use Google, then StackOverflow.</li>
+<li>In-product documentation is lacking, leading to customers using Google, etc.</li>
+<li>Hard to figure out what the cmdlet is that I want in PowerShell.”</li>
+<li>“I want one place where I can discover all of this [i.e., convenience commands]; I just need the example.”</li>
+</ul>
+<h3><span id="problem-we-believe-azure-powershell-customers-want-even-more-convenience-commands-and-they-want-them-to-extend-to-update-scenarios">Problem: We believe Azure PowerShell customers want even more convenience commands, and they want them to extend to <code>Update-</code> scenarios.</span></h3><p><strong>Validated</strong>: customers continue to show high interest in improvements to cmdlet and overall product convenience.</p>
+<ul>
+<li>Customers want more convenience.</li>
+<li>Resource group convenience commands.</li>
+<li>Some comments about mor Monitor, Storage, Cognitive Services, and CosmosDb support.</li>
+<li>More tab completion.</li>
+</ul>
+<h3><span id="problem-we-believe-that-customers-are-disheartened-when-documentation-and-samples-prioritize-azure-cli">Problem: We believe that customers are disheartened when documentation and samples prioritize Azure CLI.</span></h3><p><strong>Validated</strong>: customers, especially those steeped in PowerShell, find the lack of service documentation for Azure PowerShell concerning, as most of the documentation is tailored to Azure CLI, by default.  Azure PowerShell seems like an after-thought in service team documentation.</p>
+<ul>
+<li>“it seems like Azure CLI is the thing everything is always used.”</li>
+<li>“I’m not even sure if Azure PowerShell exists anymore”</li>
+<li>“I use Azure CLI because that’s what the docs tell me to use” </li>
+<li>“there are many things that seemed to cause it to be installed” </li>
+</ul>
+<h2><span id="customer-summary">Customer Summary</span></h2><h2><span id="next-steps">Next Steps</span></h2><h3><span id="team-brainstorming">Team Brainstorming</span></h3><h3><span id="problemconcept-interviews">Problem/Concept Interviews</span></h3><p>June 2018.</p>
+<h3><span id="hcifeature-interviews">HCI/Feature Interviews</span></h3><p>September 2018.</p>
+<h2><span id="titanium-themes">Titanium Themes</span></h2><p><strong>Azure PowerShell Team to provide feedback on the theme titles, and I will fill them in.</strong></p>
+<p>All items here are <em>themes</em>: i.e., specific items are pending customer feedback.</p>
+<h3><span id="1-realization-of-az">1 Realization of <code>Az</code></span></h3><p>Theme Ideas:</p>
+<ul>
+<li>NET Standard module.</li>
+<li>Doc updates.</li>
+<li>Aliases to old cmdlets.</li>
+</ul>
+<p><strong>Need to put the full plan here. :)</strong></p>
+<h3><span id="2-customer-engagement">2 Customer Engagement</span></h3><p>Theme Ideas:</p>
+<ul>
+<li>Increase Customer Interviews.</li>
+<li>Problem, Concept, and Feature Hypothesis Testing.</li>
+<li>Community Standup Engagement.</li>
+</ul>
+<h3><span id="3-featurecmdlet-discovery">3 Feature/Cmdlet Discovery</span></h3><p>Theme Ideas:</p>
+<ul>
+<li>Possibly invest in a command similar to <code>az find</code>?</li>
+<li>Feature broadcasts in product.</li>
+<li>Aladdin integration.</li>
+</ul>
+<h3><span id="4-documentation">4 Documentation</span></h3><p>Theme Ideas:</p>
+<ul>
+<li>Service team documentation needs to cover Azure PowerShell.</li>
+<li>Stack Overflow Day.</li>
+<li>More examples in command reference.</li>
+<li>Better documentation of features (e.g., <code>-AsJob</code>, tab completion, etc.).</li>
+</ul>
+<h3><span id="5-convenience-and-consistency">5 Convenience and Consistency</span></h3><p>Theme Ideas:</p>
+<ul>
+<li>Autogeneration of CRUD operations.</li>
+<li>Monitor convenience commands.</li>
+<li>A command that has a “dashboard” (similar to Portal Dashboard, but selected vis monitor commands in terminal).</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.aaroney.com/Azure-PowerShell-2018/index.html" data-id="cjhst5eeo0026wtysvlh30n8y" class="article-share-link">Share</a>
+      
+        <a href="http://blog.aaroney.com/Azure-PowerShell-2018/index.html#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  <img src="/images/self.jpg" width="200" style="margin-top: 80px;">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Built-with-Azure-Tools/">Built with Azure Tools</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Supreme-Court-is-Usually-Badass/">The Supreme Court is Usually Badass</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure/">azure</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/azure-cli/">azure-cli</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csharp/">csharp</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/documentdb/">documentdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnet/">dotnet</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/microsoft/">microsoft</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scotus/">scotus</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/supreme-court/">supreme court</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/azure/" style="font-size: 16.67px;">azure</a> <a href="/tags/azure-cli/" style="font-size: 16.67px;">azure-cli</a> <a href="/tags/csharp/" style="font-size: 16.67px;">csharp</a> <a href="/tags/docker/" style="font-size: 13.33px;">docker</a> <a href="/tags/documentdb/" style="font-size: 10px;">documentdb</a> <a href="/tags/dotnet/" style="font-size: 16.67px;">dotnet</a> <a href="/tags/microsoft/" style="font-size: 16.67px;">microsoft</a> <a href="/tags/scotus/" style="font-size: 20px;">scotus</a> <a href="/tags/supreme-court/" style="font-size: 20px;">supreme court</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/05/Dockerize-your-Web-App/">Dockerize your Web App</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/11/Add-DocumentDB-to-your-Web-App/">Add DocumentDB to your Web App</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/03/NET-Core-Web-App-in-Azure/">Build a .NET Core Web App in Azure</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/Issue-7-Burwell-v-Hobby-Lobby/">Issue 7: Burwell v. Hobby Lobby</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/01/Issue-6-United-States-v-Windsor/">Issue 6: United States v. Windsor</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Aaron Roney<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'twitchax-blog';
+  
+  var disqus_url = 'http://blog.aaroney.com/Azure-PowerShell-2018/index.html';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

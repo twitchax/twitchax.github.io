@@ -13,7 +13,7 @@
 <meta property="og:description" content="Azure CLI Customer Insights (201805) Survey Results 1 For approximately how long have you been using Azure CLI? 2 How likely is it that you would recommend Azure CLI to a friend or colleague (1 is">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://blog.aaroney.com/Azure-CLI-Customer-Insights-2018/index/FeatureRanking.png">
-<meta property="og:updated_time" content="2018-05-30T07:35:01.758Z">
+<meta property="og:updated_time" content="2018-05-30T07:43:54.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Azure CLI Customer Insights 2018">
 <meta name="twitter:description" content="Azure CLI Customer Insights (201805) Survey Results 1 For approximately how long have you been using Azure CLI? 2 How likely is it that you would recommend Azure CLI to a friend or colleague (1 is">
@@ -123,15 +123,15 @@ ga('send', 'pageview');
 <li><a href="#build-developer-day">Build Developer Day</a><ul>
 <li><a href="#hypothesis-types">Hypothesis Types</a></li>
 <li><a href="#problem-we-believe-azure-cli-customers-are-frustrated-by-the-rollup-package-because-it-is-getting-too-big-and-unwieldy">Problem: We believe Azure CLI customers are frustrated by the rollup package because it is getting too big and unwieldy.</a></li>
-<li><a href="#problem-we-believe-azure-cli-customers-are-frustrated-when-finding-commands-because-documentation-and-discoverability-is-lacking">Problem: We believe Azure CLI customers are frustrated when finding commands because documentation and discoverability is lacking.</a></li>
+<li><a href="#problem-we-believe-azure-cli-customers-are-frustrated-when-finding-commands-because-documentation-and-discoverability-are-lacking">Problem: We believe Azure CLI customers are frustrated when finding commands because documentation and discoverability are lacking.</a></li>
 <li><a href="#problem-we-believe-azure-cli-customers-are-frustrated-because-they-are-overwhelmingly-using-scripts-and-the-cli-is-currently-built-more-for-interactive-use">Problem: We believe Azure CLI customers are frustrated because they are overwhelmingly using scripts and the CLI is currently built more for interactive use.</a></li>
 </ul>
 </li>
 <li><a href="#customer-summary">Customer Summary</a></li>
 <li><a href="#next-steps">Next Steps</a><ul>
 <li><a href="#team-brainstorming">Team Brainstorming</a></li>
-<li><a href="#customer-interviews">Customer Interviews</a></li>
-<li><a href="#hci-interviews">HCI Interviews</a></li>
+<li><a href="#problemconcept-interviews">Problem/Concept Interviews</a></li>
+<li><a href="#hcifeature-interviews">HCI/Feature Interviews</a></li>
 </ul>
 </li>
 <li><a href="#titanium-themes">Titanium Themes</a><ul>
@@ -241,19 +241,22 @@ ga('send', 'pageview');
 <li>Feature: We believe type of customers will be successful solving problem using feature while doing job-to-be-done.  We will know they were successful when we see criteria.</li>
 <li>Business: We believe type of customers will realize business outcome by employing business action.  We will know this to be true when we see criteria.</li>
 </ul>
-<h3><span id="problem-we-believe-azure-cli-customers-are-frustrated-by-the-rollup-package-because-it-is-getting-too-big-and-unwieldy">Problem: We believe Azure CLI customers are frustrated by the rollup package because it is getting too big and unwieldy.</span></h3><p>Customer notes:</p>
+<h3><span id="problem-we-believe-azure-cli-customers-are-frustrated-by-the-rollup-package-because-it-is-getting-too-big-and-unwieldy">Problem: We believe Azure CLI customers are frustrated by the rollup package because it is getting too big and unwieldy.</span></h3><p><strong>Invalidated</strong>: customers are not frustrated by the number of command modules or the size, in general, but they are frustrated by an inability to sift through the documentation and commands to find the specific commands they need.</p>
+<p>Customer notes:</p>
 <ul>
 <li>“The long list of command modules in CLI is ‘kind of expected’.  However, the long list of services is ‘a little intimidating’.  Instead of removing commands modules, maybe make a ‘simple help’ that is pared down.  ‘Maybe by default <code>az</code> gives a smaller list.’”</li>
 <li>Other customers echoed that the Core should continue to be big, but maybe a have “simple help” that is pared down.</li>
 </ul>
-<h3><span id="problem-we-believe-azure-cli-customers-are-frustrated-when-finding-commands-because-documentation-and-discoverability-is-lacking">Problem: We believe Azure CLI customers are frustrated when finding commands because documentation and discoverability is lacking.</span></h3><p>Customer notes:</p>
+<h3><span id="problem-we-believe-azure-cli-customers-are-frustrated-when-finding-commands-because-documentation-and-discoverability-are-lacking">Problem: We believe Azure CLI customers are frustrated when finding commands because documentation and discoverability are lacking.</span></h3><p><strong>Validated</strong>: customers generally report an inability to reach a workable solution in the product or documentation alone, and they typically go somewhere like Stack Overflow for quick solutions.</p>
+<p>Customer notes:</p>
 <ul>
 <li>Search official documentation, Stack Overflow. What search string in Google: “Azure CLI provision elastic database”.</li>
 <li>Stack overflow primary go to for many customers.</li>
 <li>“Very big on written tutorials.  Likes to “block of text, and then the command”.  A lot of her students prefer videos to written documentation.”</li>
 <li>Some customers reported preferring better in-product documentation.</li>
 </ul>
-<h3><span id="problem-we-believe-azure-cli-customers-are-frustrated-because-they-are-overwhelmingly-using-scripts-and-the-cli-is-currently-built-more-for-interactive-use">Problem: We believe Azure CLI customers are frustrated because they are overwhelmingly using scripts and the CLI is currently built more for interactive use.</span></h3><p>Customer notes:</p>
+<h3><span id="problem-we-believe-azure-cli-customers-are-frustrated-because-they-are-overwhelmingly-using-scripts-and-the-cli-is-currently-built-more-for-interactive-use">Problem: We believe Azure CLI customers are frustrated because they are overwhelmingly using scripts and the CLI is currently built more for interactive use.</span></h3><p><strong>Invalidated</strong>: there are customers along the entire spectrum, and we should tailor experiences to customers from infancy to maturity.</p>
+<p>Customer notes:</p>
 <ul>
 <li>A little of both, but power users are definitely using scripts.</li>
 <li>Most customers have not heard of or used <code>az interactive</code>, but many thought it was cool when shown to them.</li>
@@ -304,7 +307,9 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<h3><span id="customer-interviews">Customer Interviews</span></h3><h3><span id="hci-interviews">HCI Interviews</span></h3><h2><span id="titanium-themes">Titanium Themes</span></h2><p><strong>Azure CLI Team to provide feedback on the theme titles, and I will fill them in.</strong></p>
+<h3><span id="problemconcept-interviews">Problem/Concept Interviews</span></h3><p>June 2018.</p>
+<h3><span id="hcifeature-interviews">HCI/Feature Interviews</span></h3><p>September 2018.</p>
+<h2><span id="titanium-themes">Titanium Themes</span></h2><p><strong>Azure CLI Team to provide feedback on the theme titles, and I will fill them in.</strong></p>
 <p>All items here are <em>themes</em>: i.e., specific items are pending customer feedback.</p>
 <h3><span id="1-customer-engagement">1 Customer Engagement</span></h3><p>Theme Ideas:</p>
 <ul>
@@ -335,7 +340,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/Azure-CLI-Customer-Insights-2018/index.html" data-id="cjhsspxf40024fgys95yvdu5z" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/Azure-CLI-Customer-Insights-2018/index.html" data-id="cjhst3oxd0024pdysy49nwtf5" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/Azure-CLI-Customer-Insights-2018/index.html#disqus_thread" class="article-comment-link">Comments</a>
       

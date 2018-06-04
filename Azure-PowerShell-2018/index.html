@@ -13,7 +13,7 @@
 <meta property="og:description" content="Azure PowerShell 2018 Survey Results 1 For approximately how long have you been using Azure PowerShell? 2 How likely is it that you would recommend Azure PowerShell to a friend or colleague (1 is">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://blog.aaroney.com/Azure-PowerShell-2018/index/FeatureRanking.png">
-<meta property="og:updated_time" content="2018-05-30T23:02:25.067Z">
+<meta property="og:updated_time" content="2018-06-04T04:17:12.203Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Azure PowerShell 2018">
 <meta name="twitter:description" content="Azure PowerShell 2018 Survey Results 1 For approximately how long have you been using Azure PowerShell? 2 How likely is it that you would recommend Azure PowerShell to a friend or colleague (1 is">
@@ -360,7 +360,34 @@ ga('send', 'pageview');
 <li>Doc updates.</li>
 <li>Aliases to old cmdlets.</li>
 </ul>
-<p><strong>Need to put the full plan here. :)</strong></p>
+<h4><span id="az-plan"><code>Az</code> Plan</span></h4><ul>
+<li>Ship new rollup package (i.e., <code>Az</code>) and cmdlet names (e.g., <code>New-AzVm</code>).</li>
+<li>New modules will be built against <strong>NETStandard 2.0+</strong> for <strong>PowerShell 6</strong> and PowerShell 5.1 Compatibility.</li>
+<li><strong>Refactoring</strong> of <strong>module layout</strong> for better consistency and conciseness.</li>
+<li>All cmdlets will have <code>Az</code> =&gt; <code>AzureRM</code> aliases for <em>at least</em> one year.</li>
+<li>Planning to ship end of <strong>August 2018</strong>.</li>
+<li>Awareness/Announcements<ul>
+<li>Talk about the move in June <strong>Community Standup</strong>.</li>
+<li>Add a notice to landing page for <strong>Azure PowerShell Conceptual Docs</strong>.</li>
+<li><strong>Blog post</strong> at ship time.</li>
+<li><code>AzureRM</code> will still be usable.</li>
+</ul>
+</li>
+<li><code>AzureRM</code> Deprecation<ul>
+<li><code>AzureRM</code> will be usable, but not developed.</li>
+<li>Critical fixes only.</li>
+<li><strong>Visual Studio</strong> will need to be notified and upgraded.</li>
+<li><strong>Automation</strong> will need to be notified and upgraded.</li>
+<li><strong>Azure Stack</strong> will need to be notified and upgraded.</li>
+</ul>
+</li>
+<li>Documentation<ul>
+<li><strong>All</strong> Azure PowerShell Reference and Conceptual Documentation must be updated.</li>
+<li><strong>Profile</strong>, <strong>ARM</strong>, and <strong>Compute</strong> Docs to be updated without exception.</li>
+<li>All other service teams should be updated at the direction of the doc team to the greatest extent possible.</li>
+</ul>
+</li>
+</ul>
 <h3><span id="2-customer-engagement">2 Customer Engagement</span></h3><p>Theme Ideas:</p>
 <ul>
 <li>Increase Customer Interviews.</li>
@@ -390,7 +417,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/Azure-PowerShell-2018/index.html" data-id="cjhv3dwdf0023nk12ayfpx89y" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/Azure-PowerShell-2018/index.html" data-id="cjhzqv992002342ysp6av2mlq" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/Azure-PowerShell-2018/index.html#disqus_thread" class="article-comment-link">Comments</a>
       

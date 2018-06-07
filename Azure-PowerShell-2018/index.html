@@ -13,7 +13,7 @@
 <meta property="og:description" content="Azure PowerShell 2018 Survey Results 1 For approximately how long have you been using Azure PowerShell? 2 How likely is it that you would recommend Azure PowerShell to a friend or colleague (1 is">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://blog.aaroney.com/Azure-PowerShell-2018/index/FeatureRanking.png">
-<meta property="og:updated_time" content="2018-06-05T08:42:16.341Z">
+<meta property="og:updated_time" content="2018-06-07T23:10:39.679Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Azure PowerShell 2018">
 <meta name="twitter:description" content="Azure PowerShell 2018 Survey Results 1 For approximately how long have you been using Azure PowerShell? 2 How likely is it that you would recommend Azure PowerShell to a friend or colleague (1 is">
@@ -350,6 +350,66 @@ ga('send', 'pageview');
 </li>
 </ul>
 <h3><span id="problemconcept-interviews">Problem/Concept Interviews</span></h3><p>June 2018.</p>
+<ul>
+<li>Problem:<ul>
+<li>We believe that customers are confused/frustrated by confusion between <code>Update</code>/<code>Set</code> scenarios.<ul>
+<li>Require that every verb <em>always</em> means the same thing.</li>
+</ul>
+</li>
+<li>We believe that customers are frustrated by the lack of consistency in support for <code>Update</code> (<code>PATCH</code>).<ul>
+<li>Require that all three verbs are implemented?<br>We believe Azure PowerShell performance degrades customer experience.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Concept:<ul>
+<li>We believe that {completers…} will solve interactive usability issues and be valuable to type of customers while using Azure PowerShell interactively.  We will know this to be true when we see criteria.<ul>
+<li>Resource by parts: hitting tab on either <code>-ResourceId</code> or <code>-ResourceGroupName</code>/<code>-Name</code>.</li>
+<li>Allowing <code>rg/name</code> for <code>-ResourceId</code>.</li>
+<li>An extension of this requires that sub resource completion is also consistent.</li>
+</ul>
+</li>
+<li>We believe that VS Code intellisense, etc. will solve script writing issues and be valuable to customers writing Azure PowerShell scripts.  We will know this to be true when we see criteria.<ul>
+<li>Tab completion in intellisense.</li>
+<li>Snippets for common tasks.</li>
+<li>Chasing down bugs with PowerShell Team.</li>
+</ul>
+</li>
+<li>We believe that shortening cmdlet names will make writing scripts easier…</li>
+<li>We believe that generated aliases will improve customer experience when using Azure PowerShell interactively.<ul>
+<li><code>Get-AzureRmVM</code> =&gt; <code>gvm</code>.</li>
+<li><code>Connect-AzureRmAccount</code> =&gt; <code>caa</code>?</li>
+<li>Customers want this to be prefixed with <code>az</code>.</li>
+</ul>
+</li>
+<li>Aaron cannot type. :()</li>
+</ul>
+</li>
+<li>Feature:<ul>
+<li>We believe that wildcard support will solve query issues and be valuable to customers getting/removing sets of resources.  We will know this to be true when we see criteria.<ul>
+<li>Example: <code>Get-AzureRmVM -Name MyVm*</code>.</li>
+<li>Remove scenarios?</li>
+<li>Update scenarios?</li>
+<li>Accept list?  Example: <code>Get-AzureRmVM -Name MyVm*,Lol</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Questions:<ul>
+<li>What is the right thing for async scenarios? =&gt; make this a feature hypothesis<ul>
+<li>What should the default be?</li>
+<li><code>-Wait</code>/<code>-NoWait</code>?</li>
+<li>If <code>-NoWait</code>, can customer then “rehydrate” the Job (i.e., <code>Get-JobForExistingOperation</code>).</li>
+</ul>
+</li>
+<li>Should we have “scopeable” aliases and cmdlet names?  For example, set scope to Compute and all aliases are Compute-only?</li>
+<li>How do people even get started with Azure PowerShell?  How do they even get onboarded to Azure?</li>
+<li>Stack rank inconvenient scenarios.</li>
+<li>Make a hypothesis for a cmdlet or query helper that is kind of like <code>Find-AzureRmHelp &quot;Create a vm.&quot;</code>.</li>
+<li>Acquisition experience!</li>
+</ul>
+</li>
+</ul>
 <h3><span id="hcifeature-interviews">HCI/Feature Interviews</span></h3><p>September 2018.</p>
 <h2><span id="titanium-themes">Titanium Themes</span></h2><p><strong>Azure PowerShell Team to provide feedback on the theme titles, and I will fill them in.</strong></p>
 <p>All items here are <em>themes</em>: i.e., specific items are pending customer feedback.</p>
@@ -384,6 +444,42 @@ ga('send', 'pageview');
 <li><strong>All</strong> Azure PowerShell Reference and Conceptual Documentation must be updated.</li>
 <li><strong>Profile</strong>, <strong>ARM</strong>, and <strong>Compute</strong> Docs to be updated without exception.</li>
 <li>All other service teams should be updated at the direction of the doc team to the greatest extent possible.</li>
+<li>P0:<ul>
+<li>Profile.</li>
+<li>Resources.</li>
+<li>Compute.</li>
+<li>Network.</li>
+<li>Storage Management.</li>
+<li>Websites.</li>
+<li>KeyVault.</li>
+<li>Tags.</li>
+<li>Automation.</li>
+</ul>
+</li>
+<li>P1:<ul>
+<li>AKS.</li>
+<li>Redis Cache.</li>
+<li>Service Fabric.</li>
+<li>SQL.</li>
+<li>Storage Data.</li>
+<li>Service Bus.</li>
+</ul>
+</li>
+<li>P2: <ul>
+<li>Azure Backup.</li>
+<li>Azure Batch.</li>
+<li>DNS.</li>
+<li>Event Grid.</li>
+<li>Event Hub.</li>
+<li>Machine Learning.</li>
+<li>Media.</li>
+<li>Notification Hubs.</li>
+<li>Recovery Services.</li>
+<li>Relay.</li>
+<li>Scheduler.</li>
+</ul>
+</li>
+<li>P3: The rest!</li>
 </ul>
 </li>
 </ul>
@@ -416,7 +512,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.aaroney.com/Azure-PowerShell-2018/index.html" data-id="cji27uxti0027xc12ex8zu9gd" class="article-share-link">Share</a>
+      <a data-url="http://blog.aaroney.com/Azure-PowerShell-2018/index.html" data-id="cji55o68q002gvr12xeijj81k" class="article-share-link">Share</a>
       
         <a href="http://blog.aaroney.com/Azure-PowerShell-2018/index.html#disqus_thread" class="article-comment-link">Comments</a>
       
